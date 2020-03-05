@@ -139,7 +139,8 @@
         
         new mapboxgl.Popup()
         .setLngLat(coordinates)
-        .setHTML("magnitude: " + mag + "<br>Was there a tsunami?: " + sup)
+        .setHTML("<b>Site: </b>" + site + "</br>" + feature.properties.Project_1 + feature.properties.Project_2 + feature.properties.Project_3 + feature.properties.Project_1)
+        
         .addTo(map);
         });
         
