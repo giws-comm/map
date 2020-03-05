@@ -122,12 +122,12 @@
         
         var coordinates = e.features[0].geometry.coordinates.slice();
         var site = e.features[0].properties.site;
-        var group;
+        var sup;
         
-        if (e.features[0].properties.group === 1) {
-            group = 'yes'
+        if (e.features[0].properties.sup === 1) {
+            sup = 'yes'
         } else {
-            group = 'no'
+            sup = 'no'
         }
         
         // Ensure that if the map is zoomed out such that
@@ -139,7 +139,7 @@
         
         new mapboxgl.Popup()
         .setLngLat(coordinates)
-        .setHTML("magnitude: " + mag + "<br>Was there a tsunami?: " + group)
+        .setHTML("magnitude: " + mag + "<br>Was there a tsunami?: " + sup)
         .addTo(map);
         });
         
