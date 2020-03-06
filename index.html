@@ -23,10 +23,26 @@
     zoom: 3
     });
  
+
         map.on('load', function() {
         // Add a new source from our GeoJSON data and
         // set the 'cluster' option to true. GL-JS will
         // add the point_count property to your source data.
+
+        //Canadian waterbasins
+        map.addSource('basin', { type: 'geojson', data:'https://giws-comm.github.io/map/GWFbasins_v2.json', buffer:5,});
+        map.addLayer({
+            'id': 'basin-fill',
+            'type': 'fill',
+            'source':'basin',
+            'layout':{},
+            'paint': {
+                'fill-color': "#24E0F3",
+                'fill-opacity':0.25,
+                'fill-outline-color':"#0C6079",
+            }
+        });
+
         map.addSource('observatories', {
         type: 'geojson',
         // Point to GeoJSON data. 
@@ -93,6 +109,8 @@
         'circle-stroke-color': '#fff'
         }
         });
+
+
         
         // inspect a cluster on click
         map.on('click', 'clusters', function(e) {
@@ -154,6 +172,7 @@
         map.getCanvas().style.cursor = '';
         });
         });
+
 </script>
  
 </body>
