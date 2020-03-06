@@ -19,7 +19,7 @@
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
-    center: [-103.59179687498357, 40.66995747013945],
+    center: [-114.4500116, 62.58332647],
     zoom: 3
     });
  
@@ -142,7 +142,7 @@
         
         new mapboxgl.Popup()
         .setLngLat(coordinates)
-        .setHTML("Site:" + site + "</br>" +  p1 + " " + p2 +" " + p3 +" " + p4)
+        .setHTML("<b>Site: </b>" + site + "</br>" + "<b>Project(s):</b> " + p1 + ", </br>"+ p2 +", </br>" + p3 +", </br>"+ p4)
         
         .addTo(map);
         });
