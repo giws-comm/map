@@ -120,6 +120,10 @@
         map.on('click', 'unclustered-point', function(e) {
         
         var coordinates = e.features[0].geometry.coordinates.slice();
+        var p1 = e.features[0].properties.Project_1;
+        var p2 = e.features[0].properties.Project_2;
+        var p3 = e.features[0].properties.Project_3;
+        var p4 = e.features[0].properties.Project_4;
         var site = e.features[0].properties.site;
         var sup;
         
@@ -138,7 +142,7 @@
         
         new mapboxgl.Popup()
         .setLngLat(coordinates)
-        .setHTML("Site:" + site + "</br>" + feature.properties.Project_1 + feature.properties.Project_2 + feature.properties.Project_3 + feature.properties.Project_1)
+        .setHTML("Site:" + site + "</br>" +  p1 + " " + p2 +" " + p3 +" " + p4)
         
         .addTo(map);
         });
