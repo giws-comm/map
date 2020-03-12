@@ -43,19 +43,6 @@
             }
         });
 
-        map.addLayer({
-            'id': "basin-line",
-            'type': 'line',
-            'source': 'basin',
-            'layout': {
-                'line-join': 'round',
-                'line-cap': 'round'
-                },
-            'paint': {
-                'line-color': '#66D6E4',
-                'line-width': 2
-        }});
-
         map.addSource('observatories', {
         type: 'geojson',
         // Point to GeoJSON data. 
