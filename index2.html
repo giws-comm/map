@@ -42,12 +42,13 @@
 
 <div id="basin-legend" class="legend">
     <h4>Obervatory Basins</h4>
-    <div><span style="background-color: #154360"></span>St. Lawrence River Basin</div>
-    <div><span style="background-color: #21618C "></span>Nelson - Saskatchewan River Basin</div>
-    <div><span style="background-color: #2874A6"></span>Columbia River basin</div>
-    <div><span style="background-color: #3498DB"></span>Yukon River Basin</div>
-    <div><span style="background-color: #85C1E9"></span>Fraser River Basin</div>
-    <div><span style="background-color: #D6EAF8"></span>Churchill River Basin</div>
+    <div><span style="background-color: #7FB3D5"></span>Yukon River Basin</div>
+    <div><span style="background-color: #73C6B6 "></span>Mackenzie River Basin</div>
+    <div><span style="background-color: #F7DC6F "></span>Fraser River Basin</div>
+    <div><span style="background-color: #EB984E"></span>Columbia River basin</div>
+    <div><span style="background-color: #BA4A00 "></span>Nelson - Saskatchewan River Basin</div>
+    <div><span style="background-color: #884EA0"></span>Churchill River Basin</div>
+    <div><span style="background-color: #154360 "></span>St. Lawrence River Basin</div>
     </div>
  
 <script>
@@ -71,46 +72,44 @@
             'id': 'basin-fill',
             'type': 'fill',
             'source':'basin',
-            'filter': ['==', 'NAMRB_EN', true],
             'layout':{},
             'paint': {
                 'fill-color': ['match',
-              //  ['linear'], 
                 ['get', 'NAMRB_EN'],
                 'Yukon',
-                    '#154360',
+                    '#D1E1EC',
                 'Mackenzie',
-                    '#6A0888',
+                    '#73C6B6',
                 'Churchill',
-                    '#21618C',
+                    '#2F6983',
                 'Fraser',
-                    '#2874A6',
+                    '#F7DC6F',
                 'Columbia',
-                    '#24E0F3',
+                    '#EB984E',
                 'Nelson - Saskatchewan',
-                    '#85C1E9',
+                    '#BA4A00',
                 'St. Lawrence',
-                    '#D6EAF8',
+                    '#021C28',
                  //other
                     '#154360',
                 ],
-                'fill-opacity':0.5,
+                'fill-opacity':0.25,
                 'fill-outline-color':"#0C6079",
             }
         });
 
-        map.addLayer({
-            'id': "basin-line",
-            'type': 'line',
-            'source': 'basin',
-            'layout': {
-                'line-join': 'round',
-                'line-cap': 'round'
-                },
-            'paint': {
-                'line-color': '#154360',
-                'line-width': 2
-        }});
+        //map.addLayer({
+            //'id': "basin-line",
+            //'type': 'line',
+           // 'source': 'basin',
+           // 'layout': {
+           //     'line-join': 'round',
+           //     'line-cap': 'round'
+            //    },
+          //  'paint': {
+          //      'line-color': '#154360',
+          //      'line-width': 0.75
+   //     }});
 
         map.addSource('observatories', {
         type: 'geojson',
