@@ -46,7 +46,7 @@
     <div><span style="background-color: #73C6B6 "></span>Mackenzie River Basin</div>
     <div><span style="background-color: #F7DC6F "></span>Fraser River Basin</div>
     <div><span style="background-color: #EB984E"></span>Columbia River basin</div>
-    <div><span style="background-color: #BA4A00 "></span>Nelson - Saskatchewan River Basin</div>
+    <div><span style="background-color: #A93226 "></span>Nelson - Saskatchewan River Basin</div>
     <div><span style="background-color: #884EA0"></span>Churchill River Basin</div>
     <div><span style="background-color: #154360 "></span>St. Lawrence River Basin</div>
     </div>
@@ -81,13 +81,13 @@
                 'Mackenzie',
                     '#73C6B6',
                 'Churchill',
-                    '#2F6983',
+                    '#884EA0',
                 'Fraser',
                     '#F7DC6F',
                 'Columbia',
                     '#EB984E',
                 'Nelson - Saskatchewan',
-                    '#BA4A00',
+                    '#A93226',
                 'St. Lawrence',
                     '#021C28',
                  //other
@@ -98,18 +98,18 @@
             }
         });
 
-        map.addLayer({
-            'id': "basin-line",
-            'type': 'line',
-            'source': 'basin',
-            'layout': {
-                'line-join': 'round',
-                    'line-cap': 'round'
-                    },
-            'paint': {
-                'line-color': '#154360',
-               'line-width': 0.75
-      }});
+       // map.addLayer({
+           // 'id': "basin-line",
+          //  'type': 'line',
+           // 'source': 'basin',
+           // 'layout': {
+           //     'line-join': 'round',
+            //        'line-cap': 'round'
+            //        },
+          //  'paint': {
+           //     'line-color': '#154360',
+          //     'line-width': 0.75
+    //  }});
 
         map.addSource('observatories', {
         type: 'geojson',
