@@ -65,7 +65,7 @@
         // add the point_count property to your source data.
 
         //Canadian waterbasins
-        map.addSource('basin', { type: 'geojson', data:'https://giws-comm.github.io/map/GWFbasins_v2.json', buffer:5,});
+        map.addSource('basin', { type: 'geojson', data:'https://giws-comm.github.io/map/2020-04-02_gwfBasins.json', buffer:5,});
         map.addLayer({
             'id': 'basin-fill',
             'type': 'fill',
@@ -88,6 +88,8 @@
                     '#A93226',
                 'St. Lawrence',
                     '#021C28',
+                'Saint. John',
+                    '#A93226',
                  //other
                     '#154360',
                 ],
