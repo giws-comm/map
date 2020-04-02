@@ -12,7 +12,43 @@
 </style>
 </head>
 <body>
+    <style>
+        .legend {
+        background-color: #fff;
+        bottom: 30px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+        }
+         
+        .legend h4 {
+        margin: 0 0 10px;
+        }
+         
+        .legend div span {
+        display: inline-block;
+        height: 10px;
+        margin-right: 5px;
+        width: 10px;
+        }
+        </style>
+
 <div id="map"></div>
+
+<div id="basin-legend" class="legend">
+    <h4>Major River Basins</h4>
+    <div><span style="background-color: #5DADE2 "></span>Yukon River Basin</div>
+    <div><span style="background-color: #73C6B6 "></span>Mackenzie River Basin</div>
+    <div><span style="background-color: #F7DC6F "></span>Fraser River Basin</div>
+    <div><span style="background-color: #EB984E"></span>Columbia River basin</div>
+    <div><span style="background-color: #A93226 "></span>Nelson - Saskatchewan River Basin</div>
+    <div><span style="background-color: #884EA0"></span>Churchill River Basin</div>
+    <div><span style="background-color: #154360 "></span>St. Lawrence River Basin</div>
+    <div><span style="background-color: #154360 "></span>Saint. John</div>
+    </div>
  
 <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ2l3cyIsImEiOiJjazdmNHNqc2swdnh0M29ud29tc205aXRiIn0.Xg-oeb-9YF_lt6D8l8ztFA';
@@ -20,7 +56,7 @@
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: [-114.4500116, 62.58332647],
-    zoom: 3
+    zoom: 4
     });
  
 
@@ -30,18 +66,51 @@
         // add the point_count property to your source data.
 
         //Canadian waterbasins
-        map.addSource('basin', { type: 'geojson', data:'https://giws-comm.github.io/map/GWFbasins_v2.json', buffer:5,});
+        map.addSource('basin', { type: 'geojson', data:'https://giws-comm.github.io/map/2020-04-02_gwfBasins.json', buffer:5,});
         map.addLayer({
             'id': 'basin-fill',
             'type': 'fill',
             'source':'basin',
             'layout':{},
             'paint': {
-                'fill-color': "#24E0F3",
+                'fill-color': ['match',
+                ['get', 'NAMRB_EN'],
+                'Yukon',
+                    '#5DADE2 ',
+                'Mackenzie',
+                    '#73C6B6',
+                'Churchill',
+                    '#884EA0',
+                'Fraser',
+                    '#F7DC6F',
+                'Columbia',
+                    '#EB984E',
+                'Nelson - Saskatchewan',
+                    '#A93226',
+                'St. Lawrence',
+                    '#021C28',
+                'Saint. John',
+                    '#A93226',
+                 //other
+                    '#154360',
+                ],
                 'fill-opacity':0.25,
                 'fill-outline-color':"#0C6079",
             }
         });
+
+       // map.addLayer({
+           // 'id': "basin-line",
+          //  'type': 'line',
+           // 'source': 'basin',
+           // 'layout': {
+           //     'line-join': 'round',
+            //        'line-cap': 'round'
+            //        },
+          //  'paint': {
+           //     'line-color': '#154360',
+          //     'line-width': 0.75
+    //  }});
 
         map.addSource('observatories', {
         type: 'geojson',
