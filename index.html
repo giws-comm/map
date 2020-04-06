@@ -45,9 +45,9 @@
     <div><span style="background-color: #F7DC6F "></span>Fraser River Basin</div>
     <div><span style="background-color: #EB984E"></span>Columbia River basin</div>
     <div><span style="background-color: #A93226 "></span>Nelson - Saskatchewan River Basin</div>
-    <div><span style="background-color: #884EA0"></span>Churchill River Basin</div>
-    <div><span style="background-color: #154360 "></span>St. Lawrence River Basin</div>
-    <div><span style="background-color: #154360 "></span>Saint. John</div>
+    <div><span style="background-color: #b30086"></span>Churchill River Basin</div>
+    <div><span style="background-color: #884EA0"></span>St. Lawrence River Basin</div>
+    <div><span style="background-color: #154360 "></span>Saint. John River Basin</div>
     </div>
  
 <script>
@@ -66,7 +66,7 @@
         // add the point_count property to your source data.
 
         //Canadian waterbasins
-        map.addSource('basin', { type: 'geojson', data:'https://giws-comm.github.io/map/2020-04-02_gwfBasins.json', buffer:5,});
+        map.addSource('basin', { type: 'geojson', data:'https://giws-comm.github.io/map/GWFbasins_v3.json', buffer:5,});
         map.addLayer({
             'id': 'basin-fill',
             'type': 'fill',
@@ -85,14 +85,14 @@
                     '#F7DC6F',
                 'Columbia',
                     '#EB984E',
-                'Nelson - Saskatchewan',
+                'Nelson',
                     '#A93226',
                 'St. Lawrence',
                     '#021C28',
-                'Saint. John',
-                    '#A93226',
+                'Saint John',
+                    '#884EA0',
                  //other
-                    '#154360',
+                    '#A93226',
                 ],
                 'fill-opacity':0.25,
                 'fill-outline-color':"#0C6079",
