@@ -259,6 +259,17 @@ Jesse tinkering with popup styling
         });
         });
 
+        map.scrollZoom.disable(); //disable default scroll zoom to allow for page zoom; ctl+scroll enabled below
+        map.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+
+        map.on("wheel", event => {
+            if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+            event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+            if (!map.scrollZoom._enabled) map.scrollZoom.enable(); // Enable zoom only if it's disabled
+            } else {
+                if (map.scrollZoom._enabled) map.scrollZoom.disable(); // Disable zoom only if it's enabled
+            }
+        });
 </script>
  
 </body>
