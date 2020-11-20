@@ -1032,39 +1032,55 @@
 
                 var projectItemDetails = document.createElement('div');
                 projectItemDetails.className = "divProjectDetails";
+                var projectString = prop.Projects.split(";");
                 var projectList = document.createElement("ul");
-                if (prop.Project_1 != "") {
+                if(projectString.length > 0){
+                  for (var p = 0; p < projectString.length; p++) {
+                    var anchor = document.createElement("p");
+                    anchor.innerHTML = projectString[p];
+                    var elem = document.createElement("li");
+                    elem.appendChild(anchor);
+                    projectList.appendChild(elem);
+                  }
                   projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_1;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                } else {
-                  projectItemDetails.style.display = "none";
+                  projectItemDetails.appendChild(projectList);
                 }
-                if (prop.Project_2 != "") {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_2;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                }
-                if (prop.Project_3 != "") {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_3;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                }
-                if (prop.Project_4 != "") {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_4;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                }
-                projectItemDetails.appendChild(projectList);
+
+                // var projectItemDetails = document.createElement('div');
+                // projectItemDetails.className = "divProjectDetails";
+                // var projectList = document.createElement("ul");
+                // if (prop.Project_1 != "") {
+                //   projectItemDetails.innerHTML = "<b>Project(s)</b>";
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_1;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // } else {
+                //   projectItemDetails.style.display = "none";
+                // }
+                // if (prop.Project_2 != "") {
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_2;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // }
+                // if (prop.Project_3 != "") {
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_3;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // }
+                // if (prop.Project_4 != "") {
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_4;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // }
+                // projectItemDetails.appendChild(projectList);
 
                 divTextItem.appendChild(textItem);
                 divItem.appendChild(divTextItem);
@@ -1235,39 +1251,55 @@
 
                 var projectItemDetails = document.createElement('div');
                 projectItemDetails.className = "divProjectDetails";
+                var projectString = prop.Projects.split(";");
                 var projectList = document.createElement("ul");
-                if (prop.Project_1 != "") {
+                if(projectString.length > 0){
+                  for (var p = 0; p < projectString.length; p++) {
+                    var anchor = document.createElement("p");
+                    anchor.innerHTML = projectString[p];
+                    var elem = document.createElement("li");
+                    elem.appendChild(anchor);
+                    projectList.appendChild(elem);
+                  }
                   projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_1;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                } else {
-                  projectItemDetails.style.display = "none";
+                  projectItemDetails.appendChild(projectList);
                 }
-                if (prop.Project_2 != "") {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_2;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                }
-                if (prop.Project_3 != "") {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_3;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                }
-                if (prop.Project_4 != "") {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = prop.Project_4;
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  projectList.appendChild(elem);
-                }
-                projectItemDetails.appendChild(projectList);
+
+                // var projectItemDetails = document.createElement('div');
+                // projectItemDetails.className = "divProjectDetails";
+                // var projectList = document.createElement("ul");
+                // if (prop.Project_1 != "") {
+                //   projectItemDetails.innerHTML = "<b>Project(s)</b>";
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_1;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // } else {
+                //   projectItemDetails.style.display = "none";
+                // }
+                // if (prop.Project_2 != "") {
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_2;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // }
+                // if (prop.Project_3 != "") {
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_3;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // }
+                // if (prop.Project_4 != "") {
+                //   var anchor = document.createElement("p");
+                //   anchor.innerHTML = prop.Project_4;
+                //   var elem = document.createElement("li");
+                //   elem.appendChild(anchor);
+                //   projectList.appendChild(elem);
+                // }
+                // projectItemDetails.appendChild(projectList);
 
                 divImgItemDetails.appendChild(imgItemDetails);
                 divOverviewItemDetails.appendChild(overviewItemDetails);
@@ -1558,7 +1590,7 @@
       map.addSource('observatorySource', {
         type: 'geojson',
         // Point to GeoJSON data.
-        data: '2020-Jan6-GWFobservatoriesGeo_withID2.json',
+        data: '2020-Jan6-GWFobservatoriesGeo_withID3.json',
         // data: 'demo.json'
         // cluster: true,
         // clusterMaxZoom: 14, // Max zoom to cluster points on
