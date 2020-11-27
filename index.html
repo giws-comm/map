@@ -36,6 +36,10 @@
       /* width: 75%; */
     }
 
+    .mapboxgl-popup-content{
+      background: rgba(255, 255, 255, 0.8);
+    }
+
     /* #navbarContainer {
       display: inline-block;
       cursor: pointer;
@@ -53,15 +57,49 @@
       background-color: black;
     } */
 
+    #observatoryViewButton {
+      position: absolute;
+      top: 2%;
+      left: 1%;
+      width: 12.45%;
+      height: 3%;
+      border-radius: 10px 10px 0px 0px;
+      /* background: rgba(145, 145, 145, 0.7); */
+      background: rgba(	221, 221, 221, 0.7);
+      border-bottom: thin solid black;
+      padding-top: 0.5%;
+      text-align: center;
+      cursor: pointer;
+      font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      display: none;
+    }
+
+    #projectViewButton {
+      position: absolute;
+      top: 2%;
+      left: 13.55%;
+      width: 12.45%;
+      height: 3%;
+      border-radius: 10px 10px 0px 0px;
+      background: rgba(145, 145, 145, 0.7);
+      /* background: rgba(	61, 61, 61, 0.7); */
+      padding-top: 0.5%;
+      text-align: center;
+      cursor: pointer;
+      font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      display: none;
+    }
+
     #listViewButton {
       position: absolute;
       /* top: 75px; */
-      top: 7.5%;
+      top: 11.5%;
       /* left: 485px; */
       left: 26%;
-      width: 40px;
-      height: 30px;
-      border-radius: 5px;
+      width: 2%;
+      height: 3%;
+      border-radius: 0px 5px 5px 0px;
       background: rgba(145, 145, 145, 0.7);
       /* background: rgba(	61, 61, 61, 0.7); */
       cursor: pointer;
@@ -69,26 +107,30 @@
     }
 
     .listViewButtonLines {
-      width: 25px;
+      /* width: 25px;
       height: 2px;
       margin-top: 3px;
-      margin-left: 8px;
+      margin-left: 8px; */
+      width: 80%;
+      height: 7%;
+      margin-top: 10%;
+      margin-left: 10%;
       background-color: white;
     }
 
     .listViewButtonLines:first-child {
-      margin-top: 7px;
+      margin-top: 12%;
     }
 
     #thumbnailViewButton {
       position: absolute;
       /* top: 115px; */
-      top: 11.5%;
+      top: 15%;
       /* left: 485px; */
       left: 26%;
-      width: 40px;
-      height: 30px;
-      border-radius: 5px;
+      width: 2%;
+      height: 3%;
+      border-radius: 0px 5px 5px 0px;
       /* background: rgba(	61, 61, 61, 0.7); */
       /* background: rgba(196, 196, 196, 0.7); */
       background: rgba(145, 145, 145, 0.7);
@@ -98,10 +140,10 @@
 
     .thumbnailViewButtonBoxes {
       float: left;
-      width: 10px;
-      height: 10px;
-      margin-top: 3px;
-      margin-left: 7px;
+      width: 30%;
+      height: 30%;
+      margin-top: 10%;
+      margin-left: 15%;
       background-color: white;
       /* background-color: rgba(	255, 255, 255, 0.7);; */
     }
@@ -137,7 +179,7 @@
       position: absolute;
       width: 25%;
       /* top: 20px; */
-      top: 2%;
+      top: 6.1%;
       /* bottom: 30px; */
       bottom: 3%;
       /* left: 10px; */
@@ -147,7 +189,7 @@
       background: rgba(221, 221, 221, 0.5);
       max-height: 100%;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 0px 0px 10px 10px;
       display: none;
     }
 
@@ -177,7 +219,7 @@
     }
 
     .map-overlay .listing .divListContainer {
-      /* float:left; */
+      float: left;
       width: 95%;
       padding: 5px 10px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -191,27 +233,32 @@
       margin: 0;
     } */
 
-    .map-overlay .listing .divListContainer a {
-      /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
-      /* color: #404; */
-      width: 70%;
-      /* white-space: nowrap; */
-      overflow: hidden;
-      /* text-overflow: ellipsis; */
-    }
-
-    /* .map-overlay .listing .divListContainer div:last-child {
-      border: none;
-    } */
-
     .map-overlay .listing .divListContainer span {
       /* display: inline-block; */
       /* position: absolute; */
-      float: right;
-      height: 20px;
-      margin-right: 5px;
-      width: 10px;
+      /* float: right; */
+      /* width:10px; */
+      width: 2%;
+      /* height: 2%; */
+      margin-right: 2%;
+      padding-right: 2%;
+
     }
+
+    .map-overlay .listing .divListContainer a {
+      /* position: absolute; */
+      /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+      /* color: #404; */
+      /* padding-left: 5%; */
+      width: 70%;
+      /* white-space: nowrap; */
+      /* overflow: hidden; */
+      /* text-overflow: ellipsis; */
+    }
+
+    /* .divListContainer:last-child {
+      border-bottom:: 2px solid rgba(255, 255, 255, 1);
+    } */
 
     /* .divListContainer a {
 
@@ -367,9 +414,58 @@
       background-color: #dddddd;
     }
 
+    .divCoIDetailsContainer{
+      margin: 2%;
+      padding-left: 2px;
+      /* margin-bottom: 10px; */
+      /* float: left; */
+      /* width: 43%; */
+      /* height: 5%; */
+      /* border: 1px solid green; */
+      /* white-space: nowrap; */
+      overflow: hidden;
+      /* text-overflow: ellipsis; */
+      background-color: #dddddd;
+    }
+
+    .divLinkDetailsContainer{
+      margin: 2%;
+      padding-left: 2px;
+      /* margin-bottom: 10px; */
+      /* float: left; */
+      /* width: 43%; */
+      /* height: 5%; */
+      /* border: 1px solid green; */
+      /* white-space: nowrap; */
+      overflow: hidden;
+      /* text-overflow: ellipsis; */
+      background-color: #dddddd;
+    }
+
     /* .divFocusDetails{
       overflow: hidden;
     } */
+
+    #menuMapToggle {
+      background: #fff;
+      /* position: absolute; */
+      opacity: .8;
+      /* z-index: 1; */
+      top: 20px;
+      /* right: 400px; */
+      /* display: block; */
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      margin: 0px auto 0px;
+      width: 25%;
+      /* width: 120px; */
+      /* border: 1px solid rgba(0, 0, 0, 0.4); */
+      font-family: 'Open Sans', sans-serif;
+      /* font-family: "Trebuchet MS", Helvetica, sans-serif; */
+      /* display: flex; */
+      /* justify-content: center; */
+    }
 
     #menuLayerToggle {
       /* background: #fff; */
@@ -475,6 +571,21 @@
 
   <div id="map"></div>
 
+  <div id="menuMapToggle"> <b>Base Map</b> <br>
+    <input id="streets-v11" type="radio" name="rtoggle" value="streets" onClick="switchBaseMap(1)" />
+    <label for="streets-v11">Streets</label>
+    <input id="light-v10" type="radio" name="rtoggle" value="light" onClick="switchBaseMap(2)" />
+    <label for="light-v10">Light</label>
+    <input id="dark-v10" type="radio" name="rtoggle" value="dark" onClick="switchBaseMap(3)" />
+    <label for="dark-v10">Dark</label>
+    <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" onClick="switchBaseMap(4)" />
+    <label for="outdoors-v11">Outdoors</label>
+    <input id="satellite-custom" type="radio" name="rtoggle" value="satellite-custom" onClick="switchBaseMap(5)" />
+    <label for="satellite-custom">Satellite</label>
+    <input id="custom" type="radio" name="rtoggle" value="custom" checked="checked" onClick="switchBaseMap(6)" />
+    <label for="custom">Custom</label>
+  </div>
+
   <div id="listViewButton" onclick="showListView()">
     <div class="listViewButtonLines" id="listViewButtonLines1"></div>
     <div class="listViewButtonLines" id="listViewButtonLines2"></div>
@@ -488,10 +599,13 @@
     <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes4"></div>
   </div>
 
+  <div id="observatoryViewButton" onclick="showObservatoryView()">Observatories</div>
+  <div id="projectViewButton" onclick="showProjectView()">Projects</div>
+
   <div id="closebtnContainer"> Observatory List <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X </a></div>
   <div class="map-overlay" id="sidebar">
     <fieldset>
-      <input id="feature-filter" type="text" placeholder="Filter results by name" />
+      <input id="feature-filter" type="text" placeholder="Filter results by observatory name" />
     </fieldset>
     <div id="feature-listing" class="listing">
       <!-- <div class = "dummyDiv"></div> -->
@@ -541,6 +655,104 @@
       maxZoom: 15,
       minZoom: 2.5
     });
+
+    function switchBaseMap(m) {
+      if (m == 1) {
+        map.setStyle('mapbox://styles/mapbox/streets-v11');
+      } else if (m == 2) {
+        map.setStyle('mapbox://styles/mapbox/light-v10');
+      } else if (m == 3) {
+        map.setStyle('mapbox://styles/mapbox/dark-v10');
+      } else if (m == 4) {
+        map.setStyle('mapbox://styles/mapbox/outdoors-v11');
+      } else if (m == 5) {
+        map.setStyle('mapbox://styles/hasnat1297/ckh8lxbs30ltw19muxkx3awoo');
+      } else if (m == 6) {
+        map.setStyle('mapbox://styles/hasnat1297/ckh4bxpbr02j619lbwyc5r1jv');
+      }
+      // map.removeLayer("Basins");
+      // map.removeLayer("Observatory");
+      // map.addLayer({
+      //   'id': 'Basins',
+      //   'type': 'fill',
+      //   'source': 'basinSouce',
+      //   'layout': {
+      //     'visibility': 'visible'
+      //   },
+      //   'paint': {
+      //     'fill-color': ['match',
+      //       ['get', 'NAMRB_EN'],
+      //       'Yukon',
+      //       colorPalette[0],
+      //       'Mackenzie',
+      //       colorPalette[1],
+      //       'Churchill',
+      //       colorPalette[2],
+      //       'Fraser',
+      //       colorPalette[3],
+      //       'Columbia',
+      //       colorPalette[4],
+      //       'Nelson',
+      //       colorPalette[5],
+      //       'St. Lawrence',
+      //       colorPalette[6],
+      //       'Saint John',
+      //       colorPalette[7],
+      //       //other
+      //       '#A93226',
+      //     ],
+      //     'fill-opacity': 0.4,
+      //     'fill-outline-color': 'black',
+      //   }
+      // });
+      // map.addLayer({
+      //   'id': 'Observatory',
+      //   'source': 'observatorySource',
+      //   'type': 'circle',
+      //   // 'generateId': 'true',
+      //   layout: {
+      //     'visibility': 'visible'
+      //   },
+      //   paint: {
+      //     'circle-color': [
+      //       'match',
+      //       ['get', 'BasinLocation'],
+      //       'Yukon',
+      //       colorPalette[0],
+      //       'Mackenzie',
+      //       colorPalette[1],
+      //       'Churchill',
+      //       colorPalette[2],
+      //       'Fraser',
+      //       colorPalette[3],
+      //       'Columbia',
+      //       colorPalette[4],
+      //       'Nelson',
+      //       colorPalette[5],
+      //       'St. Lawrence',
+      //       colorPalette[6],
+      //       'Saint John',
+      //       colorPalette[7],
+      //       //other
+      //       '#ccc'
+      //     ],
+      //     // 'circle-radius': 4,
+      //     'circle-radius': {
+      //       "stops": [
+      //         [3, 4],
+      //         // zoom is 5 -> circle radius will be 1px
+      //         [5, 6],
+      //         // zoom is 10 -> circle radius will be 2px
+      //         [7, 8],
+      //         [9, 10],
+      //         [11, 12]
+      //       ]
+      //     },
+      //     'circle-stroke-width': 2,
+      //     'circle-stroke-color': 'black',
+      //   }
+      // });
+    }
 
     //legend color palettes
     colorPalette0 = ['#5DADE2', '#73C6B6', '#b30086', '#F7DC6F', '#EB984E', '#A93226', '#884EA0', '#154360'];
@@ -680,8 +892,10 @@
     var observatoryList = [];
     var basinObjects = {};
     var basinFillOpacity = 0.4;
-    var listView = 0;
-    var thumbnailView = 1;
+    var observatoryView = 0;
+    var projectView = 1;
+    var listView = 1;
+    var thumbnailView = 0;
     var numberOfBasins = 0;
 
     function hexToRGBa(h) {
@@ -832,6 +1046,30 @@
       return toSort;
     }
 
+    function showObservatoryView() {
+      observatoryView = 1;
+      projectView = 0;
+      $('#projectViewButton').css('background-color', 'rgba(145,145,145,0.7)');
+      $('#observatoryViewButton').css('background-color', 'rgba(221,221,221,0.7)');
+      document.getElementById("projectViewButton").style.fontWeight = 'normal';
+      document.getElementById("observatoryViewButton").style.fontWeight = 'bold';
+      document.getElementById("observatoryViewButton").style.borderBottom = "thin solid #3d3d3d";
+      document.getElementById("projectViewButton").style.borderBottom = "none";
+      displayFilteredList();
+    }
+
+    function showProjectView() {
+      observatoryView = 0;
+      projectView = 1;
+      $('#observatoryViewButton').css('background-color', 'rgba(145,145,145,0.7)');
+      $('#projectViewButton').css('background-color', 'rgba(221,221,221,0.7)');
+      document.getElementById("projectViewButton").style.fontWeight = 'bold';
+      document.getElementById("observatoryViewButton").style.fontWeight = 'normal';
+      document.getElementById("projectViewButton").style.borderBottom = "thin solid black";
+      document.getElementById("observatoryViewButton").style.borderBottom = "none";
+      displayFilteredList();
+    }
+
     function showListView() {
       listView = 1;
       thumbnailView = 0;
@@ -890,7 +1128,7 @@
       } else if (sitename == "Wolf Creek Research Basin") {
         return "images/Wolf Creek.jpg"
       } else {
-        return "images/Baker Creek.jpg"
+        return "images/dummy.jpg"
       }
     }
 
@@ -899,578 +1137,900 @@
       var empty = document.createElement('p');
       // Clear any existing listings
       listingEl.innerHTML = '';
-      if (features.length) {
-        if (thumbnailView == 1) {
-          //update the view icon colors
-          document.getElementById("listViewButtonLines1").style.backgroundColor = 'white';
-          document.getElementById("listViewButtonLines2").style.backgroundColor = 'white';
-          document.getElementById("listViewButtonLines3").style.backgroundColor = 'white';
-          document.getElementById("listViewButtonLines4").style.backgroundColor = 'white';
-          document.getElementById("thumbnailViewButtonBoxes1").style.backgroundColor = 'black';
-          document.getElementById("thumbnailViewButtonBoxes2").style.backgroundColor = 'black';
-          document.getElementById("thumbnailViewButtonBoxes3").style.backgroundColor = 'black';
-          document.getElementById("thumbnailViewButtonBoxes4").style.backgroundColor = 'black';
 
-          features.forEach(function(feature) {
-            // console.log(feature);
-            var prop = feature.properties;
-            var divItem = document.createElement('div');
-            divItem.className = "divContainer";
-            var divImgItem = document.createElement('div');
-            divImgItem.className = "divImgContainer";
-            var divNameItem = document.createElement('div');
-            divNameItem.className = "divNameContainer";
-            var divTextItem = document.createElement('div');
-            divTextItem.className = "divTextContainer";
-            var imgItem = document.createElement('img');
-            imgItem.src = getListingImage(prop.Site);
-            imgItem.className = "divImg";
-            var nameItem = document.createElement('a');
-            nameItem.target = '_blank';
-            nameItem.textContent = prop.Site;
-            var textItem = document.createElement('div');
-            textItem.className = "divText";
-            textItem.innerHTML = "Click to view details";
+      if(observatoryView == 1){
+        document.getElementById("feature-filter").placeholder = "Filter results by observatory name";
+        if (features.length) {
+          if (thumbnailView == 1) {
+            //update the view icon colors
+            document.getElementById("listViewButtonLines1").style.backgroundColor = 'white';
+            document.getElementById("listViewButtonLines2").style.backgroundColor = 'white';
+            document.getElementById("listViewButtonLines3").style.backgroundColor = 'white';
+            document.getElementById("listViewButtonLines4").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes1").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes2").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes3").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes4").style.backgroundColor = 'black';
 
-            if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
-              var foundBasin = 0;
-              for (var n = 0; n < numberOfBasins; n++) {
-                if (basinObjects[n].coordinates.length > 1) {
-                  for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-                    if (inside([feature.properties.X, feature.properties.Y], basinObjects[n].coordinates[m][0]) == true) {
-                      // console.log(item.textContent, 'true in polygon ', basinObjects[n].name);
-                      divItem.style.backgroundColor = hexToRGBa(basinObjects[n].color);
-                      foundBasin = 1;
-                      // break;
-                    }
-                  }
+            features.forEach(function(feature) {
+              var itemColor = "";
+              // console.log(feature);
+              var prop = feature.properties;
+              var divItem = document.createElement('div');
+              divItem.className = "divContainer";
+              var divImgItem = document.createElement('div');
+              divImgItem.className = "divImgContainer";
+              var divNameItem = document.createElement('div');
+              divNameItem.className = "divNameContainer";
+              var divTextItem = document.createElement('div');
+              divTextItem.className = "divTextContainer";
+              var imgItem = document.createElement('img');
+              imgItem.src = getListingImage(prop.Site);
+              imgItem.className = "divImg";
+              var nameItem = document.createElement('a');
+              nameItem.target = '_blank';
+              nameItem.textContent = prop.Site;
+              var textItem = document.createElement('div');
+              textItem.className = "divText";
+              textItem.innerHTML = "Click to view details";
+
+              if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
+                if (prop.BasinLocation == 'Yukon') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[0]);
+                  itemColor = hexToRGBa(colorPalette[0]);
+                } else if (prop.BasinLocation == 'Mackenzie') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[1]);
+                  itemColor = hexToRGBa(colorPalette[1]);
+                } else if (prop.BasinLocation == 'Churchill') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[2]);
+                  itemColor = hexToRGBa(colorPalette[2]);
+                } else if (prop.BasinLocation == 'Fraser') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[3]);
+                  itemColor = hexToRGBa(colorPalette[3]);
+                } else if (prop.BasinLocation == 'Columbia') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[4]);
+                  itemColor = hexToRGBa(colorPalette[4]);
+                } else if (prop.BasinLocation == 'Nelson') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[5]);
+                  itemColor = hexToRGBa(colorPalette[5]);
+                } else if (prop.BasinLocation == 'St. Lawrence') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[6]);
+                  itemColor = hexToRGBa(colorPalette[6]);
+                } else if (prop.BasinLocation == 'Saint John') {
+                  divItem.style.backgroundColor = hexToRGBa(colorPalette[7]);
+                  itemColor = hexToRGBa(colorPalette[7]);
                 } else {
-                  for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-                    if (inside([feature.properties.X, feature.properties.Y], basinObjects[n].coordinates[m]) == true) {
-                      // console.log(item.textContent, 'true in polygon ', basinObjects[n].name);
-                      divItem.style.backgroundColor = hexToRGBa(basinObjects[n].color);
-                      foundBasin = 1;
-                      // break;
-                    }
-                  }
-                }
-                // handle the observatories who are not in any basin layer
-                if (foundBasin == 0) {
                   divItem.style.backgroundColor = '#ccc';
+                  itemColor = hexToRGBa('#ccc');
                 }
               }
-            }
 
-            divItem.addEventListener('mouseover', function() {
-              // divItem.style.backgroundColor = '#a9a9a9';
-              divItem.style.opacity = .9;
-              // Highlight corresponding feature on the map
-              popup
-                .setLngLat(feature.geometry.coordinates)
-                .setText(feature.properties.Site)
-                .addTo(map);
-            });
-            divItem.addEventListener('mouseleave', function() {
-              // divItem.style.backgroundColor = '#fff';
-              divItem.style.opacity = 1;
-              popup.remove();
-            });
-            var divItemDetailsON = 0;
-            divItem.addEventListener('click', function() {
-              if (divItemDetailsON == 0) {
-                divItemDetailsON = 1;
-                divItem.style.width = '95%';
-                divItem.style.height = 'auto';
-                divImgItem.style.height = '200px';
-                imgItem.style.height = '200px';
-                divItem.removeChild(divItem.lastChild);
+              divItem.addEventListener('mouseover', function() {
+                // divItem.style.backgroundColor = '#a9a9a9';
+                divItem.style.opacity = .9;
+                // Highlight corresponding feature on the map
+                popup
+                  .setLngLat(feature.geometry.coordinates)
+                  .setText(feature.properties.Site)
+                  .addTo(map);
+              });
+              divItem.addEventListener('mouseleave', function() {
+                // divItem.style.backgroundColor = '#fff';
+                divItem.style.opacity = 1;
+                popup.remove();
+              });
+              var divItemDetailsON = 0;
+              divItem.addEventListener('click', function() {
+                if (divItemDetailsON == 0) {
+                  divItemDetailsON = 1;
+                  divItem.style.width = '95%';
+                  divItem.style.height = 'auto';
+                  divImgItem.style.height = '200px';
+                  imgItem.style.height = '200px';
+                  divItem.removeChild(divItem.lastChild);
 
-                var divItemDetails = document.createElement('div');
-                divItemDetails.className = "divItemDetailsContainer";
-                // var divImgItemDetails = document.createElement('div');
-                // divImgItemDetails.className = "divImgDetailsContainer";
-                var divOverviewItemDetails = document.createElement('div');
-                divOverviewItemDetails.className = "divNameDetailsContainer";
-                var divFocusItemDetails = document.createElement('div');
-                divFocusItemDetails.className = "divTextDetailsContainer";
-                // var imgItemDetails = document.createElement('img');
-                // imgItemDetails.src = getListingImage(prop.Site);
-                // imgItemDetails.className = "divImgDetails";
-                var divProjectItemDetails = document.createElement('div');
-                divProjectItemDetails.className = "divProjectDetailsContainer";
+                  var divItemDetails = document.createElement('div');
+                  divItemDetails.className = "divItemDetailsContainer";
+                  // var divImgItemDetails = document.createElement('div');
+                  // divImgItemDetails.className = "divImgDetailsContainer";
+                  var divOverviewItemDetails = document.createElement('div');
+                  divOverviewItemDetails.className = "divNameDetailsContainer";
+                  var divFocusItemDetails = document.createElement('div');
+                  divFocusItemDetails.className = "divTextDetailsContainer";
+                  // var imgItemDetails = document.createElement('img');
+                  // imgItemDetails.src = getListingImage(prop.Site);
+                  // imgItemDetails.className = "divImgDetails";
+                  var divProjectItemDetails = document.createElement('div');
+                  divProjectItemDetails.className = "divProjectDetailsContainer";
 
-                var overviewItemDetails = document.createElement('p');
-                overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
-                // var overviewItemDetails = document.createElement('a');
-                // overviewItemDetails.target = '_blank';
-                // overviewItemDetails.textContent = 'Overview';
+                  var overviewItemDetails = document.createElement('p');
+                  overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+                  // var overviewItemDetails = document.createElement('a');
+                  // overviewItemDetails.target = '_blank';
+                  // overviewItemDetails.textContent = 'Overview';
 
-                var divTextItem = document.createElement('div');
-                divTextItem.className = "divTextContainer";
-                var textItem = document.createElement('div');
-                textItem.className = "divText";
-                textItem.innerHTML = "Click to Collapse";
-                divTextItem.style.transform = 'translate(0, -145px)';
+                  var divTextItem = document.createElement('div');
+                  divTextItem.className = "divTextContainer";
+                  var textItem = document.createElement('div');
+                  textItem.className = "divText";
+                  textItem.innerHTML = "Click to Collapse";
+                  divTextItem.style.transform = 'translate(0, -145px)';
 
-                // var focusItemDetails = document.createElement('div');
-                // focusItemDetails.className = "divFocusDetails";
-                // focusItemDetails.innerHTML = "Other details"
+                  // var focusItemDetails = document.createElement('div');
+                  // focusItemDetails.className = "divFocusDetails";
+                  // focusItemDetails.innerHTML = "Other details"
 
-                var focusItemDetails = document.createElement('div');
-                focusItemDetails.className = "divFocusDetails";
-                var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
-                var focusList = document.createElement("ul");
-                for (var s = 0; s < focusString.length; s++) {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = focusString[s];
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  focusList.appendChild(elem);
-                }
-                focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
-                focusItemDetails.appendChild(focusList);
-
-                var projectItemDetails = document.createElement('div');
-                projectItemDetails.className = "divProjectDetails";
-                var projectString = prop.Projects.split(";");
-                var projectList = document.createElement("ul");
-                if(projectString.length > 0){
-                  for (var p = 0; p < projectString.length; p++) {
+                  var focusItemDetails = document.createElement('div');
+                  focusItemDetails.className = "divFocusDetails";
+                  var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
+                  var focusList = document.createElement("ul");
+                  for (var s = 0; s < focusString.length; s++) {
                     var anchor = document.createElement("p");
-                    anchor.innerHTML = projectString[p];
+                    anchor.innerHTML = focusString[s];
                     var elem = document.createElement("li");
                     elem.appendChild(anchor);
-                    projectList.appendChild(elem);
+                    focusList.appendChild(elem);
                   }
-                  projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                  projectItemDetails.appendChild(projectList);
+                  focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
+                  focusItemDetails.appendChild(focusList);
+
+                  var projectItemDetails = document.createElement('div');
+                  projectItemDetails.className = "divProjectDetails";
+                  var projectString = prop.Projects.split(";");
+                  var projectList = document.createElement("ul");
+                  console.log(projectString);
+                  if (projectString.length > 0) {
+                    for (var p = 0; p < projectString.length; p++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = projectString[p];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      projectList.appendChild(elem);
+                    }
+                    projectItemDetails.innerHTML = "<b>Project(s)</b>";
+                    projectItemDetails.appendChild(projectList);
+                  }
+
+                  divTextItem.appendChild(textItem);
+                  divItem.appendChild(divTextItem);
+                  // // divImgItemDetails.appendChild(imgItemDetails);
+                  // divOverviewItemDetails.appendChild(overviewItemDetails);
+                  // divFocusItemDetails.appendChild(focusItemDetails);
+                  // // divItemDetails.appendChild(divImgItemDetails);
+                  // divItemDetails.appendChild(divOverviewItemDetails);
+                  // divItemDetails.appendChild(divFocusItemDetails);
+
+                  divOverviewItemDetails.appendChild(overviewItemDetails);
+                  divFocusItemDetails.appendChild(focusItemDetails);
+                  divProjectItemDetails.appendChild(projectItemDetails)
+                  divItemDetails.appendChild(divOverviewItemDetails);
+                  divItemDetails.appendChild(divFocusItemDetails);
+                  divItemDetails.appendChild(divProjectItemDetails);
+
+                  divItem.appendChild(divItemDetails);
+                } else if (divItemDetailsON == 1) {
+                  divItemDetailsON = 0;
+                  divItem.style.width = '45%';
+                  divItem.style.height = '150px';
+                  divImgItem.style.height = '120px';
+                  imgItem.style.height = '120px';
+                  divItem.removeChild(divItem.lastChild);
+                  divItem.removeChild(divItem.lastChild);
+                  // divItemDetails.innerHTML = '';
+                  var divTextItem = document.createElement('div');
+                  divTextItem.className = "divTextContainer";
+                  var textItem = document.createElement('div');
+                  textItem.className = "divText";
+                  textItem.innerHTML = "Click to View";
+                  divTextItem.appendChild(textItem);
+                  divItem.appendChild(divTextItem);
                 }
-
-                // var projectItemDetails = document.createElement('div');
-                // projectItemDetails.className = "divProjectDetails";
-                // var projectList = document.createElement("ul");
-                // if (prop.Project_1 != "") {
-                //   projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_1;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // } else {
-                //   projectItemDetails.style.display = "none";
-                // }
-                // if (prop.Project_2 != "") {
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_2;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // }
-                // if (prop.Project_3 != "") {
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_3;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // }
-                // if (prop.Project_4 != "") {
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_4;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // }
-                // projectItemDetails.appendChild(projectList);
-
-                divTextItem.appendChild(textItem);
-                divItem.appendChild(divTextItem);
-                // // divImgItemDetails.appendChild(imgItemDetails);
-                // divOverviewItemDetails.appendChild(overviewItemDetails);
-                // divFocusItemDetails.appendChild(focusItemDetails);
-                // // divItemDetails.appendChild(divImgItemDetails);
-                // divItemDetails.appendChild(divOverviewItemDetails);
-                // divItemDetails.appendChild(divFocusItemDetails);
-
-                divOverviewItemDetails.appendChild(overviewItemDetails);
-                divFocusItemDetails.appendChild(focusItemDetails);
-                divProjectItemDetails.appendChild(projectItemDetails)
-                divItemDetails.appendChild(divOverviewItemDetails);
-                divItemDetails.appendChild(divFocusItemDetails);
-                divItemDetails.appendChild(divProjectItemDetails);
-
-                divItem.appendChild(divItemDetails);
-              } else if (divItemDetailsON == 1) {
-                divItemDetailsON = 0;
-                divItem.style.width = '45%';
-                divItem.style.height = '150px';
-                divImgItem.style.height = '120px';
-                imgItem.style.height = '120px';
-                divItem.removeChild(divItem.lastChild);
-                divItem.removeChild(divItem.lastChild);
-                // divItemDetails.innerHTML = '';
-                var divTextItem = document.createElement('div');
-                divTextItem.className = "divTextContainer";
-                var textItem = document.createElement('div');
-                textItem.className = "divText";
-                textItem.innerHTML = "Click to View";
-                divTextItem.appendChild(textItem);
-                divItem.appendChild(divTextItem);
-              }
+              });
+              // divItem.appendChild(imgItem);
+              divImgItem.appendChild(imgItem);
+              divNameItem.appendChild(nameItem);
+              divTextItem.appendChild(textItem);
+              divItem.appendChild(divImgItem);
+              divItem.appendChild(divNameItem);
+              divItem.appendChild(divTextItem);
+              listingEl.appendChild(divItem);
             });
-            // divItem.appendChild(imgItem);
-            divImgItem.appendChild(imgItem);
-            divNameItem.appendChild(nameItem);
-            divTextItem.appendChild(textItem);
-            divItem.appendChild(divImgItem);
-            divItem.appendChild(divNameItem);
-            divItem.appendChild(divTextItem);
-            listingEl.appendChild(divItem);
-          });
 
-          //add a dummy div at the last of the listing div
-          var divListItem = document.createElement('div');
-          divListItem.className = "divListContainer";
-          divListItem.style.borderBottom="none";
-          var divDummy = document.createElement('div');
-          divDummy.className = "dummyDiv";
-          divListItem.appendChild(divDummy);
-          listingEl.appendChild(divListItem);
-        }
-        // adding listview with a span on the right matching the basin layer
-        if (listView == 1) {
-          //update the view icon colors
-          document.getElementById("listViewButtonLines1").style.backgroundColor = 'black';
-          document.getElementById("listViewButtonLines2").style.backgroundColor = 'black';
-          document.getElementById("listViewButtonLines3").style.backgroundColor = 'black';
-          document.getElementById("listViewButtonLines4").style.backgroundColor = 'black';
-          document.getElementById("thumbnailViewButtonBoxes1").style.backgroundColor = 'white';
-          document.getElementById("thumbnailViewButtonBoxes2").style.backgroundColor = 'white';
-          document.getElementById("thumbnailViewButtonBoxes3").style.backgroundColor = 'white';
-          document.getElementById("thumbnailViewButtonBoxes4").style.backgroundColor = 'white';
-
-          features.forEach(function(feature) {
-            var itemColor = "";
-            // console.log('observatory feature names: ', feature.properties.Site);
-            var prop = feature.properties;
+            //add a dummy div at the last of the listing div
             var divListItem = document.createElement('div');
             divListItem.className = "divListContainer";
-            var item = document.createElement('a');
-            var spanListItem = document.createElement('span');
-            // item.href = prop.wikipedia;
-            item.target = '_blank';
-            item.textContent = prop.Site;
-            // if (item.textContent == ""){
-            //   item.textContent = feature._vectorTileFeature["Site"];
-            // }
-            if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
-              var foundBasin = 0;
-              for (var n = 0; n < numberOfBasins; n++) {
-                if (basinObjects[n].coordinates.length > 1) {
-                  for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-                    if (inside([feature.properties.X, feature.properties.Y], basinObjects[n].coordinates[m][0]) == true) {
-                      // console.log(item.textContent, 'true in polygon ', basinObjects[n].name);
-                      // spanListItem.style.backgroundColor = hexToRGBa(basinObjects[n].color);
-                      spanListItem.style.backgroundColor = basinObjects[n].color;
-                      itemColor = hexToRGBa(basinObjects[n].color);
-                      foundBasin = 1;
-                      // break;
-                    }
-                  }
+            divListItem.style.borderBottom = "none";
+            var divDummy = document.createElement('div');
+            divDummy.className = "dummyDiv";
+            divListItem.appendChild(divDummy);
+            listingEl.appendChild(divListItem);
+          }
+          // adding listview with a span on the right matching the basin layer
+          if (listView == 1) {
+            //update the view icon colors
+            document.getElementById("listViewButtonLines1").style.backgroundColor = 'black';
+            document.getElementById("listViewButtonLines2").style.backgroundColor = 'black';
+            document.getElementById("listViewButtonLines3").style.backgroundColor = 'black';
+            document.getElementById("listViewButtonLines4").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes1").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes2").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes3").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes4").style.backgroundColor = 'white';
+
+            features.forEach(function(feature) {
+              var itemColor = "";
+              // console.log('observatory feature names: ', feature.properties.Site);
+              var prop = feature.properties;
+              var divListItem = document.createElement('div');
+              divListItem.className = "divListContainer";
+              var item = document.createElement('a');
+              var spanListItem = document.createElement('span');
+              // item.href = prop.wikipedia;
+              item.target = '_blank';
+              item.textContent = prop.Site;
+              // if (item.textContent == ""){
+              //   item.textContent = feature._vectorTileFeature["Site"];
+              // }
+              if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
+                if (prop.BasinLocation == 'Yukon') {
+                  spanListItem.style.backgroundColor = colorPalette[0];
+                  itemColor = hexToRGBa(colorPalette[0]);
+                } else if (prop.BasinLocation == 'Mackenzie') {
+                  spanListItem.style.backgroundColor = colorPalette[1];
+                  itemColor = hexToRGBa(colorPalette[1]);
+                } else if (prop.BasinLocation == 'Churchill') {
+                  spanListItem.style.backgroundColor = colorPalette[2];
+                  itemColor = hexToRGBa(colorPalette[2]);
+                } else if (prop.BasinLocation == 'Fraser') {
+                  spanListItem.style.backgroundColor = colorPalette[3];
+                  itemColor = hexToRGBa(colorPalette[3]);
+                } else if (prop.BasinLocation == 'Columbia') {
+                  spanListItem.style.backgroundColor = colorPalette[4];
+                  itemColor = hexToRGBa(colorPalette[4]);
+                } else if (prop.BasinLocation == 'Nelson') {
+                  spanListItem.style.backgroundColor = colorPalette[5];
+                  itemColor = hexToRGBa(colorPalette[5]);
+                } else if (prop.BasinLocation == 'St. Lawrence') {
+                  spanListItem.style.backgroundColor = colorPalette[6];
+                  itemColor = hexToRGBa(colorPalette[6]);
+                } else if (prop.BasinLocation == 'Saint John') {
+                  spanListItem.style.backgroundColor = colorPalette[7];
+                  itemColor = hexToRGBa(colorPalette[7]);
                 } else {
-                  for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-                    if (inside([feature.properties.X, feature.properties.Y], basinObjects[n].coordinates[m]) == true) {
-                      // console.log(item.textContent, 'true in polygon ', basinObjects[n].name);
-                      // spanListItem.style.backgroundColor = hexToRGBa(basinObjects[n].color);
-                      spanListItem.style.backgroundColor = basinObjects[n].color;
-                      itemColor = hexToRGBa(basinObjects[n].color);
-                      foundBasin = 1;
-                      // break;
-                    }
-                  }
-                }
-                // handle the observatories who are not in any basin layer
-                if (foundBasin == 0) {
                   spanListItem.style.backgroundColor = '#ccc';
                   itemColor = hexToRGBa('#ccc');
                 }
               }
-            }
 
-            divListItem.addEventListener('mouseover', function() {
-              // Highlight corresponding feature on the map
-              // item.style.opacity = .9;
-              divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0.5);
-              item.style.cursor = 'pointer';
-              popup
-                .setLngLat(feature.geometry.coordinates)
-                .setText(feature.properties.Site)
-                .addTo(map);
-            });
-            divListItem.addEventListener('mouseleave', function() {
-              popup.remove();
-              // item.style.opacity = 1;
-              divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0);;
-            });
-            var divItemDetailsON = 0;
-            divListItem.addEventListener('click', function() {
-              if (divItemDetailsON == 0) {
-                divItemDetailsON = 1;
-                var divItemDetails = document.createElement('div');
-                divItemDetails.className = "divItemDetailsContainer";
-                divItemDetails.style.backgroundColor = itemColor;
+              divListItem.addEventListener('mouseover', function() {
+                // Highlight corresponding feature on the map
+                // item.style.opacity = .9;
+                divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0.5);
+                item.style.cursor = 'pointer';
+                popup
+                  .setLngLat(feature.geometry.coordinates)
+                  .setText(feature.properties.Site)
+                  .addTo(map);
+              });
+              divListItem.addEventListener('mouseleave', function() {
+                popup.remove();
+                // item.style.opacity = 1;
+                divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0);;
+              });
+              var divItemDetailsON = 0;
+              divListItem.addEventListener('click', function() {
+                if (divItemDetailsON == 0) {
+                  divItemDetailsON = 1;
+                  var divItemDetails = document.createElement('div');
+                  divItemDetails.className = "divItemDetailsContainer";
+                  divItemDetails.style.backgroundColor = itemColor;
 
-                var divImgItemDetails = document.createElement('div');
-                divImgItemDetails.className = "divImgDetailsContainer";
-                var divOverviewItemDetails = document.createElement('div');
-                divOverviewItemDetails.className = "divNameDetailsContainer";
-                var divFocusItemDetails = document.createElement('div');
-                divFocusItemDetails.className = "divTextDetailsContainer";
-                var divProjectItemDetails = document.createElement('div');
-                divProjectItemDetails.className = "divProjectDetailsContainer";
+                  var divImgItemDetails = document.createElement('div');
+                  divImgItemDetails.className = "divImgDetailsContainer";
+                  var divOverviewItemDetails = document.createElement('div');
+                  divOverviewItemDetails.className = "divNameDetailsContainer";
+                  var divFocusItemDetails = document.createElement('div');
+                  divFocusItemDetails.className = "divTextDetailsContainer";
+                  var divProjectItemDetails = document.createElement('div');
+                  divProjectItemDetails.className = "divProjectDetailsContainer";
 
-                var imgItemDetails = document.createElement('img');
-                imgItemDetails.src = getListingImage(prop.Site);
-                imgItemDetails.className = "divImgDetails";
+                  var imgItemDetails = document.createElement('img');
+                  imgItemDetails.src = getListingImage(prop.Site);
+                  imgItemDetails.className = "divImgDetails";
 
-                var overviewItemDetails = document.createElement('p');
-                overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+                  var overviewItemDetails = document.createElement('p');
+                  overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
 
-                var focusItemDetails = document.createElement('div');
-                focusItemDetails.className = "divFocusDetails";
-                var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
-                var focusList = document.createElement("ul");
-                for (var s = 0; s < focusString.length; s++) {
-                  var anchor = document.createElement("p");
-                  anchor.innerHTML = focusString[s];
-                  var elem = document.createElement("li");
-                  elem.appendChild(anchor);
-                  focusList.appendChild(elem);
-                }
-                focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
-                focusItemDetails.appendChild(focusList);
-
-                var projectItemDetails = document.createElement('div');
-                projectItemDetails.className = "divProjectDetails";
-                var projectString = prop.Projects.split(";");
-                var projectList = document.createElement("ul");
-                if(projectString.length > 0){
-                  for (var p = 0; p < projectString.length; p++) {
+                  var focusItemDetails = document.createElement('div');
+                  focusItemDetails.className = "divFocusDetails";
+                  var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
+                  var focusList = document.createElement("ul");
+                  for (var s = 0; s < focusString.length; s++) {
                     var anchor = document.createElement("p");
-                    anchor.innerHTML = projectString[p];
+                    anchor.innerHTML = focusString[s];
                     var elem = document.createElement("li");
                     elem.appendChild(anchor);
-                    projectList.appendChild(elem);
+                    focusList.appendChild(elem);
                   }
-                  projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                  projectItemDetails.appendChild(projectList);
+                  focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
+                  focusItemDetails.appendChild(focusList);
+
+                  var projectItemDetails = document.createElement('div');
+                  projectItemDetails.className = "divProjectDetails";
+                  var projectString = prop.Projects.split(";");
+                  var projectList = document.createElement("ul");
+                  if (projectString.length > 0) {
+                    for (var p = 0; p < projectString.length; p++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = projectString[p];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      projectList.appendChild(elem);
+                    }
+                    projectItemDetails.innerHTML = "<b>Project(s)</b>";
+                    projectItemDetails.appendChild(projectList);
+                  }
+
+                  divImgItemDetails.appendChild(imgItemDetails);
+                  divOverviewItemDetails.appendChild(overviewItemDetails);
+                  divFocusItemDetails.appendChild(focusItemDetails);
+                  divProjectItemDetails.appendChild(projectItemDetails)
+                  divItemDetails.appendChild(divImgItemDetails);
+                  divItemDetails.appendChild(divOverviewItemDetails);
+                  divItemDetails.appendChild(divFocusItemDetails);
+                  divItemDetails.appendChild(divProjectItemDetails);
+
+                  item.appendChild(divItemDetails);
+                  // divListItem.removeChild(spanListItem);
+                } else if (divItemDetailsON == 1) {
+                  divItemDetailsON = 0;
+                  // divListItem.appendChild(spanListItem);
+                  item.removeChild(item.lastChild);
+                  // divItemDetails.innerHTML = '';
                 }
+              });
 
-                // var projectItemDetails = document.createElement('div');
-                // projectItemDetails.className = "divProjectDetails";
-                // var projectList = document.createElement("ul");
-                // if (prop.Project_1 != "") {
-                //   projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_1;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // } else {
-                //   projectItemDetails.style.display = "none";
-                // }
-                // if (prop.Project_2 != "") {
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_2;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // }
-                // if (prop.Project_3 != "") {
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_3;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // }
-                // if (prop.Project_4 != "") {
-                //   var anchor = document.createElement("p");
-                //   anchor.innerHTML = prop.Project_4;
-                //   var elem = document.createElement("li");
-                //   elem.appendChild(anchor);
-                //   projectList.appendChild(elem);
-                // }
-                // projectItemDetails.appendChild(projectList);
-
-                divImgItemDetails.appendChild(imgItemDetails);
-                divOverviewItemDetails.appendChild(overviewItemDetails);
-                divFocusItemDetails.appendChild(focusItemDetails);
-                divProjectItemDetails.appendChild(projectItemDetails)
-                divItemDetails.appendChild(divImgItemDetails);
-                divItemDetails.appendChild(divOverviewItemDetails);
-                divItemDetails.appendChild(divFocusItemDetails);
-                divItemDetails.appendChild(divProjectItemDetails);
-
-                item.appendChild(divItemDetails);
-                divListItem.removeChild(spanListItem);
-              } else if (divItemDetailsON == 1) {
-                divItemDetailsON = 0;
-                item.removeChild(item.lastChild);
-                divListItem.appendChild(spanListItem);
-                // divItemDetails.innerHTML = '';
-              }
+              divListItem.appendChild(spanListItem);
+              divListItem.appendChild(item);
+              listingEl.appendChild(divListItem);
             });
 
-            divListItem.appendChild(item);
-            divListItem.appendChild(spanListItem);
+            //add a dummy div at the last of the listing div
+            var divListItem = document.createElement('div');
+            divListItem.className = "divListContainer";
+            divListItem.style.borderBottom = "none";
+            var divDummy = document.createElement('div');
+            divDummy.className = "dummyDiv";
+            divListItem.appendChild(divDummy);
             listingEl.appendChild(divListItem);
-          });
+          }
 
-          //add a dummy div at the last of the listing div
-          var divListItem = document.createElement('div');
-          divListItem.className = "divListContainer";
-          divListItem.style.borderBottom="none";
-          var divDummy = document.createElement('div');
-          divDummy.className = "dummyDiv";
-          divListItem.appendChild(divDummy);
-          listingEl.appendChild(divListItem);
+          document.getElementById("listViewButton").style.display = "block";
+          document.getElementById("thumbnailViewButton").style.display = "block";
+          document.getElementById("observatoryViewButton").style.display = "block";
+          document.getElementById("projectViewButton").style.display = "block";
+
+          // Show the filter input
+          filterEl.parentNode.style.display = 'block';
+        } else if (features.length === 0 && filterEl.value !== '') {
+          empty.textContent = 'No results found';
+          listingEl.appendChild(empty);
+        } else {
+          empty.textContent = 'Drag the map to populate results';
+          listingEl.appendChild(empty);
+
+          // Hide the filter input
+          filterEl.parentNode.style.display = 'none';
+
+          // remove features filter
+          map.setFilter('Observatory', ['has', 'Site']);
         }
-        // adding listview with background colors matching the basin layer
-        // if (listView == 1) {
-        //   features.forEach(function(feature) {
-        //     // console.log('observatory feature names: ', feature.properties.Site);
-        //     var prop = feature.properties;
-        //     var item = document.createElement('a');
-        //     // item.href = prop.wikipedia;
-        //     item.target = '_blank';
-        //     item.textContent = prop.Site;
-        //     // if (item.textContent == ""){
-        //     //   item.textContent = feature._vectorTileFeature["Site"];
-        //     // }
-        //     if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
-        //       for (var n = 0; n < 8; n++) {
-        //         if (basinObjects[n].coordinates.length > 1) {
-        //           for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-        //             if (inside([feature.properties.X, feature.properties.Y], basinObjects[n].coordinates[m][0]) == true) {
-        //               // console.log(item.textContent, 'true in polygon ', basinObjects[n].name);
-        //               item.style.backgroundColor = hexToRGBa(basinObjects[n].color);
-        //               // break;
-        //             }
-        //           }
-        //         } else {
-        //           for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-        //             if (inside([feature.properties.X, feature.properties.Y], basinObjects[n].coordinates[m]) == true) {
-        //               // console.log(item.textContent, 'true in polygon ', basinObjects[n].name);
-        //               item.style.backgroundColor = hexToRGBa(basinObjects[n].color);
-        //               // break;
-        //             }
-        //           }
-        //         }
-        //       }
-        //     }
-        //
-        //     item.addEventListener('mouseover', function() {
-        //       // Highlight corresponding feature on the map
-        //       item.style.opacity = .9;
-        //       item.style.cursor = 'pointer';
-        //       popup
-        //         .setLngLat(feature.geometry.coordinates)
-        //         .setText(feature.properties.Site)
-        //         .addTo(map);
-        //     });
-        //     item.addEventListener('mouseleave', function() {
-        //       popup.remove();
-        //       item.style.opacity = 1;
-        //     });
-        //     var divItemDetailsON = 0;
-        //     item.addEventListener('click', function() {
-        //       if (divItemDetailsON == 0) {
-        //         divItemDetailsON = 1;
-        //         var divItemDetails = document.createElement('div');
-        //         divItemDetails.className = "divItemDetailsContainer";
-        //
-        //         var divImgItemDetails = document.createElement('div');
-        //         divImgItemDetails.className = "divImgDetailsContainer";
-        //         var divOverviewItemDetails = document.createElement('div');
-        //         divOverviewItemDetails.className = "divNameDetailsContainer";
-        //         var divFocusItemDetails = document.createElement('div');
-        //         divFocusItemDetails.className = "divTextDetailsContainer";
-        //         var imgItemDetails = document.createElement('img');
-        //         imgItemDetails.src = getListingImage(prop.Site);
-        //         imgItemDetails.className = "divImgDetails";
-        //         var overviewItemDetails = document.createElement('a');
-        //         overviewItemDetails.target = '_blank';
-        //         overviewItemDetails.textContent = 'Overview';
-        //         var focusItemDetails = document.createElement('div');
-        //         focusItemDetails.className = "divFocusDetails";
-        //         focusItemDetails.innerHTML = "Other details"
-        //
-        //         divImgItemDetails.appendChild(imgItemDetails);
-        //         divOverviewItemDetails.appendChild(overviewItemDetails);
-        //         divFocusItemDetails.appendChild(focusItemDetails);
-        //         divItemDetails.appendChild(divImgItemDetails);
-        //         divItemDetails.appendChild(divOverviewItemDetails);
-        //         divItemDetails.appendChild(divFocusItemDetails);
-        //
-        //         item.appendChild(divItemDetails);
-        //       } else if (divItemDetailsON == 1) {
-        //         divItemDetailsON = 0;
-        //         item.removeChild(item.lastChild);
-        //         // divItemDetails.innerHTML = '';
-        //       }
-        //     });
-        //     listingEl.appendChild(item);
-        //   });
-        // }
+      }
+      else if(projectView == 1){
+        document.getElementById("feature-filter").placeholder = "Filter results by project name";
+        if (features.length) {
+          if (thumbnailView == 1) {
+            //update the view icon colors
+            document.getElementById("listViewButtonLines1").style.backgroundColor = 'white';
+            document.getElementById("listViewButtonLines2").style.backgroundColor = 'white';
+            document.getElementById("listViewButtonLines3").style.backgroundColor = 'white';
+            document.getElementById("listViewButtonLines4").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes1").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes2").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes3").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes4").style.backgroundColor = 'black';
 
-        //add a dummy div at the last of the listing div
-        // var divDummy = document.createElement('div');
-        // divDummy.className = "dummyDiv";
-        // listingEl.appendChild(divDummy);
+            features.forEach(function(feature) {
+              var itemColor = "";
+              // console.log(feature);
+              var prop = feature.properties;
+              var divItem = document.createElement('div');
+              divItem.className = "divContainer";
+              var divImgItem = document.createElement('div');
+              divImgItem.className = "divImgContainer";
+              var divNameItem = document.createElement('div');
+              divNameItem.className = "divNameContainer";
+              var divTextItem = document.createElement('div');
+              divTextItem.className = "divTextContainer";
+              var imgItem = document.createElement('img');
+              imgItem.src = getListingImage(prop.ProjectName);
+              imgItem.className = "divImg";
+              var nameItem = document.createElement('a');
+              nameItem.target = '_blank';
+              nameItem.textContent = prop.ProjectName;
+              var textItem = document.createElement('div');
+              textItem.className = "divText";
+              textItem.innerHTML = "Click to view details";
 
-        document.getElementById("listViewButton").style.display = "block";
-        document.getElementById("thumbnailViewButton").style.display = "block";
+              // if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
+              //   if (prop.BasinLocation == 'Yukon') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[0]);
+              //     itemColor = hexToRGBa(colorPalette[0]);
+              //   } else if (prop.BasinLocation == 'Mackenzie') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[1]);
+              //     itemColor = hexToRGBa(colorPalette[1]);
+              //   } else if (prop.BasinLocation == 'Churchill') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[2]);
+              //     itemColor = hexToRGBa(colorPalette[2]);
+              //   } else if (prop.BasinLocation == 'Fraser') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[3]);
+              //     itemColor = hexToRGBa(colorPalette[3]);
+              //   } else if (prop.BasinLocation == 'Columbia') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[4]);
+              //     itemColor = hexToRGBa(colorPalette[4]);
+              //   } else if (prop.BasinLocation == 'Nelson') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[5]);
+              //     itemColor = hexToRGBa(colorPalette[5]);
+              //   } else if (prop.BasinLocation == 'St. Lawrence') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[6]);
+              //     itemColor = hexToRGBa(colorPalette[6]);
+              //   } else if (prop.BasinLocation == 'Saint John') {
+              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[7]);
+              //     itemColor = hexToRGBa(colorPalette[7]);
+              //   } else {
+              //     divItem.style.backgroundColor = '#ccc';
+              //     itemColor = hexToRGBa('#ccc');
+              //   }
+              // }
 
-        // Show the filter input
-        filterEl.parentNode.style.display = 'block';
-      } else if (features.length === 0 && filterEl.value !== '') {
-        empty.textContent = 'No results found';
-        listingEl.appendChild(empty);
-      } else {
-        empty.textContent = 'Drag the map to populate results';
-        listingEl.appendChild(empty);
+              divItem.addEventListener('mouseover', function() {
+                // divItem.style.backgroundColor = '#a9a9a9';
+                divItem.style.opacity = .9;
+                // Highlight corresponding feature on the map
+                // popup
+                //   .setLngLat(feature.geometry.coordinates)
+                //   .setText(feature.properties.Site)
+                //   .addTo(map);
+                if(prop.NumberofSites == 1){
+                  new mapboxgl.Popup({
+                    closeButton: false,
+                    className: 'projectPopups'
+                  }).setLngLat(feature.geometry.coordinates)
+                    .setText(feature.properties.Site)
+                    .addTo(map);
+                }
+                else if(prop.NumberofSites > 1){
+                  var projectSiteNames = feature.properties.Site.split(";");
+                  for(var pop = 0; pop < prop.NumberofSites; pop++){
+                    new mapboxgl.Popup({
+                      closeButton: false,
+                      className: 'projectPopups'
+                    }).setLngLat(feature.geometry.coordinates[pop])
+                      .setText(projectSiteNames[pop])
+                      .addTo(map);
+                  }
+                }
+              });
+              divItem.addEventListener('mouseleave', function() {
+                // divItem.style.backgroundColor = '#fff';
+                divItem.style.opacity = 1;
+                $('.projectPopups').remove();
+              });
+              var divItemDetailsON = 0;
+              divItem.addEventListener('click', function() {
+                if (divItemDetailsON == 0) {
+                  divItemDetailsON = 1;
+                  divItem.style.width = '95%';
+                  divItem.style.height = 'auto';
+                  divImgItem.style.height = '200px';
+                  imgItem.style.height = '200px';
+                  divItem.removeChild(divItem.lastChild);
 
-        // Hide the filter input
-        filterEl.parentNode.style.display = 'none';
+                  var divItemDetails = document.createElement('div');
+                  divItemDetails.className = "divItemDetailsContainer";
+                  // var divImgItemDetails = document.createElement('div');
+                  // divImgItemDetails.className = "divImgDetailsContainer";
+                  var divOverviewItemDetails = document.createElement('div');
+                  divOverviewItemDetails.className = "divNameDetailsContainer";
+                  var divFocusItemDetails = document.createElement('div');
+                  divFocusItemDetails.className = "divTextDetailsContainer";
+                  var divCoIItemDetails = document.createElement('div');
+                  divCoIItemDetails.className = "divCoIDetailsContainer";
+                  var divProjectItemDetails = document.createElement('div');
+                  divProjectItemDetails.className = "divProjectDetailsContainer";
+                  var divLinkItemDetails = document.createElement('div');
+                  divLinkItemDetails.className = "divLinkDetailsContainer";
 
-        // remove features filter
-        map.setFilter('Observatory', ['has', 'Site']);
+                  var overviewItemDetails = document.createElement('p');
+                  overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+
+                  var divTextItem = document.createElement('div');
+                  divTextItem.className = "divTextContainer";
+                  var textItem = document.createElement('div');
+                  textItem.className = "divText";
+                  textItem.innerHTML = "Click to Collapse";
+                  divTextItem.style.transform = 'translate(0, -145px)';
+
+                  var focusItemDetails = document.createElement('div');
+                  focusItemDetails.className = "divFocusDetails";
+                  focusItemDetails.innerHTML = "<b>Principal Investigator</b>: <br><br>" + prop.PI.split(";")[0] + "<br><br>";
+
+                  var coIItemDetails = document.createElement('div');
+                  coIItemDetails.className = "divcoIDetails";
+                  var coIString = prop.CoI.split(";");
+                  var coIList = document.createElement("ul");
+                  if (coIString.length > 1) {
+                    for (var c = 0; c < coIString.length; c++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = coIString[c];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      coIList.appendChild(elem);
+                    }
+                    coIItemDetails.innerHTML = "<b>Co-Investigator(s)</b>";
+                    coIItemDetails.appendChild(coIList);
+                  }
+
+                  var projectItemDetails = document.createElement('div');
+                  projectItemDetails.className = "divProjectDetails";
+                  var projectString = prop.Site.split(";");
+                  var projectList = document.createElement("ul");
+                  if (projectString.length > 0) {
+                    for (var p = 0; p < projectString.length; p++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = projectString[p];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      projectList.appendChild(elem);
+                    }
+                    projectItemDetails.innerHTML = "<b>Site(s)</b>";
+                    projectItemDetails.appendChild(projectList);
+                  }
+
+                  var LinkItemDetails = document.createElement('a');
+                  LinkItemDetails.target = '_blank';
+                  LinkItemDetails.href = prop.URL;
+                  LinkItemDetails.textContent = "\tMore Info";
+
+                  divTextItem.appendChild(textItem);
+                  divItem.appendChild(divTextItem);
+                  // // divImgItemDetails.appendChild(imgItemDetails);
+                  // divOverviewItemDetails.appendChild(overviewItemDetails);
+                  // divFocusItemDetails.appendChild(focusItemDetails);
+                  // // divItemDetails.appendChild(divImgItemDetails);
+                  // divItemDetails.appendChild(divOverviewItemDetails);
+                  // divItemDetails.appendChild(divFocusItemDetails);
+
+                  divOverviewItemDetails.appendChild(overviewItemDetails);
+                  divFocusItemDetails.appendChild(focusItemDetails);
+                  divCoIItemDetails.appendChild(coIItemDetails);
+                  divProjectItemDetails.appendChild(projectItemDetails);
+                  divLinkItemDetails.appendChild(LinkItemDetails);
+
+                  divItemDetails.appendChild(divOverviewItemDetails);
+                  divItemDetails.appendChild(divFocusItemDetails);
+                  divItemDetails.appendChild(divCoIItemDetails);
+                  divItemDetails.appendChild(divProjectItemDetails);
+                  divItemDetails.appendChild(divLinkItemDetails);
+
+                  divItem.appendChild(divItemDetails);
+                } else if (divItemDetailsON == 1) {
+                  divItemDetailsON = 0;
+                  divItem.style.width = '45%';
+                  divItem.style.height = '150px';
+                  divImgItem.style.height = '120px';
+                  imgItem.style.height = '120px';
+                  divItem.removeChild(divItem.lastChild);
+                  divItem.removeChild(divItem.lastChild);
+                  // divItemDetails.innerHTML = '';
+                  var divTextItem = document.createElement('div');
+                  divTextItem.className = "divTextContainer";
+                  var textItem = document.createElement('div');
+                  textItem.className = "divText";
+                  textItem.innerHTML = "Click to View";
+                  divTextItem.appendChild(textItem);
+                  divItem.appendChild(divTextItem);
+                }
+              });
+              // divItem.appendChild(imgItem);
+              divImgItem.appendChild(imgItem);
+              divNameItem.appendChild(nameItem);
+              divTextItem.appendChild(textItem);
+              divItem.appendChild(divImgItem);
+              divItem.appendChild(divNameItem);
+              divItem.appendChild(divTextItem);
+              listingEl.appendChild(divItem);
+            });
+
+            //add a dummy div at the last of the listing div
+            var divListItem = document.createElement('div');
+            divListItem.className = "divListContainer";
+            divListItem.style.borderBottom = "none";
+            var divDummy = document.createElement('div');
+            divDummy.className = "dummyDiv";
+            divListItem.appendChild(divDummy);
+            listingEl.appendChild(divListItem);
+          }
+          // adding listview with a span on the right matching the basin layer
+          if (listView == 1) {
+            //update the view icon colors
+            document.getElementById("listViewButtonLines1").style.backgroundColor = 'black';
+            document.getElementById("listViewButtonLines2").style.backgroundColor = 'black';
+            document.getElementById("listViewButtonLines3").style.backgroundColor = 'black';
+            document.getElementById("listViewButtonLines4").style.backgroundColor = 'black';
+            document.getElementById("thumbnailViewButtonBoxes1").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes2").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes3").style.backgroundColor = 'white';
+            document.getElementById("thumbnailViewButtonBoxes4").style.backgroundColor = 'white';
+
+            features.forEach(function(feature) {
+              var itemColor = "";
+              // console.log('observatory feature names: ', feature.properties.Site);
+              var prop = feature.properties;
+              var divListItem = document.createElement('div');
+              divListItem.className = "divListContainer";
+              var item = document.createElement('a');
+              // var spanListItem = document.createElement('span');
+              item.target = '_blank';
+              item.textContent = prop.ProjectName;
+              // if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
+              //   if (prop.BasinLocation == 'Yukon') {
+              //     spanListItem.style.backgroundColor = colorPalette[0];
+              //     itemColor = hexToRGBa(colorPalette[0]);
+              //   } else if (prop.BasinLocation == 'Mackenzie') {
+              //     spanListItem.style.backgroundColor = colorPalette[1];
+              //     itemColor = hexToRGBa(colorPalette[1]);
+              //   } else if (prop.BasinLocation == 'Churchill') {
+              //     spanListItem.style.backgroundColor = colorPalette[2];
+              //     itemColor = hexToRGBa(colorPalette[2]);
+              //   } else if (prop.BasinLocation == 'Fraser') {
+              //     spanListItem.style.backgroundColor = colorPalette[3];
+              //     itemColor = hexToRGBa(colorPalette[3]);
+              //   } else if (prop.BasinLocation == 'Columbia') {
+              //     spanListItem.style.backgroundColor = colorPalette[4];
+              //     itemColor = hexToRGBa(colorPalette[4]);
+              //   } else if (prop.BasinLocation == 'Nelson') {
+              //     spanListItem.style.backgroundColor = colorPalette[5];
+              //     itemColor = hexToRGBa(colorPalette[5]);
+              //   } else if (prop.BasinLocation == 'St. Lawrence') {
+              //     spanListItem.style.backgroundColor = colorPalette[6];
+              //     itemColor = hexToRGBa(colorPalette[6]);
+              //   } else if (prop.BasinLocation == 'Saint John') {
+              //     spanListItem.style.backgroundColor = colorPalette[7];
+              //     itemColor = hexToRGBa(colorPalette[7]);
+              //   } else {
+              //     spanListItem.style.backgroundColor = '#ccc';
+              //     itemColor = hexToRGBa('#ccc');
+              //   }
+              //
+              // }
+
+              divListItem.addEventListener('mouseover', function() {
+                // Highlight corresponding feature on the map
+                // item.style.opacity = .9;
+                divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0.5);
+                item.style.cursor = 'pointer';
+                // console.log(feature.geometry.coordinates);
+                if(prop.NumberofSites == 1){
+                  new mapboxgl.Popup({
+                    closeButton: false,
+                    className: 'projectPopups'
+                  }).setLngLat(feature.geometry.coordinates)
+                    .setText(feature.properties.Site)
+                    .addTo(map);
+                }
+                else if(prop.NumberofSites > 1){
+                  var projectSiteNames = feature.properties.Site.split(";");
+                  for(var pop = 0; pop < prop.NumberofSites; pop++){
+                    new mapboxgl.Popup({
+                      closeButton: false,
+                      className: 'projectPopups'
+                    }).setLngLat(feature.geometry.coordinates[pop])
+                      .setText(projectSiteNames[pop])
+                      .addTo(map);
+                  }
+                }
+              });
+              divListItem.addEventListener('mouseleave', function() {
+                // popup2.remove();
+                $('.projectPopups').remove();
+                // item.style.opacity = 1;
+                divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0);;
+              });
+              var divItemDetailsON = 0;
+              divListItem.addEventListener('click', function() {
+                if (divItemDetailsON == 0) {
+                  divItemDetailsON = 1;
+                  var divItemDetails = document.createElement('div');
+                  divItemDetails.className = "divItemDetailsContainer";
+                  divItemDetails.style.backgroundColor = itemColor;
+
+                  var divImgItemDetails = document.createElement('div');
+                  divImgItemDetails.className = "divImgDetailsContainer";
+                  var divOverviewItemDetails = document.createElement('div');
+                  divOverviewItemDetails.className = "divNameDetailsContainer";
+                  var divFocusItemDetails = document.createElement('div');
+                  divFocusItemDetails.className = "divTextDetailsContainer";
+                  var divCoIItemDetails = document.createElement('div');
+                  divCoIItemDetails.className = "divCoIDetailsContainer";
+                  var divProjectItemDetails = document.createElement('div');
+                  divProjectItemDetails.className = "divProjectDetailsContainer";
+                  var divLinkItemDetails = document.createElement('div');
+                  divLinkItemDetails.className = "divLinkDetailsContainer";
+
+                  var imgItemDetails = document.createElement('img');
+                  imgItemDetails.src = getListingImage(prop.ProjectName);
+                  imgItemDetails.className = "divImgDetails";
+
+                  var overviewItemDetails = document.createElement('p');
+                  overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+
+                  var focusItemDetails = document.createElement('div');
+                  focusItemDetails.className = "divFocusDetails";
+                  focusItemDetails.innerHTML = "<b>Principal Investigator</b>: <br><br>" + prop.PI + "<br><br>";
+
+                  var coIItemDetails = document.createElement('div');
+                  coIItemDetails.className = "divcoIDetails";
+                  var coIString = prop.CoI.split(";");
+                  var coIList = document.createElement("ul");
+                  if (coIString.length > 1) {
+                    for (var c = 0; c < coIString.length; c++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = coIString[c];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      coIList.appendChild(elem);
+                    }
+                    coIItemDetails.innerHTML = "<b>Co-Investigator(s)</b>";
+                    coIItemDetails.appendChild(coIList);
+                  }
+
+                  var projectItemDetails = document.createElement('div');
+                  projectItemDetails.className = "divProjectDetails";
+                  var projectString = prop.Site.split(";");
+                  var projectList = document.createElement("ul");
+                  if (projectString.length > 0) {
+                    for (var p = 0; p < projectString.length; p++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = projectString[p];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      projectList.appendChild(elem);
+                    }
+                    projectItemDetails.innerHTML = "<b>Site(s)</b>";
+                    projectItemDetails.appendChild(projectList);
+                  }
+
+                  var LinkItemDetails = document.createElement('a');
+                  LinkItemDetails.target = '_blank';
+                  LinkItemDetails.href = prop.URL;
+                  LinkItemDetails.textContent = "\tMore Info";
+
+                  divImgItemDetails.appendChild(imgItemDetails);
+                  divOverviewItemDetails.appendChild(overviewItemDetails);
+                  divFocusItemDetails.appendChild(focusItemDetails);
+                  divCoIItemDetails.appendChild(coIItemDetails);
+                  divProjectItemDetails.appendChild(projectItemDetails);
+                  divLinkItemDetails.appendChild(LinkItemDetails);
+
+                  divItemDetails.appendChild(divImgItemDetails);
+                  divItemDetails.appendChild(divOverviewItemDetails);
+                  divItemDetails.appendChild(divFocusItemDetails);
+                  divItemDetails.appendChild(divCoIItemDetails);
+                  divItemDetails.appendChild(divProjectItemDetails);
+                  divItemDetails.appendChild(divLinkItemDetails);
+
+                  item.appendChild(divItemDetails);
+                  // divListItem.removeChild(spanListItem);
+                }
+                else if (divItemDetailsON == 1) {
+                  divItemDetailsON = 0;
+                  // divListItem.appendChild(spanListItem);
+                  item.removeChild(item.lastChild);
+                  // divItemDetails.innerHTML = '';
+                }
+              });
+
+              // divListItem.appendChild(spanListItem);
+              divListItem.appendChild(item);
+              listingEl.appendChild(divListItem);
+            });
+
+            //add a dummy div at the last of the listing div
+            var divListItem = document.createElement('div');
+            divListItem.className = "divListContainer";
+            divListItem.style.borderBottom = "none";
+            var divDummy = document.createElement('div');
+            divDummy.className = "dummyDiv";
+            divListItem.appendChild(divDummy);
+            listingEl.appendChild(divListItem);
+          }
+
+          document.getElementById("listViewButton").style.display = "block";
+          document.getElementById("thumbnailViewButton").style.display = "block";
+          document.getElementById("observatoryViewButton").style.display = "block";
+          document.getElementById("projectViewButton").style.display = "block";
+
+          // Show the filter input
+          filterEl.parentNode.style.display = 'block';
+        } else if (features.length === 0 && filterEl.value !== '') {
+          empty.textContent = 'No results found';
+          listingEl.appendChild(empty);
+        } else {
+          empty.textContent = 'Drag the map to populate results';
+          listingEl.appendChild(empty);
+
+          // Hide the filter input
+          filterEl.parentNode.style.display = 'none';
+
+          // remove features filter
+          map.setFilter('Project', ['has', 'ProjectName']);
+        }
       }
     }
 
     function displayFilteredList() {
-      var features = map.queryRenderedFeatures({
-        layers: ['Observatory']
-      });
-      // console.log(features);
-
-      var siteNames = [];
-      var featuresSorted = [];
-      if (features) {
-        // console.log('features before sorting: ', features);
-        for (var i = 0; i < features.length; i++) {
-          siteNames[i] = features[i].properties.Site;
+      if(observatoryView == 1){
+        var features = map.queryRenderedFeatures({
+          layers: ['Observatory']
+        });
+        var siteNames = [];
+        var featuresSorted = [];
+        if (features) {
+          // console.log('features before sorting: ', features);
+          for (var i = 0; i < features.length; i++) {
+            siteNames[i] = features[i].properties.Site;
+          }
+          sortWithIndeces(siteNames);
+          // console.log('Site indices sorted: ', siteNames.sortIndices);
+          for (var f = 0; f < features.length; f++) {
+            featuresSorted[f] = features[siteNames.sortIndices[f]];
+          }
+          renderListings(featuresSorted);
+          // Clear the input container
+          filterEl.value = '';
+          // Store the current features in `observatoryList` variable to
+          // later use for filtering on `keyup`.
+          observatoryList = features;
         }
-        sortWithIndeces(siteNames);
-        // console.log('Site indices sorted: ', siteNames.sortIndices);
-        for (var f = 0; f < features.length; f++) {
-          featuresSorted[f] = features[siteNames.sortIndices[f]];
+      }
+      else if (projectView == 1){
+        var features = map.queryRenderedFeatures({
+          layers: ['Project']
+        });
+        console.log(features);
+        features = features.filter(function(obj, index, self) { return index === self.findIndex(function(t) { return t['id'] === obj['id'] }); });
+        console.log('after filtering duplicates:', features);
+        var projectNames = [];
+        var featuresSorted = [];
+        if (features) {
+          // console.log('features before sorting: ', features);
+          for (var i = 0; i < features.length; i++) {
+            projectNames[i] = features[i].properties.ProjectName;
+          }
+          // console.log(projectNames);
+          sortWithIndeces(projectNames);
+          // console.log('Site indices sorted: ', siteNames.sortIndices);
+          for (var f = 0; f < features.length; f++) {
+            featuresSorted[f] = features[projectNames.sortIndices[f]];
+          }
+          renderListings(featuresSorted);
+          // Clear the input container
+          filterEl.value = '';
+          // Store the current features in `observatoryList` variable to
+          // later use for filtering on `keyup`.
+          projectList = features;
         }
-        renderListings(featuresSorted);
-        // Clear the input container
-        filterEl.value = '';
-        // Store the current features in `observatoryList` variable to
-        // later use for filtering on `keyup`.
-        observatoryList = features;
       }
     }
 
@@ -1544,7 +2104,7 @@
     //     return uniqueFeatures;
     // }
 
-    map.on('load', function() {
+    map.on('style.load', function() {
 
       // document.getElementById("navbarContainer").style.display = "block";
       //Canadian waterbasins
@@ -1586,6 +2146,40 @@
           'fill-outline-color': 'black',
         }
       });
+
+      map.addSource('projectSource', {
+        type: 'geojson',
+        // Point to GeoJSON data.
+        data: 'GWFprojects.json',
+      });
+      map.addLayer({
+        'id': 'Project',
+        'source': 'projectSource',
+        'type': 'circle',
+        // 'generateId': 'true',
+        layout: {
+          'visibility': 'visible'
+        },
+        paint: {
+          'circle-color': 'black',
+          'circle-radius': 0.5,
+          'circle-stroke-width': 0,
+          // 'circle-stroke-color': 'black',
+        }
+      });
+      // map.addLayer({
+      //   "id": "numberofprojects",
+      //   "type": "symbol",
+      //   "source": "projectSource",
+      //   "layout": {
+      //     "text-field": "{NumberofSites}",
+      //     "text-font": [
+      //       "DIN Offc Pro Medium",
+      //       "Arial Unicode MS Bold"
+      //     ],
+      //     "text-size": 20
+      //   }
+      // });
 
       map.addSource('observatorySource', {
         type: 'geojson',
@@ -1723,30 +2317,60 @@
       });
 
       filterEl.addEventListener('keyup', function(e) {
-        var value = normalize(e.target.value);
+        if(observatoryView == 1){
+          var value = normalize(e.target.value);
 
-        // Filter visible features that don't match the input value.
-        var filtered = observatoryList.filter(function(feature) {
-          var name = normalize(feature.properties.Site);
-          return name.indexOf(value) > -1;
-        });
+          // Filter visible features that don't match the input value.
+          var filtered = observatoryList.filter(function(feature) {
+            var name = normalize(feature.properties.Site);
+            return name.indexOf(value) > -1;
+          });
 
-        // Populate the sidebar with filtered results
-        renderListings(filtered);
+          // Populate the sidebar with filtered results
+          renderListings(filtered);
 
-        // Set the filter to populate features into the layer.
-        if (filtered.length) {
-          map.setFilter('Observatory', [
-            'match',
-            ['get', 'Site'],
-            filtered.map(function(feature) {
-              return feature.properties.Site;
-            }),
-            true,
-            false
-          ]);
+          // Set the filter to populate features into the layer.
+          if (filtered.length) {
+            map.setFilter('Observatory', [
+              'match',
+              ['get', 'Site'],
+              filtered.map(function(feature) {
+                return feature.properties.Site;
+              }),
+              true,
+              false
+            ]);
+          }
         }
+        else if(projectView == 1){
+          var value = normalize(e.target.value);
+
+          // Filter visible features that don't match the input value.
+          var filtered = projectList.filter(function(feature) {
+            var name = normalize(feature.properties.ProjectName);
+            return name.indexOf(value) > -1;
+          });
+
+          // Populate the sidebar with filtered results
+          renderListings(filtered);
+
+          // Set the filter to populate features into the layer.
+          if (filtered.length) {
+            map.setFilter('Project', [
+              'match',
+              ['get', 'ProjectName'],
+              filtered.map(function(feature) {
+                return feature.properties.ProjectName;
+              }),
+              true,
+              false
+            ]);
+          }
+        }
+
       });
+
+      document.getElementById("menuLayerToggle").innerHTML = "";
 
       // enumerate ids of the layers
       var toggleableLayerIds = ['Basins', 'Observatory'];
@@ -1779,6 +2403,8 @@
               document.getElementById("closebtnContainer").style.display = "none";
               document.getElementById("listViewButton").style.display = "none";
               document.getElementById("thumbnailViewButton").style.display = "none";
+              document.getElementById("observatoryViewButton").style.display = "none";
+              document.getElementById("projectViewButton").style.display = "none";
             }
             this.className = '';
           } else {
@@ -1793,6 +2419,8 @@
               document.getElementById("closebtnContainer").style.display = "none";
               document.getElementById("listViewButton").style.display = "block";
               document.getElementById("thumbnailViewButton").style.display = "block";
+              document.getElementById("observatoryViewButton").style.display = "block";
+              document.getElementById("projectViewButton").style.display = "block";
               map.on('render', afterChangeComplete);
             }
           }
