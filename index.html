@@ -2,9 +2,9 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <title>Global Water Futures</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,8 +36,85 @@
       /* width: 75%; */
     }
 
-    .mapboxgl-popup-content{
+    .mapboxgl-popup-content {
       background: rgba(255, 255, 255, 0.8);
+    }
+
+    .switch {
+      position: absolute;
+      display: inline-block;
+      width: 2%;
+      height: 2%;
+      right: 6.5%;
+    }
+
+    #switchBasinLayer{
+      top: 6%;
+    }
+
+    #switchObservatoryLayer{
+      top: 9.5%;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      /* height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px; */
+      height: 70%;
+      width: 40%;
+      /* left: 5%;
+      right: 5%; */
+      bottom: 15%;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+      /* -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px); */
+      -webkit-transform: translateX(140%);
+      -ms-transform: translateX(140%);
+      transform: translateX(140%);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 10px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
     }
 
     /* #navbarContainer {
@@ -65,7 +142,7 @@
       height: 3%;
       border-radius: 10px 10px 0px 0px;
       /* background: rgba(145, 145, 145, 0.7); */
-      background: rgba(	221, 221, 221, 0.7);
+      background: rgba(221, 221, 221, 0.7);
       border-bottom: thin solid black;
       padding-top: 0.5%;
       text-align: center;
@@ -224,16 +301,22 @@
       padding: 5px 10px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      /* text-overflow: ellipsis; */
+      text-overflow: ellipsis;
     }
 
-    /* .map-overlay .listing .divListContainer>* {
-      display: block;
-      padding: 5px 10px;
-      margin: 0;
-    } */
+    .map-overlay .listing .divListContainer .observatoryListViewSapn {
+      /* display: inline-block; */
+      /* position: absolute; */
+      /* float: right; */
+      /* width:10px; */
+      width: 2%;
+      /* height: 2%; */
+      margin-right: 2%;
+      padding-right: 2%;
 
-    .map-overlay .listing .divListContainer span {
+    }
+
+    .map-overlay .listing .divListContainer .projectListViewSpan {
       /* display: inline-block; */
       /* position: absolute; */
       /* float: right; */
@@ -255,14 +338,6 @@
       /* overflow: hidden; */
       /* text-overflow: ellipsis; */
     }
-
-    /* .divListContainer:last-child {
-      border-bottom:: 2px solid rgba(255, 255, 255, 1);
-    } */
-
-    /* .divListContainer a {
-
-    } */
 
     .map-overlay .listing .divListContainer .dummyDiv {
       width: 100%;
@@ -333,6 +408,21 @@
       overflow: hidden;
       text-overflow: ellipsis;
       background-color: #fff;
+    }
+
+    .divSpanContainer {
+      margin: 2%;
+      padding-left: 2px;
+      height: 10%;
+      background-color: #fff;
+      /* border: 1px solid black; */
+    }
+
+    .map-overlay .listing .divContainer .divSpanContainer .projectThumbnailViewSpan {
+      width: 10%;
+      height: 100%;
+      margin-right: 2%;
+      padding-right: 5%;
     }
 
     .divTextContainer {
@@ -414,7 +504,7 @@
       background-color: #dddddd;
     }
 
-    .divCoIDetailsContainer{
+    .divCoIDetailsContainer {
       margin: 2%;
       padding-left: 2px;
       /* margin-bottom: 10px; */
@@ -428,7 +518,7 @@
       background-color: #dddddd;
     }
 
-    .divLinkDetailsContainer{
+    .divLinkDetailsContainer {
       margin: 2%;
       padding-left: 2px;
       /* margin-bottom: 10px; */
@@ -472,25 +562,29 @@
       position: absolute;
       opacity: .8;
       z-index: 1;
-      top: 20px;
-      right: 10px;
-      border-radius: 10px;
-      width: 120px;
+      /* top: 20px; */
+      top: 5%;
+      /* right: 10px; */
+      right: 1%;
+      border-radius: 0px 10px 10px 0px;
+      width: 5%;
       /* border: 1px solid rgba(0, 0, 0, 0.4); */
       /* font-family: 'Open Sans', sans-serif; */
       font-family: "Trebuchet MS", Helvetica, sans-serif;
     }
 
     #menuLayerToggle a {
-      font-size: 15px;
+      /* font-size: 15px; */
+      font-size: .7vw;
       color: black;
       display: block;
       margin: 0;
       padding: 0;
-      padding: 10px;
+      padding: 10%;
       text-decoration: none;
       border-bottom: 1px solid rgba(0, 0, 0, 0.25);
       text-align: center;
+      /* border-radius: 0px 10px 10px 0px; */
       border-radius: 10px;
       background: #fff;
     }
@@ -511,7 +605,8 @@
       background-color: #dddddd;
       color: black;
       font-weight: bold;
-      font-size: 15px;
+      font-size: .7vw;
+      /* font-size: 15px; */
     }
 
     #menuLayerToggle a.active:hover {
@@ -521,42 +616,53 @@
       font-weight: normal;
     }
 
-    .colorPickerClass {
-      background-color: rgba(221, 221, 221, .7);
-      bottom: 250px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-      padding: 5px;
+    .legendContainer{
       position: absolute;
-      right: 11px;
-      z-index: 1;
+      width: 13%;
       float: left;
+      bottom: 3%;
+      right: 1%;
+      background-color: rgba(221, 221, 221, .7);
       border-radius: 10px;
-      display: inline-block;
-      text-align: center;
-      /* font-weight: bold; */
-    }
-
-    .colorPickerClass h4 {
-      margin: 0;
+      padding: .5%;
     }
 
     .legend {
-      /* background-color: #dddddd; */
-      background-color: rgba(221, 221, 221, .7);
-      bottom: 30px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-      padding: 10px;
-      position: absolute;
-      right: 10px;
-      z-index: 1;
-      border-radius: 10px;
+      font-size: .7vw;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      /* padding-left: 9px; */
+      /* margin: auto; */
+      border-radius: 10px 10px 0px 0px;
+      /* border-bottom: 1px solid black; */
     }
+
+    .colorPickerClass {
+      font-size: .7vw;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      /* padding: 0.3%; */
+      padding-top: 3%;
+      float: left;
+      border-radius: 0px 0px 10px 10px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* .legend {
+      background-color: rgba(221, 221, 221, .7);
+      bottom: 8.4%;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      font-size: .7vw;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      padding: 9px;
+      position: absolute;
+      right: 1%;
+      z-index: 1;
+      border-radius: 10px 10px 0px 0px;
+    } */
 
     .legend h4 {
       text-align: center;
-      margin: 0 0 10px;
+      margin: 0 0 5px;
     }
 
     .legend div span {
@@ -564,6 +670,26 @@
       height: 10px;
       margin-right: 5px;
       width: 10px;
+    }
+
+    /* .colorPickerClass {
+      background-color: rgba(221, 221, 221, .7);
+      bottom: 3%;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      font-size: .7vw;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      padding: 0.3%;
+      position: absolute;
+      right: 1%;
+      z-index: 1;
+      float: left;
+      border-radius: 0px 0px 10px 10px;
+      display: inline-block;
+      text-align: center;
+    } */
+
+    .colorPickerClass h4 {
+      margin: 0 0 5px;
     }
   </style>
 
@@ -585,6 +711,17 @@
     <input id="custom" type="radio" name="rtoggle" value="custom" checked="checked" onClick="switchBaseMap(6)" />
     <label for="custom">Custom</label>
   </div>
+
+  <!-- <label class="switch" id="switchBasinLayer">
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label>
+
+
+  <label class="switch" id="switchObservatoryLayer">
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label> -->
 
   <div id="listViewButton" onclick="showListView()">
     <div class="listViewButtonLines" id="listViewButtonLines1"></div>
@@ -613,6 +750,19 @@
 
   </div>
 
+<div id="colorPicker" class="legendContainer">
+  <div id="basin-legend" class="legend">
+    <h4>Major River Basins</h4>
+    <div><span id="legendspan1"></span>Yukon River Basin</div>
+    <div><span id="legendspan2"></span>Mackenzie River Basin</div>
+    <div><span id="legendspan3"></span>Churchill River Basin</div>
+    <div><span id="legendspan4"></span>Fraser River Basin</div>
+    <div><span id="legendspan5"></span>Columbia River basin</div>
+    <div><span id="legendspan6"></span>Nelson-Saskatchewan River Basin</div>
+    <div><span id="legendspan7"></span>St. Lawrence River Basin</div>
+    <div><span id="legendspan8"></span>Saint. John River Basin</div>
+  </div>
+
   <div id="colorPicker" class="colorPickerClass">
     <h4>Basin Color Palette</h4>
     <input type="radio" name="edit" value="A" onclick="colorPaletteChange(1)">1
@@ -623,18 +773,7 @@
     <input type="radio" name="edit" value="A" onclick="colorPaletteChange(6)">6
     <input type="radio" name="edit" value="C" checked="checked" onclick="colorPaletteChange(7)">7
   </div>
-
-  <div id="basin-legend" class="legend">
-    <h4>Major River Basins</h4>
-    <div><span id="legendspan1"></span>Yukon River Basin</div>
-    <div><span id="legendspan2"></span>Mackenzie River Basin</div>
-    <div><span id="legendspan3"></span>Churchill River Basin</div>
-    <div><span id="legendspan4"></span>Fraser River Basin</div>
-    <div><span id="legendspan5"></span>Columbia River basin</div>
-    <div><span id="legendspan6"></span>Nelson - Saskatchewan River Basin</div>
-    <div><span id="legendspan7"></span>St. Lawrence River Basin</div>
-    <div><span id="legendspan8"></span>Saint. John River Basin</div>
-  </div>
+</div>
 
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzbmF0MTI5NyIsImEiOiJja2gyZmozN3EwMm0xMnlxcnJlNjE2ZXIyIn0.JGVcpK9BELAP1RAtMrELtA';
@@ -894,8 +1033,8 @@
     var basinFillOpacity = 0.4;
     var observatoryView = 1;
     var projectView = 0;
-    var listView = 1;
-    var thumbnailView = 0;
+    var listView = 0;
+    var thumbnailView = 1;
     var numberOfBasins = 0;
 
     function hexToRGBa(h) {
@@ -1098,7 +1237,7 @@
       displayFilteredList();
     }
 
-    function getListingImage(sitename) {
+    function getObservatoryListingImage(sitename) {
       if (sitename == "Havikpak Creek") {
         return "images/Havikpak Creek.jpg"
       } else if (sitename == "Trail Valley Creek") {
@@ -1132,13 +1271,48 @@
       }
     }
 
+    function getProjectListingImage(sitename) {
+      if (sitename == "Southern Forests Water Futures") {
+        return "projectImages/Southern Forests Water Futures.jpg"
+      } else if (sitename == "Prairie Drainage Governance") {
+        return "projectImages/Prairie Drainage Governance.jpg"
+      } else if (sitename == "Global Water Citizenship: Integrating Networked Citizens, Scientists and Local Decision Makers") {
+        return "projectImages/Global Water Citizenship.jpg"
+      } else if (sitename == "SPADE: Storms and Precipitation Across the Continental Divide Experiment") {
+        return "projectImages/SPADE.jpg"
+      } else if (sitename == "Climate-Related Precipitation Extremes") {
+        return "projectImages/Climate-Related Precipitation Extremes.jpg"
+      } else if (sitename == "Northern Water Futures") {
+        return "projectImages/Northern Water Futures.jpg"
+      } else if (sitename == "FORMBLOOM") {
+        return "projectImages/FORMBLOOM.jpg"
+      } else if (sitename == "Agricultural Water Futures") {
+        return "projectImages/Agricultural Water Futures.png"
+      } else if (sitename == "Boreal Water Futures") {
+        return "projectImages/Boreal Water Futures.jpg"
+      } else if (sitename == "Prairie Water") {
+        return "projectImages/Prairie Water.png"
+      } else if (sitename == "Integrated Modelling Program for Canada") {
+        return "projectImages/Integrated Modelling Program for Canada.jpg"
+      } else if (sitename == "Mountain Water Futures") {
+        return "projectImages/Mountain Water Futures.jpg"
+      } else if (sitename == "Lake Futures") {
+        return "projectImages/Lake Futures.png"
+      } else if (sitename == "Transformative Sensor Technologies and Smart Watersheds") {
+        return "projectImages/Transformative Sensor Technologies and Smart Watersheds.jpg"
+      }
+      else {
+        return "projectImages/dummy.jpg"
+      }
+    }
+
     function renderListings(features) {
       document.getElementById("closebtnContainer").style.display = "none";
       var empty = document.createElement('p');
       // Clear any existing listings
       listingEl.innerHTML = '';
 
-      if(observatoryView == 1){
+      if (observatoryView == 1) {
         document.getElementById("feature-filter").placeholder = "Filter results by observatory name";
         if (features.length) {
           if (thumbnailView == 1) {
@@ -1165,7 +1339,7 @@
               var divTextItem = document.createElement('div');
               divTextItem.className = "divTextContainer";
               var imgItem = document.createElement('img');
-              imgItem.src = getListingImage(prop.Site);
+              imgItem.src = getObservatoryListingImage(prop.Site);
               imgItem.className = "divImg";
               var nameItem = document.createElement('a');
               nameItem.target = '_blank';
@@ -1364,13 +1538,10 @@
               var divListItem = document.createElement('div');
               divListItem.className = "divListContainer";
               var item = document.createElement('a');
-              var spanListItem = document.createElement('span');
-              // item.href = prop.wikipedia;
               item.target = '_blank';
               item.textContent = prop.Site;
-              // if (item.textContent == ""){
-              //   item.textContent = feature._vectorTileFeature["Site"];
-              // }
+              var spanListItem = document.createElement('span');
+              spanListItem.className = "observatoryListViewSapn";
               if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
                 if (prop.BasinLocation == 'Yukon') {
                   spanListItem.style.backgroundColor = colorPalette[0];
@@ -1435,7 +1606,7 @@
                   divProjectItemDetails.className = "divProjectDetailsContainer";
 
                   var imgItemDetails = document.createElement('img');
-                  imgItemDetails.src = getListingImage(prop.Site);
+                  imgItemDetails.src = getObservatoryListingImage(prop.Site);
                   imgItemDetails.className = "divImgDetails";
 
                   var overviewItemDetails = document.createElement('p');
@@ -1525,8 +1696,7 @@
           // remove features filter
           map.setFilter('Observatory', ['has', 'Site']);
         }
-      }
-      else if(projectView == 1){
+      } else if (projectView == 1) {
         document.getElementById("feature-filter").placeholder = "Filter results by project name";
         if (features.length) {
           if (thumbnailView == 1) {
@@ -1546,14 +1716,17 @@
               var prop = feature.properties;
               var divItem = document.createElement('div');
               divItem.className = "divContainer";
+              divItem.style.height = "170px";
               var divImgItem = document.createElement('div');
               divImgItem.className = "divImgContainer";
               var divNameItem = document.createElement('div');
               divNameItem.className = "divNameContainer";
+              var divSpanItem = document.createElement('div');
+              divSpanItem.className = "divSpanContainer";
               var divTextItem = document.createElement('div');
               divTextItem.className = "divTextContainer";
               var imgItem = document.createElement('img');
-              imgItem.src = getListingImage(prop.ProjectName);
+              imgItem.src = getProjectListingImage(prop.ProjectName);
               imgItem.className = "divImg";
               var nameItem = document.createElement('a');
               nameItem.target = '_blank';
@@ -1561,37 +1734,6 @@
               var textItem = document.createElement('div');
               textItem.className = "divText";
               textItem.innerHTML = "Click to view details";
-
-              // if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
-              //   if (prop.BasinLocation == 'Yukon') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[0]);
-              //     itemColor = hexToRGBa(colorPalette[0]);
-              //   } else if (prop.BasinLocation == 'Mackenzie') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[1]);
-              //     itemColor = hexToRGBa(colorPalette[1]);
-              //   } else if (prop.BasinLocation == 'Churchill') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[2]);
-              //     itemColor = hexToRGBa(colorPalette[2]);
-              //   } else if (prop.BasinLocation == 'Fraser') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[3]);
-              //     itemColor = hexToRGBa(colorPalette[3]);
-              //   } else if (prop.BasinLocation == 'Columbia') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[4]);
-              //     itemColor = hexToRGBa(colorPalette[4]);
-              //   } else if (prop.BasinLocation == 'Nelson') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[5]);
-              //     itemColor = hexToRGBa(colorPalette[5]);
-              //   } else if (prop.BasinLocation == 'St. Lawrence') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[6]);
-              //     itemColor = hexToRGBa(colorPalette[6]);
-              //   } else if (prop.BasinLocation == 'Saint John') {
-              //     divItem.style.backgroundColor = hexToRGBa(colorPalette[7]);
-              //     itemColor = hexToRGBa(colorPalette[7]);
-              //   } else {
-              //     divItem.style.backgroundColor = '#ccc';
-              //     itemColor = hexToRGBa('#ccc');
-              //   }
-              // }
 
               divItem.addEventListener('mouseover', function() {
                 // divItem.style.backgroundColor = '#a9a9a9';
@@ -1601,21 +1743,20 @@
                 //   .setLngLat(feature.geometry.coordinates)
                 //   .setText(feature.properties.Site)
                 //   .addTo(map);
-                if(prop.NumberofSites == 1){
+                if (prop.NumberofSites == 1) {
                   new mapboxgl.Popup({
-                    closeButton: false,
-                    className: 'projectPopups'
-                  }).setLngLat(feature.geometry.coordinates)
-                    .setText(feature.properties.Site)
-                    .addTo(map);
-                }
-                else if(prop.NumberofSites > 1){
-                  var projectSiteNames = feature.properties.Site.split(";");
-                  for(var pop = 0; pop < prop.NumberofSites; pop++){
-                    new mapboxgl.Popup({
                       closeButton: false,
                       className: 'projectPopups'
-                    }).setLngLat(feature.geometry.coordinates[pop])
+                    }).setLngLat(feature.geometry.coordinates)
+                    .setText(feature.properties.Site)
+                    .addTo(map);
+                } else if (prop.NumberofSites > 1) {
+                  var projectSiteNames = feature.properties.Site.split(";");
+                  for (var pop = 0; pop < prop.NumberofSites; pop++) {
+                    new mapboxgl.Popup({
+                        closeButton: false,
+                        className: 'projectPopups'
+                      }).setLngLat(feature.geometry.coordinates[pop])
                       .setText(projectSiteNames[pop])
                       .addTo(map);
                   }
@@ -1663,7 +1804,20 @@
 
                   var focusItemDetails = document.createElement('div');
                   focusItemDetails.className = "divFocusDetails";
-                  focusItemDetails.innerHTML = "<b>Principal Investigator</b>: <br><br>" + prop.PI.split(";")[0] + "<br><br>";
+                  // focusItemDetails.innerHTML = "<b>Principal Investigator</b>: <br><br>" + prop.PI.split(";")[0] + "<br><br>";
+                  var PIString = prop.PI.split(";");
+                  var PIList = document.createElement("ul");
+                  if (PIString.length > 0) {
+                    for (var pi = 0; pi < PIString.length; pi++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = PIString[pi];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      PIList.appendChild(elem);
+                    }
+                    focusItemDetails.innerHTML = "<b>Principal Investigator(s)</b>";
+                    focusItemDetails.appendChild(PIList);
+                  }
 
                   var coIItemDetails = document.createElement('div');
                   coIItemDetails.className = "divcoIDetails";
@@ -1727,7 +1881,7 @@
                 } else if (divItemDetailsON == 1) {
                   divItemDetailsON = 0;
                   divItem.style.width = '45%';
-                  divItem.style.height = '150px';
+                  divItem.style.height = '170px';
                   divImgItem.style.height = '120px';
                   imgItem.style.height = '120px';
                   divItem.removeChild(divItem.lastChild);
@@ -1745,9 +1899,48 @@
               // divItem.appendChild(imgItem);
               divImgItem.appendChild(imgItem);
               divNameItem.appendChild(nameItem);
+              for (sp = 0; sp < prop.NumberofSites; sp++) {
+                var spanItem = document.createElement('span');
+                spanItem.className = "projectThumbnailViewSpan";
+                basinLocationList = prop.BasinLocation.split(";");
+                if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
+                  if (basinLocationList[sp] == 'Yukon') {
+                    spanItem.style.backgroundColor = colorPalette[0];
+                    itemColor = hexToRGBa(colorPalette[0]);
+                  } else if (basinLocationList[sp] == 'Mackenzie') {
+                    spanItem.style.backgroundColor = colorPalette[1];
+                    itemColor = hexToRGBa(colorPalette[1]);
+                  } else if (basinLocationList[sp] == 'Churchill') {
+                    spanItem.style.backgroundColor = colorPalette[2];
+                    itemColor = hexToRGBa(colorPalette[2]);
+                  } else if (basinLocationList[sp] == 'Fraser') {
+                    spanItem.style.backgroundColor = colorPalette[3];
+                    itemColor = hexToRGBa(colorPalette[3]);
+                  } else if (basinLocationList[sp] == 'Columbia') {
+                    spanItem.style.backgroundColor = colorPalette[4];
+                    itemColor = hexToRGBa(colorPalette[4]);
+                  } else if (basinLocationList[sp] == 'Nelson') {
+                    spanItem.style.backgroundColor = colorPalette[5];
+                    itemColor = hexToRGBa(colorPalette[5]);
+                  } else if (basinLocationList[sp] == 'St. Lawrence') {
+                    spanItem.style.backgroundColor = colorPalette[6];
+                    itemColor = hexToRGBa(colorPalette[6]);
+                  } else if (basinLocationList[sp] == 'Saint John') {
+                    spanItem.style.backgroundColor = colorPalette[7];
+                    itemColor = hexToRGBa(colorPalette[7]);
+                  } else {
+                    spanItem.style.backgroundColor = '#ccc';
+                    itemColor = hexToRGBa('#ccc');
+                  }
+                  // spanItem.style.width = "5px";
+                  // spanItem.style.height = "8px";
+                }
+                divSpanItem.appendChild(spanItem);
+              }
               divTextItem.appendChild(textItem);
               divItem.appendChild(divImgItem);
               divItem.appendChild(divNameItem);
+              divItem.appendChild(divSpanItem);
               divItem.appendChild(divTextItem);
               listingEl.appendChild(divItem);
             });
@@ -1780,40 +1973,47 @@
               var divListItem = document.createElement('div');
               divListItem.className = "divListContainer";
               var item = document.createElement('a');
-              // var spanListItem = document.createElement('span');
               item.target = '_blank';
-              item.textContent = prop.ProjectName;
-              // if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
-              //   if (prop.BasinLocation == 'Yukon') {
-              //     spanListItem.style.backgroundColor = colorPalette[0];
-              //     itemColor = hexToRGBa(colorPalette[0]);
-              //   } else if (prop.BasinLocation == 'Mackenzie') {
-              //     spanListItem.style.backgroundColor = colorPalette[1];
-              //     itemColor = hexToRGBa(colorPalette[1]);
-              //   } else if (prop.BasinLocation == 'Churchill') {
-              //     spanListItem.style.backgroundColor = colorPalette[2];
-              //     itemColor = hexToRGBa(colorPalette[2]);
-              //   } else if (prop.BasinLocation == 'Fraser') {
-              //     spanListItem.style.backgroundColor = colorPalette[3];
-              //     itemColor = hexToRGBa(colorPalette[3]);
-              //   } else if (prop.BasinLocation == 'Columbia') {
-              //     spanListItem.style.backgroundColor = colorPalette[4];
-              //     itemColor = hexToRGBa(colorPalette[4]);
-              //   } else if (prop.BasinLocation == 'Nelson') {
-              //     spanListItem.style.backgroundColor = colorPalette[5];
-              //     itemColor = hexToRGBa(colorPalette[5]);
-              //   } else if (prop.BasinLocation == 'St. Lawrence') {
-              //     spanListItem.style.backgroundColor = colorPalette[6];
-              //     itemColor = hexToRGBa(colorPalette[6]);
-              //   } else if (prop.BasinLocation == 'Saint John') {
-              //     spanListItem.style.backgroundColor = colorPalette[7];
-              //     itemColor = hexToRGBa(colorPalette[7]);
-              //   } else {
-              //     spanListItem.style.backgroundColor = '#ccc';
-              //     itemColor = hexToRGBa('#ccc');
-              //   }
-              //
-              // }
+              item.setAttribute('style', 'white-space: pre;');
+              var newline = "\r\n";
+              item.textContent = newline + prop.ProjectName;
+
+              for (sp = 0; sp < prop.NumberofSites; sp++) {
+                var spanListItem = document.createElement('span');
+                spanListItem.className = "projectListViewSpan";
+                basinLocationList = prop.BasinLocation.split(";");
+                if (map.getLayoutProperty('Basins', 'visibility') == 'visible') {
+                  if (basinLocationList[sp] == 'Yukon') {
+                    spanListItem.style.backgroundColor = colorPalette[0];
+                    itemColor = hexToRGBa(colorPalette[0]);
+                  } else if (basinLocationList[sp] == 'Mackenzie') {
+                    spanListItem.style.backgroundColor = colorPalette[1];
+                    itemColor = hexToRGBa(colorPalette[1]);
+                  } else if (basinLocationList[sp] == 'Churchill') {
+                    spanListItem.style.backgroundColor = colorPalette[2];
+                    itemColor = hexToRGBa(colorPalette[2]);
+                  } else if (basinLocationList[sp] == 'Fraser') {
+                    spanListItem.style.backgroundColor = colorPalette[3];
+                    itemColor = hexToRGBa(colorPalette[3]);
+                  } else if (basinLocationList[sp] == 'Columbia') {
+                    spanListItem.style.backgroundColor = colorPalette[4];
+                    itemColor = hexToRGBa(colorPalette[4]);
+                  } else if (basinLocationList[sp] == 'Nelson') {
+                    spanListItem.style.backgroundColor = colorPalette[5];
+                    itemColor = hexToRGBa(colorPalette[5]);
+                  } else if (basinLocationList[sp] == 'St. Lawrence') {
+                    spanListItem.style.backgroundColor = colorPalette[6];
+                    itemColor = hexToRGBa(colorPalette[6]);
+                  } else if (basinLocationList[sp] == 'Saint John') {
+                    spanListItem.style.backgroundColor = colorPalette[7];
+                    itemColor = hexToRGBa(colorPalette[7]);
+                  } else {
+                    spanListItem.style.backgroundColor = '#ccc';
+                    itemColor = hexToRGBa('#ccc');
+                  }
+                }
+                divListItem.appendChild(spanListItem);
+              }
 
               divListItem.addEventListener('mouseover', function() {
                 // Highlight corresponding feature on the map
@@ -1821,21 +2021,20 @@
                 divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0.5);
                 item.style.cursor = 'pointer';
                 // console.log(feature.geometry.coordinates);
-                if(prop.NumberofSites == 1){
+                if (prop.NumberofSites == 1) {
                   new mapboxgl.Popup({
-                    closeButton: false,
-                    className: 'projectPopups'
-                  }).setLngLat(feature.geometry.coordinates)
-                    .setText(feature.properties.Site)
-                    .addTo(map);
-                }
-                else if(prop.NumberofSites > 1){
-                  var projectSiteNames = feature.properties.Site.split(";");
-                  for(var pop = 0; pop < prop.NumberofSites; pop++){
-                    new mapboxgl.Popup({
                       closeButton: false,
                       className: 'projectPopups'
-                    }).setLngLat(feature.geometry.coordinates[pop])
+                    }).setLngLat(feature.geometry.coordinates)
+                    .setText(feature.properties.Site)
+                    .addTo(map);
+                } else if (prop.NumberofSites > 1) {
+                  var projectSiteNames = feature.properties.Site.split(";");
+                  for (var pop = 0; pop < prop.NumberofSites; pop++) {
+                    new mapboxgl.Popup({
+                        closeButton: false,
+                        className: 'projectPopups'
+                      }).setLngLat(feature.geometry.coordinates[pop])
                       .setText(projectSiteNames[pop])
                       .addTo(map);
                   }
@@ -1869,7 +2068,7 @@
                   divLinkItemDetails.className = "divLinkDetailsContainer";
 
                   var imgItemDetails = document.createElement('img');
-                  imgItemDetails.src = getListingImage(prop.ProjectName);
+                  imgItemDetails.src = getProjectListingImage(prop.ProjectName);
                   imgItemDetails.className = "divImgDetails";
 
                   var overviewItemDetails = document.createElement('p');
@@ -1877,7 +2076,20 @@
 
                   var focusItemDetails = document.createElement('div');
                   focusItemDetails.className = "divFocusDetails";
-                  focusItemDetails.innerHTML = "<b>Principal Investigator</b>: <br><br>" + prop.PI + "<br><br>";
+                  // focusItemDetails.innerHTML = "<b>Principal Investigator</b>: <br><br>" + prop.PI + "<br><br>";
+                  var PIString = prop.PI.split(";");
+                  var PIList = document.createElement("ul");
+                  if (PIString.length > 0) {
+                    for (var pi = 0; pi < PIString.length; pi++) {
+                      var anchor = document.createElement("p");
+                      anchor.innerHTML = PIString[pi];
+                      var elem = document.createElement("li");
+                      elem.appendChild(anchor);
+                      PIList.appendChild(elem);
+                    }
+                    focusItemDetails.innerHTML = "<b>Principal Investigator(s)</b>";
+                    focusItemDetails.appendChild(PIList);
+                  }
 
                   var coIItemDetails = document.createElement('div');
                   coIItemDetails.className = "divcoIDetails";
@@ -1932,8 +2144,7 @@
 
                   item.appendChild(divItemDetails);
                   // divListItem.removeChild(spanListItem);
-                }
-                else if (divItemDetailsON == 1) {
+                } else if (divItemDetailsON == 1) {
                   divItemDetailsON = 0;
                   // divListItem.appendChild(spanListItem);
                   item.removeChild(item.lastChild);
@@ -1941,7 +2152,7 @@
                 }
               });
 
-              // divListItem.appendChild(spanListItem);
+
               divListItem.appendChild(item);
               listingEl.appendChild(divListItem);
             });
@@ -1980,7 +2191,7 @@
     }
 
     function displayFilteredList() {
-      if(observatoryView == 1){
+      if (observatoryView == 1) {
         var features = map.queryRenderedFeatures({
           layers: ['Observatory']
         });
@@ -2003,13 +2214,16 @@
           // later use for filtering on `keyup`.
           observatoryList = features;
         }
-      }
-      else if (projectView == 1){
+      } else if (projectView == 1) {
         var features = map.queryRenderedFeatures({
           layers: ['Project']
         });
         console.log(features);
-        features = features.filter(function(obj, index, self) { return index === self.findIndex(function(t) { return t['id'] === obj['id'] }); });
+        features = features.filter(function(obj, index, self) {
+          return index === self.findIndex(function(t) {
+            return t['id'] === obj['id']
+          });
+        });
         console.log('after filtering duplicates:', features);
         var projectNames = [];
         var featuresSorted = [];
@@ -2105,6 +2319,18 @@
     // }
 
     map.on('style.load', function() {
+
+      map.scrollZoom.disable();
+      map.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+
+      map.on("wheel", event => {
+        if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+          event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+          if (!map.scrollZoom._enabled) map.scrollZoom.enable(); // Enable zoom only if it's disabled
+        } else {
+          if (map.scrollZoom._enabled) map.scrollZoom.disable(); // Disable zoom only if it's enabled
+        }
+      });
 
       // document.getElementById("navbarContainer").style.display = "block";
       //Canadian waterbasins
@@ -2317,7 +2543,7 @@
       });
 
       filterEl.addEventListener('keyup', function(e) {
-        if(observatoryView == 1){
+        if (observatoryView == 1) {
           var value = normalize(e.target.value);
 
           // Filter visible features that don't match the input value.
@@ -2341,8 +2567,7 @@
               false
             ]);
           }
-        }
-        else if(projectView == 1){
+        } else if (projectView == 1) {
           var value = normalize(e.target.value);
 
           // Filter visible features that don't match the input value.
