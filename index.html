@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
     body {
@@ -52,16 +53,18 @@
     .menuLayerToggleContainer{
       position: absolute;
       top: 3vh;
-      right: 2vw;
+      right: 1vw;
       z-index: 1;
       /* border-radius: 0px 10px 10px 0px; */
-      width: 10vw;
+      width: 11vw;
       /* height: 5%; */
       display: block;
     }
 
     .menuLayerToggleSwitchContainer{
-      background-color: rgba(61,61,61,0.4);
+      /* background-color: rgba(61,61,61,0.4); */
+      background-color: rgba(221,221,221,0.8);
+      border-radius: 10px 0 0 10px;
     }
 
     .switch {
@@ -320,13 +323,30 @@
       position: absolute;
       opacity: .8;
       z-index: 1;
-      top: 7vw;
-      left: .7vw;
-      width: 3vw;
+      top: 15.5vw;
+      left: 2.4vw;
+      /* width: 7vw;
+      height: 3vw; */
+      /* width: 25vw; */
       /* font-size: 2vw; */
       font-family: "Trebuchet MS", Helvetica, sans-serif;
       display: none;
+      /* transform: rotate(270deg); */
+
+      -webkit-transform: rotate(270deg);
+    -webkit-transform-origin: left bottom;
+    -moz-transform: rotate(270deg);
+    -moz-transform-origin: left bottom;
+    -ms-transform: rotate(270deg);
+    -ms-transform-origin: left bottom;
+    -o-transform: rotate(270deg);
+    -o-transform-origin: left bottom;
+    transform: rotate(270deg);
+    transform-origin: left bottom;
+
     }
+
+
 
     /* #layerItemsViewToggle {
       opacity: .8;
@@ -335,15 +355,18 @@
     } */
 
     #layerItemsViewToggle a {
-      font-size: 1.7vw;
+      font-size: 1vw;
       color: black;
-      display: block;
+      /* display: block; */
+      display: inline;
       margin: 0;
       padding: .3vw 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.25);
       border-radius: 5px;
       text-align: center;
       background: #fff;
+      text-decoration: none !important;
+      /* transform: rotate(270deg); */
     }
 
     #layerItemsViewToggle a:last-child {
@@ -354,7 +377,7 @@
     #layerItemsViewToggle a:hover {
       background-color: #f8f8f8;
       color: black;
-      font-weight: bold;
+      /* font-weight: bold; */
     }
 
     #layerItemsViewToggle a.activeView {
@@ -362,25 +385,25 @@
       /* background-color: #2196F3; */
       background-color: #3d3d3d;
       color: #2196F3;
-      font-weight: bold;
-      font-size: 2vw;
+      /* font-weight: bold; */
+      font-size: 1vw;
     }
 
     #layerItemsViewToggle a.activeView:hover {
       background: #b7b7b7;
       color: #0c83e1;
-      font-weight: normal;
+      /* font-weight: normal; */
     }
 
     .map-overlay {
       position: absolute;
-      width: 25%;
+      width: 25vw;
       /* top: 20px; */
-      top: 3%;
+      top: 2vw;
       /* bottom: 30px; */
-      bottom: 3%;
+      bottom: 2vw;
       /* left: 10px; */
-      left: 3.7vw;
+      left: 2.7vw;
       font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
       /* background-color: #dddddd; */
       background: rgba(221, 221, 221, 0.5);
@@ -760,7 +783,7 @@
       right: 1%;
       background-color: rgba(221, 221, 221, .7);
       border-radius: 10px;
-      padding: .5%;
+      /* padding: .5%; */
     }
 
     .legend {
@@ -768,8 +791,9 @@
       font-family: "Trebuchet MS", Helvetica, sans-serif;
       /* padding-left: 9px; */
       /* margin: auto; */
-      border-radius: 10px 10px 0px 0px;
+      /* border-radius: 10px 10px 0px 0px; */
       padding-bottom: 2%;
+      padding-top: 2%;
       border-bottom: .2px solid black;
     }
 
@@ -808,23 +832,8 @@
       height: 10px;
       margin-right: 5px;
       width: 10px;
+      margin-left: 5px;
     }
-
-    /* .colorPickerClass {
-      background-color: rgba(221, 221, 221, .7);
-      bottom: 3%;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      font-size: .7vw;
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-      padding: 0.3%;
-      position: absolute;
-      right: 1%;
-      z-index: 1;
-      float: left;
-      border-radius: 0px 0px 10px 10px;
-      display: inline-block;
-      text-align: center;
-    } */
 
     .colorPickerClass h4 {
       text-align: center;
@@ -834,10 +843,9 @@
   </style>
 
   <!-- <nav id="menuLayerToggle"></nav> -->
-
   <div class="menuLayerToggleContainer">
     <div style="display: flex;">
-      <div class="menuLayerToggleSwitchContainer" style="display:inline; width: 30%; border-bottom:.2px solid white;">
+      <div class="menuLayerToggleSwitchContainer" style="display:inline; width: 30%; border-bottom:.2px solid black;">
         <label class="switch" id="switchBasinLayer" >
           <input type="checkbox" id="input1" checked>
           <span class="slider round" id="slider1" onClick="showHideBasinLayer()"></span>
@@ -852,7 +860,7 @@
           <span class="slider round" id="slider2" onClick="showHideObservatoryLayer()"></span>
         </label>
       </div>
-      <div id="layerName2" style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">Observatory</div>
+      <div id="layerName2" style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">Reseacrh Site</div>
     </div>
   </div>
 
@@ -870,6 +878,7 @@
   <nav id="layerItemsViewToggle"></nav>
 
   <div id="map"></div>
+  <div class="ctrlScrollprompt" style="position:absolute; display:none;text-align: center;width: 100%; height: 55%;padding-top: 45vh; background-color:rgba(221,221,221,0.3); font-size: 2vw; font-family: Trebuchet MS, Helvetica, sans-serif; color: white;"> Press Ctrl + Scroll to zoom the map </div>
 
   <div id="menuMapToggle"> <b>Base Map</b> <br>
     <input id="streets-v11" type="radio" name="rtoggle" value="streets" onClick="switchBaseMap(1)" />
@@ -1326,23 +1335,88 @@
 
     function showHideObservatoryLayer(){
       if (document.getElementById("input2").checked == true){
-        // hide observatory layer
-        map.setLayoutProperty('Observatory', 'visibility', 'none');
+        // currently visible, hide observatory layer
+        // map.setLayoutProperty('Observatory', 'visibility', 'none');
         document.getElementById("layerName2").style.fontWeight = "normal";
-        observatoryLayer = 0;
-        updateViewNavItems(1);
+        // observatoryLayer = 0;
+        // updateViewNavItems(1);
+        // updateViewNavItems(0);
+        map.removeLayer("Observatory");
+        map.addLayer({
+          'id': 'Observatory',
+          'source': 'observatorySource',
+          'type': 'circle',
+          // 'generateId': 'true',
+          layout: {
+            'visibility': 'visible'
+          },
+          paint: {
+            'circle-color': 'black',
+            'circle-radius': 0.5,
+            'circle-stroke-width': 0,
+            // 'circle-stroke-color': 'black',
+          }
+        });
       }
       else{
-        // hide observatory layer
+        // currently hidden, show observatory layer
         map.setLayoutProperty('Observatory', 'visibility', 'visible');
         observatoryLayer = 1;
-        document.getElementById("sidebar").style.display = "block";
-        document.getElementById("closebtnContainer").style.display = "none";
-        document.getElementById("listViewButton").style.display = "block";
-        document.getElementById("thumbnailViewButton").style.display = "block";
+        // document.getElementById("sidebar").style.display = "block";
+        // document.getElementById("closebtnContainer").style.display = "none";
+        // document.getElementById("listViewButton").style.display = "block";
+        // document.getElementById("thumbnailViewButton").style.display = "block";
         document.getElementById("layerName2").style.fontWeight = "bold";
+        // updateViewNavItems(0);
+        map.removeLayer("Observatory");
+        map.addLayer({
+          'id': 'Observatory',
+          'source': 'observatorySource',
+          'type': 'circle',
+          // 'generateId': 'true',
+          layout: {
+            'visibility': 'visible'
+          },
+          paint: {
+            'circle-color': [
+              'match',
+              ['get', 'BasinLocation'],
+              'Yukon',
+              colorPalette[0],
+              'Mackenzie',
+              colorPalette[1],
+              'Churchill',
+              colorPalette[2],
+              'Fraser',
+              colorPalette[3],
+              'Columbia',
+              colorPalette[4],
+              'Nelson',
+              colorPalette[5],
+              'St. Lawrence',
+              colorPalette[6],
+              'Saint John',
+              colorPalette[7],
+              //other
+              '#ccc'
+            ],
+            // 'circle-radius': 4,
+            'circle-radius': {
+              "stops": [
+                [3, 4],
+                // zoom is 5 -> circle radius will be 1px
+                [5, 6],
+                // zoom is 10 -> circle radius will be 2px
+                [7, 8],
+                [9, 10],
+                [11, 12]
+              ]
+            },
+            'circle-stroke-width': 2,
+            'circle-stroke-color': 'black',
+          }
+        });
         displayFilteredList();
-        updateViewNavItems(0);
       }
     }
 
@@ -1540,6 +1614,8 @@
                   imgItem.style.height = '200px';
                   divItem.removeChild(divItem.lastChild);
 
+                  divNameItem.style.whiteSpace = "initial";
+
                   var divItemDetails = document.createElement('div');
                   divItemDetails.className = "divItemDetailsContainer";
                   // var divImgItemDetails = document.createElement('div');
@@ -1628,6 +1704,7 @@
                   divItem.removeChild(divItem.lastChild);
                   divItem.removeChild(divItem.lastChild);
                   // divItemDetails.innerHTML = '';
+                  divNameItem.style.whiteSpace = "nowrap";
                   var divTextItem = document.createElement('div');
                   divTextItem.className = "divTextContainer";
                   var textItem = document.createElement('div');
@@ -1833,7 +1910,8 @@
           // remove features filter
           map.setFilter('Observatory', ['has', 'Site']);
         }
-      } else if (projectView == 1) {
+      }
+      else if (projectView == 1) {
         document.getElementById("feature-filter").placeholder = "Filter results by project name";
         if (features.length) {
           if (thumbnailView == 1) {
@@ -1913,6 +1991,8 @@
                   divImgItem.style.height = '200px';
                   imgItem.style.height = '200px';
                   divItem.removeChild(divItem.lastChild);
+
+                  divNameItem.style.whiteSpace = "initial";
 
                   var divItemDetails = document.createElement('div');
                   divItemDetails.className = "divItemDetailsContainer";
@@ -2024,6 +2104,7 @@
                   divItem.removeChild(divItem.lastChild);
                   divItem.removeChild(divItem.lastChild);
                   // divItemDetails.innerHTML = '';
+                  divNameItem.style.whiteSpace = "nowrap";
                   var divTextItem = document.createElement('div');
                   divTextItem.className = "divTextContainer";
                   var textItem = document.createElement('div');
@@ -2111,7 +2192,8 @@
               divListItem.className = "divListContainer";
               var item = document.createElement('a');
               item.target = '_blank';
-              item.setAttribute('style', 'white-space: pre;');
+              // item.setAttribute('style', 'white-space: pre;');
+              item.setAttribute('style', 'white-space: initial;');
               var newline = "\r\n";
               item.textContent = newline + prop.ProjectName;
 
@@ -2332,7 +2414,7 @@
     function displayFilteredList() {
       if (observatoryView == 1) {
         document.getElementById("viewTitle").style.width = "60%";
-        document.getElementById("viewTitle").innerHTML = "Observatory View";
+        document.getElementById("viewTitle").innerHTML = "Research Site View";
         var features = map.queryRenderedFeatures({
           layers: ['Observatory']
         });
@@ -2472,7 +2554,10 @@
           if (!map.scrollZoom._enabled) map.scrollZoom.enable(); // Enable zoom only if it's disabled
         } else {
           if (map.scrollZoom._enabled) map.scrollZoom.disable(); // Disable zoom only if it's enabled
-          alert("Press Ctrl + Scroll to zoom the map");
+          // alert("Press Ctrl + Scroll to zoom the map");
+          var ele = $(".ctrlScrollprompt");
+          ele.show();
+          setTimeout(function() { ele.hide(); }, 1000);
         }
       });
 
@@ -2740,10 +2825,10 @@
       });
 
       // enumerate ids of the layers
-      var toggleableLayerItemViewIds = ['Project','Observatory'];
+      var toggleableLayerItemViewIds = ['Observatory','Project'];
 
       // set up the corresponding toggle button for each layer Item view
-      window.updateViewNavItems = function(flag){
+      // window.updateViewNavItems = function(flag){
         document.getElementById("layerItemsViewToggle").innerHTML = "";
         for (var j = 0; j < toggleableLayerItemViewIds.length; j++) {
           var id2 = toggleableLayerItemViewIds[j];
@@ -2753,24 +2838,28 @@
             var link2 = document.createElement('a');
             link2.href = '#';
             link2.className = '';
-            link2.textContent = 'O';
+            // link2.setAttribute('style', 'white-space: pre;');
+            link2.innerHTML = '&nbsp Reseacrh Sites &nbsp';
+            link2.id = "researchSiteItemView";
           }
           else if( id2 == 'Project' && projectLayer == 1){
             var link2 = document.createElement('a');
             link2.href = '#';
             link2.className = 'activeView';
-            link2.textContent = 'P';
+            // link2.setAttribute('style', 'white-space: pre;');
+            link2.innerHTML = '&nbsp Projects &nbsp';
+            link2.id = "projectItemView";
           }
           else{
             continue;
           }
 
           link2.onclick = function(e2) {
-            var clickedLayer2 = this.textContent;
+            var clickedLayer2 = this.id;
             e2.preventDefault();
             e2.stopPropagation();
 
-            if( clickedLayer2 == 'P'){
+            if( clickedLayer2 == 'projectItemView'){
               console.log('entered project click');
               if ( projectView == 1 ){
                 projectView = 0;
@@ -2789,7 +2878,7 @@
                 displayFilteredList();
               }
             }
-            else if( clickedLayer2 == 'O'){
+            else if( clickedLayer2 == 'researchSiteItemView'){
               console.log('entered observatory click');
               if ( observatoryView == 1 ){
                 observatoryView = 0;
@@ -2845,19 +2934,19 @@
           // if flag is -1, it was the initial call- skip any processing
           // if flag is 1, not an initila call, the current list view's layer has been toggled off, change the list view to project's
           // if flaf is 0, not an initial call, and the current layer that has been toogled off is not the current list view, no harm, skip
-          if(flag == 1){
-            // document.getElementById("sidebar").style.display = "none";
-            projectView = 1;
-            observatoryView = 0;
-            // console.log('entered critical ');
-            displayFilteredList();
-          }
+          // if(flag == 1){
+          //   // document.getElementById("sidebar").style.display = "none";
+          //   projectView = 1;
+          //   observatoryView = 0;
+          //   // console.log('entered critical ');
+          //   displayFilteredList();
+          // }
 
           var layers2 = document.getElementById('layerItemsViewToggle');
           layers2.appendChild(link2);
         }
-      }
-      updateViewNavItems(-1);
+      // }
+      // updateViewNavItems(-1);
 
       map.on('render', afterChangeComplete);
 
