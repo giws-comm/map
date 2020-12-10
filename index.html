@@ -40,21 +40,44 @@
       background: rgba(255, 255, 255, 0.8);
     }
 
-    .switch {
+    /* .switch {
       position: absolute;
       display: inline-block;
       width: 2%;
       height: 2%;
       right: 6.5%;
+      z-index: 1;
+    } */
+
+    .menuLayerToggleContainer{
+      position: absolute;
+      top: 3vh;
+      right: 2vw;
+      z-index: 1;
+      /* border-radius: 0px 10px 10px 0px; */
+      width: 10vw;
+      /* height: 5%; */
+      display: block;
     }
 
-    #switchBasinLayer{
+    .menuLayerToggleSwitchContainer{
+      background-color: rgba(61,61,61,0.4);
+    }
+
+    .switch {
+      /* display: inline-block; */
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* #switchBasinLayer{
       top: 6%;
     }
 
     #switchObservatoryLayer{
       top: 9.5%;
-    }
+    } */
 
     .switch input {
       opacity: 0;
@@ -66,9 +89,11 @@
       position: absolute;
       cursor: pointer;
       top: 0;
-      left: 0;
+      left: 1%;
       right: 0;
       bottom: 0;
+      height: 30%;
+      width: 25%;
       background-color: #ccc;
       -webkit-transition: .4s;
       transition: .4s;
@@ -77,18 +102,20 @@
     .slider:before {
       position: absolute;
       content: "";
-      /* height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px; */
-      height: 70%;
-      width: 40%;
-      /* left: 5%;
-      right: 5%; */
-      bottom: 15%;
+      height: 100%;
+      width: 50%;
+      /* bottom: 15%; */
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
+    }
+
+    #slider1{
+      top: 10%;
+    }
+
+    #slider2{
+      top: 60%;
     }
 
     input:checked+.slider {
@@ -105,7 +132,7 @@
       transform: translateX(26px); */
       -webkit-transform: translateX(140%);
       -ms-transform: translateX(140%);
-      transform: translateX(140%);
+      transform: translateX(100%);
     }
 
     /* Rounded sliders */
@@ -134,14 +161,13 @@
       background-color: black;
     } */
 
-    #observatoryViewButton {
+    /* #observatoryViewButton {
       position: absolute;
       top: 2%;
-      left: 1%;
+      left: 4%;
       width: 12.45%;
       height: 3%;
       border-radius: 10px 10px 0px 0px;
-      /* background: rgba(145, 145, 145, 0.7); */
       background: rgba(221, 221, 221, 0.7);
       border-bottom: thin solid black;
       padding-top: 0.5%;
@@ -150,9 +176,9 @@
       font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
       font-weight: bold;
       display: none;
-    }
+    } */
 
-    #projectViewButton {
+    /* #projectViewButton {
       position: absolute;
       top: 2%;
       left: 13.55%;
@@ -160,67 +186,89 @@
       height: 3%;
       border-radius: 10px 10px 0px 0px;
       background: rgba(145, 145, 145, 0.7);
-      /* background: rgba(	61, 61, 61, 0.7); */
       padding-top: 0.5%;
       text-align: center;
       cursor: pointer;
       font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
       display: none;
-    }
+    } */
 
-    #listViewButton {
+    /* #listViewButton {
       position: absolute;
-      /* top: 75px; */
       top: 11.5%;
-      /* left: 485px; */
       left: 26%;
       width: 2%;
       height: 3%;
       border-radius: 0px 5px 5px 0px;
       background: rgba(145, 145, 145, 0.7);
-      /* background: rgba(	61, 61, 61, 0.7); */
       cursor: pointer;
+      display: none;
+    } */
+
+    #listViewButton {
+      /* top: 12.5%; */
+      /* left: 26%; */
+      /* width: 10%; */
+      /* height: 70%; */
+      width: 2vw;
+      height: 2vw;
+      border-radius: 5px;
+      margin-right: .3vw;
+      margin-top: .2vw;
+      background: rgba(145, 145, 145, 0.7);
+      cursor: pointer;
+      float: right;
       display: none;
     }
 
     .listViewButtonLines {
-      /* width: 25px;
-      height: 2px;
-      margin-top: 3px;
-      margin-left: 8px; */
-      width: 80%;
-      height: 7%;
-      margin-top: 10%;
-      margin-left: 10%;
+      width: 1.5vw;
+      height: .2vw;
+      margin-top: .2vw;
+      margin-left: .25vw;
       background-color: white;
     }
 
     .listViewButtonLines:first-child {
-      margin-top: 12%;
+      margin-top: .3vw;
     }
 
-    #thumbnailViewButton {
+    /* #thumbnailViewButton {
       position: absolute;
-      /* top: 115px; */
       top: 15%;
-      /* left: 485px; */
       left: 26%;
       width: 2%;
       height: 3%;
       border-radius: 0px 5px 5px 0px;
-      /* background: rgba(	61, 61, 61, 0.7); */
-      /* background: rgba(196, 196, 196, 0.7); */
       background: rgba(145, 145, 145, 0.7);
       cursor: pointer;
+      display: none;
+    } */
+
+    #thumbnailViewButton {
+      /* width: 10%;
+      height: 70%; */
+      width: 2vw;
+      height: 2vw;
+      border-radius: 5px;
+      margin-right: .3vw;
+      margin-top: .2vw;
+      background: rgba(145, 145, 145, 0.7);
+      cursor: pointer;
+      float: right;
       display: none;
     }
 
     .thumbnailViewButtonBoxes {
       float: left;
-      width: 30%;
+      /* width: 30%;
       height: 30%;
       margin-top: 10%;
-      margin-left: 15%;
+      margin-left: 15%; */
+      width: .6vw;
+      height: .6vw;
+      margin-top: .2vw;
+      margin-left: .3vw;
       background-color: white;
       /* background-color: rgba(	255, 255, 255, 0.7);; */
     }
@@ -252,22 +300,118 @@
       color: black;
     }
 
+    /* #LayerItemsViewToggleContainer{
+      position: absolute;
+      top: 5%;
+      left: 0.5%;
+      width: 5%;
+    } */
+
+    /* #LayerItemsViewToggleContainer{
+      background: #3d3d3d;
+      position: absolute;
+      opacity: .8;
+      top: 7vw;
+      left: .3vw;
+      width: 2.9vw;
+    } */
+
+    #layerItemsViewToggle {
+      position: absolute;
+      opacity: .8;
+      z-index: 1;
+      top: 7vw;
+      left: .7vw;
+      width: 3vw;
+      /* font-size: 2vw; */
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      display: none;
+    }
+
+    /* #layerItemsViewToggle {
+      opacity: .8;
+      border-radius: 0px 10px 10px 0px;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+    } */
+
+    #layerItemsViewToggle a {
+      font-size: 1.7vw;
+      color: black;
+      display: block;
+      margin: 0;
+      padding: .3vw 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+      text-align: center;
+      background: #fff;
+    }
+
+    #layerItemsViewToggle a:last-child {
+      border: none;
+      /* border-radius: 0px 0px 5px 5px; */
+    }
+
+    #layerItemsViewToggle a:hover {
+      background-color: #f8f8f8;
+      color: black;
+      font-weight: bold;
+    }
+
+    #layerItemsViewToggle a.activeView {
+      /* background-color: #dddddd; */
+      /* background-color: #2196F3; */
+      background-color: #3d3d3d;
+      color: #2196F3;
+      font-weight: bold;
+      font-size: 2vw;
+    }
+
+    #layerItemsViewToggle a.activeView:hover {
+      background: #b7b7b7;
+      color: #0c83e1;
+      font-weight: normal;
+    }
+
     .map-overlay {
       position: absolute;
       width: 25%;
       /* top: 20px; */
-      top: 6.1%;
+      top: 3%;
       /* bottom: 30px; */
       bottom: 3%;
       /* left: 10px; */
-      left: 1%;
+      left: 3.7vw;
       font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
       /* background-color: #dddddd; */
       background: rgba(221, 221, 221, 0.5);
       max-height: 100%;
       overflow: hidden;
-      border-radius: 0px 0px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
       display: none;
+    }
+
+    .map-overlay #viewTop{
+      border-radius: 10px 10px 0px 0px;
+      background: rgba(221, 221, 221, 0.7);
+      border-bottom: thin solid black;
+      /* padding: 2.5% 25%; */
+      width: 100%;
+      height: 5%;
+      /* float: left; */
+      /* display: inline-block; */
+    }
+
+    .map-overlay #viewTitle{
+      /* background: rgba(221, 221, 221, 0.7); */
+      padding: 2.5% 5%;
+      width: 55%;
+      text-align: right;
+      /* padding-right: 20%; */
+      /* font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif; */
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      font-size: 1vw;
+      font-weight: bold;
+      float: left;
     }
 
     .map-overlay fieldset {
@@ -341,7 +485,7 @@
 
     .map-overlay .listing .divListContainer .dummyDiv {
       width: 100%;
-      height: 50px;
+      height: 100px;
     }
 
     .map-overlay .divContainer {
@@ -538,23 +682,15 @@
 
     #menuMapToggle {
       background: #fff;
-      /* position: absolute; */
       opacity: .8;
-      /* z-index: 1; */
-      top: 20px;
-      /* right: 400px; */
-      /* display: block; */
-      border-radius: 10px;
-      padding: 10px;
+      /* top: 2vh; */
+      border-radius: .5vw;
+      padding: .5vw;
       text-align: center;
       margin: 0px auto 0px;
-      width: 25%;
-      /* width: 120px; */
-      /* border: 1px solid rgba(0, 0, 0, 0.4); */
+      width: 25vw;
+      font-size: .8vw;
       font-family: 'Open Sans', sans-serif;
-      /* font-family: "Trebuchet MS", Helvetica, sans-serif; */
-      /* display: flex; */
-      /* justify-content: center; */
     }
 
     #menuLayerToggle {
@@ -642,8 +778,8 @@
       font-family: "Trebuchet MS", Helvetica, sans-serif;
       /* padding: 0.3%; */
       padding-top: 2%;
-      float: left;
-      border-radius: 0px 0px 10px 10px;
+      /* float: left; */
+      /* border-radius: 0px 0px 10px 10px; */
       display: inline-block;
       text-align: center;
     }
@@ -662,6 +798,7 @@
     } */
 
     .legend h4 {
+      font-size: .8vw;
       text-align: center;
       margin: 0 0 5px;
     }
@@ -690,11 +827,47 @@
     } */
 
     .colorPickerClass h4 {
+      text-align: center;
       margin: 0 0 5px;
+      font-size: .8vw;
     }
   </style>
 
-  <nav id="menuLayerToggle"></nav>
+  <!-- <nav id="menuLayerToggle"></nav> -->
+
+  <div class="menuLayerToggleContainer">
+    <div style="display: flex;">
+      <div class="menuLayerToggleSwitchContainer" style="display:inline; width: 30%; border-bottom:.2px solid white;">
+        <label class="switch" id="switchBasinLayer" >
+          <input type="checkbox" id="input1" checked>
+          <span class="slider round" id="slider1" onClick="showHideBasinLayer()"></span>
+        </label>
+      </div>
+      <div id="layerName1" style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; border-bottom:.5px solid black; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">Basin</div>
+    </div>
+    <div style="display: flex;">
+      <div class="menuLayerToggleSwitchContainer" style="display:inline; width: 30%; ">
+        <label class="switch" id="switchObservatoryLayer" >
+          <input type="checkbox" id="input2" checked>
+          <span class="slider round" id="slider2" onClick="showHideObservatoryLayer()"></span>
+        </label>
+      </div>
+      <div id="layerName2" style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">Observatory</div>
+    </div>
+  </div>
+
+  <!-- <label class="switch" id="switchBasinLayer" onClick="showHideBasinLayer">
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label>
+
+  <label class="switch" id="switchObservatoryLayer" onClick="showHideObservatoryLayer">
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label> -->
+
+  <!-- <div id="LayerItemsViewToggleContainer"> <nav id="layerItemsViewToggle"></nav> </div> -->
+  <nav id="layerItemsViewToggle"></nav>
 
   <div id="map"></div>
 
@@ -713,18 +886,7 @@
     <label for="custom">Custom</label>
   </div>
 
-  <!-- <label class="switch" id="switchBasinLayer">
-    <input type="checkbox" checked>
-    <span class="slider round"></span>
-  </label>
-
-
-  <label class="switch" id="switchObservatoryLayer">
-    <input type="checkbox" checked>
-    <span class="slider round"></span>
-  </label> -->
-
-  <div id="listViewButton" onclick="showListView()">
+  <!-- <div id="listViewButton" onclick="showListView()">
     <div class="listViewButtonLines" id="listViewButtonLines1"></div>
     <div class="listViewButtonLines" id="listViewButtonLines2"></div>
     <div class="listViewButtonLines" id="listViewButtonLines3"></div>
@@ -735,13 +897,29 @@
     <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes2"></div>
     <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes3"></div>
     <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes4"></div>
-  </div>
+  </div> -->
 
-  <div id="observatoryViewButton" onclick="showObservatoryView()">Observatories</div>
-  <div id="projectViewButton" onclick="showProjectView()">Projects</div>
+  <!-- <div id="observatoryViewButton" onclick="showObservatoryView()">Observatories</div>
+  <div id="projectViewButton" onclick="showProjectView()">Projects</div> -->
 
   <div id="closebtnContainer"> Observatory List <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X </a></div>
   <div class="map-overlay" id="sidebar">
+    <div id="viewTop">
+      <div id="viewTitle">Sample</div>
+        <div id="thumbnailViewButton" onclick="showThumbnailView()">
+          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes1"></div>
+          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes2"></div>
+          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes3"></div>
+          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes4"></div>
+        </div>
+        <div id="listViewButton" onclick="showListView()">
+          <div class="listViewButtonLines" id="listViewButtonLines1"></div>
+          <div class="listViewButtonLines" id="listViewButtonLines2"></div>
+          <div class="listViewButtonLines" id="listViewButtonLines3"></div>
+          <div class="listViewButtonLines" id="listViewButtonLines4"></div>
+        </div>
+    </div>
+
     <fieldset>
       <input id="feature-filter" type="text" placeholder="Filter results by observatory name" />
     </fieldset>
@@ -751,7 +929,7 @@
 
   </div>
 
-<div id="colorPicker" class="legendContainer">
+  <div id="basinlegendContainer" class="legendContainer">
   <div id="basin-legend" class="legend">
     <h4>Major River Basins</h4>
     <div><span id="legendspan1"></span>Yukon River Basin</div>
@@ -780,16 +958,7 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzbmF0MTI5NyIsImEiOiJja2gyZmozN3EwMm0xMnlxcnJlNjE2ZXIyIn0.JGVcpK9BELAP1RAtMrELtA';
     var map = new mapboxgl.Map({
       container: 'map',
-      // style: 'mapbox://styles/mapbox/satellite-v9',
-      // style: 'mapbox://styles/mapbox/satellite-streets-v11',
-
-      // style: 'mapbox://styles/mapbox/streets-v11',
-      // style: 'mapbox://styles/mapbox/outdoors-v11',
-      // style: 'mapbox://styles/mapbox/light-v10',
-      // style: 'mapbox://styles/mapbox/dark-v10',
-      // style: 'mapbox://styles/hasnat1297/ckh8lxbs30ltw19muxkx3awoo',
       style: 'mapbox://styles/hasnat1297/ckh4bxpbr02j619lbwyc5r1jv',
-      // center: [-114.4500116, 62.58332647],
       center: [-118.018093, 58.321212],
       zoom: 3.2,
       maxZoom: 15,
@@ -810,88 +979,6 @@
       } else if (m == 6) {
         map.setStyle('mapbox://styles/hasnat1297/ckh4bxpbr02j619lbwyc5r1jv');
       }
-      // map.removeLayer("Basins");
-      // map.removeLayer("Observatory");
-      // map.addLayer({
-      //   'id': 'Basins',
-      //   'type': 'fill',
-      //   'source': 'basinSouce',
-      //   'layout': {
-      //     'visibility': 'visible'
-      //   },
-      //   'paint': {
-      //     'fill-color': ['match',
-      //       ['get', 'NAMRB_EN'],
-      //       'Yukon',
-      //       colorPalette[0],
-      //       'Mackenzie',
-      //       colorPalette[1],
-      //       'Churchill',
-      //       colorPalette[2],
-      //       'Fraser',
-      //       colorPalette[3],
-      //       'Columbia',
-      //       colorPalette[4],
-      //       'Nelson',
-      //       colorPalette[5],
-      //       'St. Lawrence',
-      //       colorPalette[6],
-      //       'Saint John',
-      //       colorPalette[7],
-      //       //other
-      //       '#A93226',
-      //     ],
-      //     'fill-opacity': 0.4,
-      //     'fill-outline-color': 'black',
-      //   }
-      // });
-      // map.addLayer({
-      //   'id': 'Observatory',
-      //   'source': 'observatorySource',
-      //   'type': 'circle',
-      //   // 'generateId': 'true',
-      //   layout: {
-      //     'visibility': 'visible'
-      //   },
-      //   paint: {
-      //     'circle-color': [
-      //       'match',
-      //       ['get', 'BasinLocation'],
-      //       'Yukon',
-      //       colorPalette[0],
-      //       'Mackenzie',
-      //       colorPalette[1],
-      //       'Churchill',
-      //       colorPalette[2],
-      //       'Fraser',
-      //       colorPalette[3],
-      //       'Columbia',
-      //       colorPalette[4],
-      //       'Nelson',
-      //       colorPalette[5],
-      //       'St. Lawrence',
-      //       colorPalette[6],
-      //       'Saint John',
-      //       colorPalette[7],
-      //       //other
-      //       '#ccc'
-      //     ],
-      //     // 'circle-radius': 4,
-      //     'circle-radius': {
-      //       "stops": [
-      //         [3, 4],
-      //         // zoom is 5 -> circle radius will be 1px
-      //         [5, 6],
-      //         // zoom is 10 -> circle radius will be 2px
-      //         [7, 8],
-      //         [9, 10],
-      //         [11, 12]
-      //       ]
-      //     },
-      //     'circle-stroke-width': 2,
-      //     'circle-stroke-color': 'black',
-      //   }
-      // });
     }
 
     //legend color palettes
@@ -1032,8 +1119,11 @@
     var observatoryList = [];
     var basinObjects = {};
     var basinFillOpacity = 0.4;
-    var observatoryView = 1;
-    var projectView = 0;
+    var observatoryLayer = 1;
+    var basinLayer = 1;
+    var projectLayer = 1;
+    var observatoryView = 0;
+    var projectView = 1;
     var listView = 0;
     var thumbnailView = 1;
     var numberOfBasins = 0;
@@ -1186,28 +1276,74 @@
       return toSort;
     }
 
-    function showObservatoryView() {
-      observatoryView = 1;
-      projectView = 0;
-      $('#projectViewButton').css('background-color', 'rgba(145,145,145,0.7)');
-      $('#observatoryViewButton').css('background-color', 'rgba(221,221,221,0.7)');
-      document.getElementById("projectViewButton").style.fontWeight = 'normal';
-      document.getElementById("observatoryViewButton").style.fontWeight = 'bold';
-      document.getElementById("observatoryViewButton").style.borderBottom = "thin solid #3d3d3d";
-      document.getElementById("projectViewButton").style.borderBottom = "none";
-      displayFilteredList();
+    // function showObservatoryView() {
+    //   observatoryView = 1;
+    //   projectView = 0;
+    //   $('#projectViewButton').css('background-color', 'rgba(145,145,145,0.7)');
+    //   $('#observatoryViewButton').css('background-color', 'rgba(221,221,221,0.7)');
+    //   document.getElementById("projectViewButton").style.fontWeight = 'normal';
+    //   document.getElementById("observatoryViewButton").style.fontWeight = 'bold';
+    //   document.getElementById("observatoryViewButton").style.borderBottom = "thin solid #3d3d3d";
+    //   document.getElementById("projectViewButton").style.borderBottom = "none";
+    //   displayFilteredList();
+    // }
+    //
+    // function showProjectView() {
+    //   observatoryView = 0;
+    //   projectView = 1;
+    //   $('#observatoryViewButton').css('background-color', 'rgba(145,145,145,0.7)');
+    //   $('#projectViewButton').css('background-color', 'rgba(221,221,221,0.7)');
+    //   document.getElementById("projectViewButton").style.fontWeight = 'bold';
+    //   document.getElementById("observatoryViewButton").style.fontWeight = 'normal';
+    //   document.getElementById("projectViewButton").style.borderBottom = "thin solid black";
+    //   document.getElementById("observatoryViewButton").style.borderBottom = "none";
+    //   displayFilteredList();
+    // }
+
+    // console.log(document.getElementById("input1").checked);
+
+    function showHideBasinLayer(){
+      // console.log('click found');
+      if (document.getElementById("input1").checked == true){
+        // hide basin layer
+        console.log("Basin Layer has been hidden");
+        map.setLayoutProperty('Basins', 'visibility', 'none');
+        basinLayer = 0;
+        document.getElementById("basinlegendContainer").style.display = "none";
+        document.getElementById("layerName1").style.fontWeight = "normal";
+        displayFilteredList();
+      }
+      else{
+        // hide basin layer
+        console.log("Basin Layer has been made Visible");
+        map.setLayoutProperty('Basins', 'visibility', 'visible');
+        basinLayer = 1;
+        document.getElementById("basinlegendContainer").style.display = "block";
+        document.getElementById("layerName1").style.fontWeight = "bold";
+        displayFilteredList();
+      }
     }
 
-    function showProjectView() {
-      observatoryView = 0;
-      projectView = 1;
-      $('#observatoryViewButton').css('background-color', 'rgba(145,145,145,0.7)');
-      $('#projectViewButton').css('background-color', 'rgba(221,221,221,0.7)');
-      document.getElementById("projectViewButton").style.fontWeight = 'bold';
-      document.getElementById("observatoryViewButton").style.fontWeight = 'normal';
-      document.getElementById("projectViewButton").style.borderBottom = "thin solid black";
-      document.getElementById("observatoryViewButton").style.borderBottom = "none";
-      displayFilteredList();
+    function showHideObservatoryLayer(){
+      if (document.getElementById("input2").checked == true){
+        // hide observatory layer
+        map.setLayoutProperty('Observatory', 'visibility', 'none');
+        document.getElementById("layerName2").style.fontWeight = "normal";
+        observatoryLayer = 0;
+        updateViewNavItems(1);
+      }
+      else{
+        // hide observatory layer
+        map.setLayoutProperty('Observatory', 'visibility', 'visible');
+        observatoryLayer = 1;
+        document.getElementById("sidebar").style.display = "block";
+        document.getElementById("closebtnContainer").style.display = "none";
+        document.getElementById("listViewButton").style.display = "block";
+        document.getElementById("thumbnailViewButton").style.display = "block";
+        document.getElementById("layerName2").style.fontWeight = "bold";
+        displayFilteredList();
+        updateViewNavItems(0);
+      }
     }
 
     function showListView() {
@@ -2170,8 +2306,10 @@
 
           document.getElementById("listViewButton").style.display = "block";
           document.getElementById("thumbnailViewButton").style.display = "block";
-          document.getElementById("observatoryViewButton").style.display = "block";
-          document.getElementById("projectViewButton").style.display = "block";
+          // document.getElementById("observatoryViewButton").style.display = "block";
+          // document.getElementById("projectViewButton").style.display = "block";
+          document.getElementById("sidebar").style.display = "block";
+          document.getElementById("layerItemsViewToggle").style.display = "block";
 
           // Show the filter input
           filterEl.parentNode.style.display = 'block';
@@ -2193,6 +2331,8 @@
 
     function displayFilteredList() {
       if (observatoryView == 1) {
+        document.getElementById("viewTitle").style.width = "60%";
+        document.getElementById("viewTitle").innerHTML = "Observatory View";
         var features = map.queryRenderedFeatures({
           layers: ['Observatory']
         });
@@ -2216,6 +2356,8 @@
           observatoryList = features;
         }
       } else if (projectView == 1) {
+        document.getElementById("viewTitle").style.width = "55%";
+        document.getElementById("viewTitle").innerHTML = "Project View";
         var features = map.queryRenderedFeatures({
           layers: ['Project']
         });
@@ -2330,6 +2472,7 @@
           if (!map.scrollZoom._enabled) map.scrollZoom.enable(); // Enable zoom only if it's disabled
         } else {
           if (map.scrollZoom._enabled) map.scrollZoom.disable(); // Disable zoom only if it's enabled
+          alert("Press Ctrl + Scroll to zoom the map");
         }
       });
 
@@ -2515,7 +2658,7 @@
         } // still not loaded; bail out.
 
         // now that the map is loaded, it's safe to query the features:
-        document.getElementById("sidebar").style.display = "block";
+
         // changeObservatoryCircleColor();
         displayFilteredList();
 
@@ -2596,65 +2739,193 @@
 
       });
 
-      document.getElementById("menuLayerToggle").innerHTML = "";
-
       // enumerate ids of the layers
-      var toggleableLayerIds = ['Basins', 'Observatory'];
+      var toggleableLayerItemViewIds = ['Project','Observatory'];
 
-      // set up the corresponding toggle button for each layer
-      for (var i = 0; i < toggleableLayerIds.length; i++) {
-        var id = toggleableLayerIds[i];
+      // set up the corresponding toggle button for each layer Item view
+      window.updateViewNavItems = function(flag){
+        document.getElementById("layerItemsViewToggle").innerHTML = "";
+        for (var j = 0; j < toggleableLayerItemViewIds.length; j++) {
+          var id2 = toggleableLayerItemViewIds[j];
+          // console.log('entered loop ' , id2);
 
-        var link = document.createElement('a');
-        link.href = '#';
-        link.className = 'active';
-        link.textContent = id;
-
-        link.onclick = function(e) {
-          var clickedLayer = this.textContent;
-          e.preventDefault();
-          e.stopPropagation();
-
-          var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-
-          // toggle layer visibility by changing the layout object's visibility property
-          if (visibility == 'visible') {
-            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-            if (clickedLayer == "Basins") {
-              document.getElementById("colorPicker").style.display = "none";
-              document.getElementById("basin-legend").style.display = "none";
-              displayFilteredList();
-            } else {
-              document.getElementById("sidebar").style.display = "none";
-              document.getElementById("closebtnContainer").style.display = "none";
-              document.getElementById("listViewButton").style.display = "none";
-              document.getElementById("thumbnailViewButton").style.display = "none";
-              document.getElementById("observatoryViewButton").style.display = "none";
-              document.getElementById("projectViewButton").style.display = "none";
-            }
-            this.className = '';
-          } else {
-            this.className = 'active';
-            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-            if (clickedLayer == "Basins") {
-              document.getElementById("colorPicker").style.display = "block";
-              document.getElementById("basin-legend").style.display = "block";
-              displayFilteredList();
-            } else {
-              document.getElementById("sidebar").style.display = "block";
-              document.getElementById("closebtnContainer").style.display = "none";
-              document.getElementById("listViewButton").style.display = "block";
-              document.getElementById("thumbnailViewButton").style.display = "block";
-              document.getElementById("observatoryViewButton").style.display = "block";
-              document.getElementById("projectViewButton").style.display = "block";
-              map.on('render', afterChangeComplete);
-            }
+          if( id2 == 'Observatory' && observatoryLayer == 1){
+            var link2 = document.createElement('a');
+            link2.href = '#';
+            link2.className = '';
+            link2.textContent = 'O';
           }
-        };
+          else if( id2 == 'Project' && projectLayer == 1){
+            var link2 = document.createElement('a');
+            link2.href = '#';
+            link2.className = 'activeView';
+            link2.textContent = 'P';
+          }
+          else{
+            continue;
+          }
 
-        var layers = document.getElementById('menuLayerToggle');
-        layers.appendChild(link);
+          link2.onclick = function(e2) {
+            var clickedLayer2 = this.textContent;
+            e2.preventDefault();
+            e2.stopPropagation();
+
+            if( clickedLayer2 == 'P'){
+              console.log('entered project click');
+              if ( projectView == 1 ){
+                projectView = 0;
+                this.className = '';
+                document.getElementById("sidebar").style.display = "none";
+              }
+              else if ( projectView == 0 ){
+                projectView = 1;
+                observatoryView = 0;
+                var v = document.getElementsByClassName('activeView');
+                for (var k = 0; k < v.length; v++ ){
+                  v[k].className = '';
+                }
+                this.className = 'activeView';
+                document.getElementById("sidebar").style.display = "block";
+                displayFilteredList();
+              }
+            }
+            else if( clickedLayer2 == 'O'){
+              console.log('entered observatory click');
+              if ( observatoryView == 1 ){
+                observatoryView = 0;
+                this.className = '';
+                document.getElementById("sidebar").style.display = "none";
+              }
+              else if ( observatoryView == 0 ){
+                projectView = 0;
+                observatoryView = 1;
+                var v = document.getElementsByClassName('activeView');
+                for (var k = 0; k < v.length; v++ ){
+                  v[k].className = '';
+                }
+                this.className = 'activeView';
+                document.getElementById("sidebar").style.display = "block";
+                displayFilteredList();
+              }
+            }
+
+            // if (visibility2 == 'visible') {
+            //   map.setLayoutProperty(id2, 'visibility', 'none');
+            //   if (id2 == "Basins") {
+            //     document.getElementById("basinlegendContainer").style.display = "none";
+            //     displayFilteredList();
+            //   } else {
+            //     document.getElementById("sidebar").style.display = "none";
+            //     document.getElementById("closebtnContainer").style.display = "none";
+            //     document.getElementById("listViewButton").style.display = "none";
+            //     document.getElementById("thumbnailViewButton").style.display = "none";
+            //     document.getElementById("observatoryViewButton").style.display = "none";
+            //     document.getElementById("projectViewButton").style.display = "none";
+            //   }
+            //   this.className = '';
+            // }
+            // else {
+            //   this.className = 'activeView';
+            //   map.setLayoutProperty(id2, 'visibility', 'visible');
+            //   if (id2 == "Basins") {
+            //     document.getElementById("basinlegendContainer").style.display = "block";
+            //     displayFilteredList();
+            //   } else {
+            //     document.getElementById("sidebar").style.display = "block";
+            //     document.getElementById("closebtnContainer").style.display = "none";
+            //     document.getElementById("listViewButton").style.display = "block";
+            //     document.getElementById("thumbnailViewButton").style.display = "block";
+            //     document.getElementById("observatoryViewButton").style.display = "block";
+            //     document.getElementById("projectViewButton").style.display = "block";
+            //     map.on('render', afterChangeComplete);
+            //   }
+            // }
+          };
+
+          // if flag is -1, it was the initial call- skip any processing
+          // if flag is 1, not an initila call, the current list view's layer has been toggled off, change the list view to project's
+          // if flaf is 0, not an initial call, and the current layer that has been toogled off is not the current list view, no harm, skip
+          if(flag == 1){
+            // document.getElementById("sidebar").style.display = "none";
+            projectView = 1;
+            observatoryView = 0;
+            // console.log('entered critical ');
+            displayFilteredList();
+          }
+
+          var layers2 = document.getElementById('layerItemsViewToggle');
+          layers2.appendChild(link2);
+        }
       }
+      updateViewNavItems(-1);
+
+      map.on('render', afterChangeComplete);
+
+      // // enumerate ids of the layers
+      // var toggleableLayerIds = ['Basins', 'Observatory'];
+      //
+      // document.getElementById("menuLayerToggle").innerHTML = "";
+      //
+      // // set up the corresponding toggle button for each layer
+      // for (var i = 0; i < toggleableLayerIds.length; i++) {
+      //   var id = toggleableLayerIds[i];
+      //
+      //   var link = document.createElement('a');
+      //   link.href = '#';
+      //   link.className = 'active';
+      //   link.textContent = id;
+      //
+      //   link.onclick = function(e) {
+      //     var flag = 0;
+      //     var clickedLayer = this.textContent;
+      //     e.preventDefault();
+      //     e.stopPropagation();
+      //
+      //     var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+      //
+      //     // toggle layer visibility by changing the layout object's visibility property
+      //     if (visibility == 'visible') {
+      //       map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+      //       if (clickedLayer == "Basins") {
+      //         basinLayer = 0;
+      //         document.getElementById("basinlegendContainer").style.display = "none";
+      //         displayFilteredList();
+      //       } else {
+      //         flag = 1;
+      //         observatoryLayer = 0;
+      //         // document.getElementById("sidebar").style.display = "none";
+      //         // document.getElementById("closebtnContainer").style.display = "none";
+      //         // document.getElementById("listViewButton").style.display = "none";
+      //         // document.getElementById("thumbnailViewButton").style.display = "none";
+      //         // document.getElementById("observatoryViewButton").style.display = "none";
+      //         // document.getElementById("projectViewButton").style.display = "none";
+      //         // displayFilteredList();
+      //       }
+      //       this.className = '';
+      //     } else {
+      //       this.className = 'active';
+      //       map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+      //       if (clickedLayer == "Basins") {
+      //         basinLayer = 1;
+      //         document.getElementById("basinlegendContainer").style.display = "block";
+      //         displayFilteredList();
+      //       } else {
+      //         observatoryLayer = 1;
+      //         document.getElementById("sidebar").style.display = "block";
+      //         document.getElementById("closebtnContainer").style.display = "none";
+      //         document.getElementById("listViewButton").style.display = "block";
+      //         document.getElementById("thumbnailViewButton").style.display = "block";
+      //         // document.getElementById("observatoryViewButton").style.display = "block";
+      //         // document.getElementById("projectViewButton").style.display = "block";
+      //         map.on('render', afterChangeComplete);
+      //       }
+      //     }
+      //   updateViewNavItems(flag);
+      //   };
+      //
+      //   var layers = document.getElementById('menuLayerToggle');
+      //   layers.appendChild(link);
+      // }
     });
   </script>
 
