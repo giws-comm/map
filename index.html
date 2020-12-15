@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <title>Global Water Futures</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
@@ -31,26 +31,15 @@
   <style>
     #map {
       position: absolute;
-      /* left: 25%; */
       top: 0;
       bottom: 0;
-      /* width: 75%; */
     }
 
     .mapboxgl-popup-content {
       background: rgba(255, 255, 255, 0.8);
     }
 
-    /* .switch {
-      position: absolute;
-      display: inline-block;
-      width: 2%;
-      height: 2%;
-      right: 6.5%;
-      z-index: 1;
-    } */
-
-    .menuLayerToggleContainer{
+    .menuLayerToggleContainer {
       position: absolute;
       top: 3vh;
       right: 1vw;
@@ -61,9 +50,9 @@
       display: block;
     }
 
-    .menuLayerToggleSwitchContainer{
+    .menuLayerToggleSwitchContainer {
       /* background-color: rgba(61,61,61,0.4); */
-      background-color: rgba(221,221,221,0.8);
+      background-color: rgba(221, 221, 221, 0.8);
       border-radius: 10px 0 0 10px;
     }
 
@@ -73,14 +62,6 @@
       height: 100%;
       z-index: 1;
     }
-
-    /* #switchBasinLayer{
-      top: 6%;
-    }
-
-    #switchObservatoryLayer{
-      top: 9.5%;
-    } */
 
     .switch input {
       opacity: 0;
@@ -113,11 +94,11 @@
       transition: .4s;
     }
 
-    #slider1{
+    #slider1 {
       top: 10%;
     }
 
-    #slider2{
+    #slider2 {
       top: 60%;
     }
 
@@ -130,9 +111,6 @@
     }
 
     input:checked+.slider:before {
-      /* -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-      transform: translateX(26px); */
       -webkit-transform: translateX(140%);
       -ms-transform: translateX(140%);
       transform: translateX(100%);
@@ -147,72 +125,7 @@
       border-radius: 50%;
     }
 
-    /* #navbarContainer {
-      display: inline-block;
-      cursor: pointer;
-      position: absolute;
-      width: 130px;
-      height: 150px;
-      top: 30px;
-      background-color: red;
-      display: block;
-    }
-
-    #navbarContainer .navbar {
-      width: 50%;
-      height: 15px;
-      background-color: black;
-    } */
-
-    /* #observatoryViewButton {
-      position: absolute;
-      top: 2%;
-      left: 4%;
-      width: 12.45%;
-      height: 3%;
-      border-radius: 10px 10px 0px 0px;
-      background: rgba(221, 221, 221, 0.7);
-      border-bottom: thin solid black;
-      padding-top: 0.5%;
-      text-align: center;
-      cursor: pointer;
-      font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      display: none;
-    } */
-
-    /* #projectViewButton {
-      position: absolute;
-      top: 2%;
-      left: 13.55%;
-      width: 12.45%;
-      height: 3%;
-      border-radius: 10px 10px 0px 0px;
-      background: rgba(145, 145, 145, 0.7);
-      padding-top: 0.5%;
-      text-align: center;
-      cursor: pointer;
-      font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-      display: none;
-    } */
-
-    /* #listViewButton {
-      position: absolute;
-      top: 11.5%;
-      left: 26%;
-      width: 2%;
-      height: 3%;
-      border-radius: 0px 5px 5px 0px;
-      background: rgba(145, 145, 145, 0.7);
-      cursor: pointer;
-      display: none;
-    } */
-
     #listViewButton {
-      /* top: 12.5%; */
-      /* left: 26%; */
-      /* width: 10%; */
-      /* height: 70%; */
       width: 2vw;
       height: 2vw;
       border-radius: 5px;
@@ -236,21 +149,7 @@
       margin-top: .3vw;
     }
 
-    /* #thumbnailViewButton {
-      position: absolute;
-      top: 15%;
-      left: 26%;
-      width: 2%;
-      height: 3%;
-      border-radius: 0px 5px 5px 0px;
-      background: rgba(145, 145, 145, 0.7);
-      cursor: pointer;
-      display: none;
-    } */
-
     #thumbnailViewButton {
-      /* width: 10%;
-      height: 70%; */
       width: 2vw;
       height: 2vw;
       border-radius: 5px;
@@ -303,27 +202,11 @@
       color: black;
     }
 
-    /* #LayerItemsViewToggleContainer{
-      position: absolute;
-      top: 5%;
-      left: 0.5%;
-      width: 5%;
-    } */
-
-    /* #LayerItemsViewToggleContainer{
-      background: #3d3d3d;
-      position: absolute;
-      opacity: .8;
-      top: 7vw;
-      left: .3vw;
-      width: 2.9vw;
-    } */
-
     #layerItemsViewToggle {
       position: absolute;
       opacity: .8;
       z-index: 1;
-      top: 15.5vw;
+      top: 13.3vw;
       left: 2.4vw;
       /* width: 7vw;
       height: 3vw; */
@@ -334,25 +217,17 @@
       /* transform: rotate(270deg); */
 
       -webkit-transform: rotate(270deg);
-    -webkit-transform-origin: left bottom;
-    -moz-transform: rotate(270deg);
-    -moz-transform-origin: left bottom;
-    -ms-transform: rotate(270deg);
-    -ms-transform-origin: left bottom;
-    -o-transform: rotate(270deg);
-    -o-transform-origin: left bottom;
-    transform: rotate(270deg);
-    transform-origin: left bottom;
+      -webkit-transform-origin: left bottom;
+      -moz-transform: rotate(270deg);
+      -moz-transform-origin: left bottom;
+      -ms-transform: rotate(270deg);
+      -ms-transform-origin: left bottom;
+      -o-transform: rotate(270deg);
+      -o-transform-origin: left bottom;
+      transform: rotate(270deg);
+      transform-origin: left bottom;
 
     }
-
-
-
-    /* #layerItemsViewToggle {
-      opacity: .8;
-      border-radius: 0px 10px 10px 0px;
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-    } */
 
     #layerItemsViewToggle a {
       font-size: 1vw;
@@ -362,16 +237,19 @@
       margin: 0;
       padding: .3vw 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       text-align: center;
       background: #fff;
       text-decoration: none !important;
       /* transform: rotate(270deg); */
     }
 
+    #layerItemsViewToggle a:first-child {
+      border-right: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
     #layerItemsViewToggle a:last-child {
       border: none;
-      /* border-radius: 0px 0px 5px 5px; */
     }
 
     #layerItemsViewToggle a:hover {
@@ -409,41 +287,26 @@
       background: rgba(221, 221, 221, 0.5);
       max-height: 100%;
       overflow: hidden;
-      border-radius: 10px 10px 10px 10px;
+      border-radius: 0px 10px 10px 10px;
       display: none;
     }
 
-    .map-overlay #viewTop{
-      border-radius: 10px 10px 0px 0px;
+    .map-overlay .viewTop {
+      border-radius: 0px 10px 0px 0px;
       background: rgba(221, 221, 221, 0.7);
       border-bottom: thin solid black;
-      /* padding: 2.5% 25%; */
       width: 100%;
-      height: 5%;
-      /* float: left; */
-      /* display: inline-block; */
+      height: 6%;
     }
 
-    .map-overlay #viewTitle{
-      /* background: rgba(221, 221, 221, 0.7); */
-      padding: 2.5% 5%;
-      width: 55%;
-      text-align: right;
-      /* padding-right: 20%; */
-      /* font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif; */
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-      font-size: 1vw;
-      font-weight: bold;
-      float: left;
-    }
-
-    .map-overlay fieldset {
+    .map-overlay .viewTop fieldset {
       display: none;
-      /* background: #c4c4c4; */
       background-color: rgba(196, 196, 196, .5);
       border: none;
-      padding: 10px;
+      padding: 1.5%;
       margin: 0;
+      width: 75%;
+      float: left;
     }
 
     .map-overlay input {
@@ -451,7 +314,7 @@
       border: none;
       width: 100%;
       border-radius: 3px;
-      padding: 10px;
+      padding: 3%;
       margin: 0;
       background-color: rgba(255, 255, 255, .5);
       box-sizing: border-box;
@@ -472,38 +335,21 @@
     }
 
     .map-overlay .listing .divListContainer .observatoryListViewSapn {
-      /* display: inline-block; */
-      /* position: absolute; */
-      /* float: right; */
-      /* width:10px; */
       width: 2%;
-      /* height: 2%; */
       margin-right: 2%;
       padding-right: 2%;
 
     }
 
     .map-overlay .listing .divListContainer .projectListViewSpan {
-      /* display: inline-block; */
-      /* position: absolute; */
-      /* float: right; */
-      /* width:10px; */
       width: 2%;
-      /* height: 2%; */
       margin-right: 2%;
       padding-right: 2%;
 
     }
 
     .map-overlay .listing .divListContainer a {
-      /* position: absolute; */
-      /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
-      /* color: #404; */
-      /* padding-left: 5%; */
       width: 70%;
-      /* white-space: nowrap; */
-      /* overflow: hidden; */
-      /* text-overflow: ellipsis; */
     }
 
     .map-overlay .listing .divListContainer .dummyDiv {
@@ -512,43 +358,24 @@
     }
 
     .map-overlay .divContainer {
-      /* position: relative */
-      /* margin: 4px; */
       float: left;
       width: 45%;
       height: 150px;
-      /* padding: 5px; */
-      /* margin: 5px; */
       padding: 1%;
       margin: 1%;
-      /* border: 1px solid #ff3366; */
-      /* white-space: nowrap; */
-      /* overflow: hidden; */
-      /* text-overflow: ellipsis; */
       background-color: #fff;
-      /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
     }
 
     .divImgContainer {
       margin: 2%;
-      /* float: left; */
-      /* width: 43%; */
       height: 120px;
       text-align: center;
       object-fit: cover;
-      /* display:block; */
-      /* border: 1px solid blue; */
-      /* background-color: #444; */
     }
 
     .divImgContainer img {
       width: 100%;
       height: 120px;
-      /* max-width: 100%;
-      max-height: 100%; */
-      /* display:block; */
-      /* height: auto; */
-      /* width: auto; */
     }
 
     .divContainer:hover .divTextContainer {
@@ -567,10 +394,6 @@
     .divNameContainer {
       margin: 2%;
       padding-left: 2px;
-      /* float: left; */
-      /* width: 43%; */
-      /* height: 5%; */
-      /* border: 1px solid green; */
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -582,7 +405,6 @@
       padding-left: 2px;
       height: 10%;
       background-color: #fff;
-      /* border: 1px solid black; */
     }
 
     .map-overlay .listing .divContainer .divSpanContainer .projectThumbnailViewSpan {
@@ -595,13 +417,9 @@
     .divTextContainer {
       transition: .5s ease;
       opacity: 0;
-      /* position: absolute; */
-      /* top: 0; */
-      /* left: 0; */
       top: 50%;
       left: 50%;
       transform: translate(0, -95px);
-      /* -ms-transform: translate(-50%, -50%); */
       text-align: center;
     }
 
@@ -612,9 +430,6 @@
 
     .map-overlay .divItemDetailsContainer {
       margin: 2%;
-      /* margin-top: 10px; */
-      /* width: 100%; */
-      /* height: 100px; */
       background-color: rgba(221, 221, 221, .9);
       padding-bottom: 2px;
     }
@@ -633,11 +448,6 @@
     .divNameDetailsContainer {
       margin: 2%;
       padding-left: 2px;
-      /* float: left; */
-      /* width: 43%; */
-      /* height: 5%; */
-      /* border: 1px solid green; */
-      /* white-space: nowrap; */
       overflow: hidden;
       /* text-overflow: ellipsis; */
       background-color: #dddddd;
@@ -646,12 +456,6 @@
     .divTextDetailsContainer {
       margin: 2%;
       padding-left: 2px;
-      /* margin-bottom: 10px; */
-      /* float: left; */
-      /* width: 43%; */
-      /* height: 5%; */
-      /* border: 1px solid green; */
-      /* white-space: nowrap; */
       overflow: hidden;
       /* text-overflow: ellipsis; */
       background-color: #dddddd;
@@ -660,12 +464,6 @@
     .divProjectDetailsContainer {
       margin: 2%;
       padding-left: 2px;
-      /* margin-bottom: 10px; */
-      /* float: left; */
-      /* width: 43%; */
-      /* height: 5%; */
-      /* border: 1px solid green; */
-      /* white-space: nowrap; */
       overflow: hidden;
       /* text-overflow: ellipsis; */
       background-color: #dddddd;
@@ -674,12 +472,6 @@
     .divCoIDetailsContainer {
       margin: 2%;
       padding-left: 2px;
-      /* margin-bottom: 10px; */
-      /* float: left; */
-      /* width: 43%; */
-      /* height: 5%; */
-      /* border: 1px solid green; */
-      /* white-space: nowrap; */
       overflow: hidden;
       /* text-overflow: ellipsis; */
       background-color: #dddddd;
@@ -688,20 +480,10 @@
     .divLinkDetailsContainer {
       margin: 2%;
       padding-left: 2px;
-      /* margin-bottom: 10px; */
-      /* float: left; */
-      /* width: 43%; */
-      /* height: 5%; */
-      /* border: 1px solid green; */
-      /* white-space: nowrap; */
       overflow: hidden;
       /* text-overflow: ellipsis; */
       background-color: #dddddd;
     }
-
-    /* .divFocusDetails{
-      overflow: hidden;
-    } */
 
     #menuMapToggle {
       background: #fff;
@@ -717,18 +499,13 @@
     }
 
     #menuLayerToggle {
-      /* background: #fff; */
       position: absolute;
       opacity: .8;
       z-index: 1;
-      /* top: 20px; */
       top: 5%;
-      /* right: 10px; */
       right: 1%;
       border-radius: 0px 10px 10px 0px;
       width: 5%;
-      /* border: 1px solid rgba(0, 0, 0, 0.4); */
-      /* font-family: 'Open Sans', sans-serif; */
       font-family: "Trebuchet MS", Helvetica, sans-serif;
     }
 
@@ -775,7 +552,7 @@
       font-weight: normal;
     }
 
-    .legendContainer{
+    .legendContainer {
       position: absolute;
       width: 13%;
       float: left;
@@ -808,19 +585,6 @@
       text-align: center;
     }
 
-    /* .legend {
-      background-color: rgba(221, 221, 221, .7);
-      bottom: 8.4%;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      font-size: .7vw;
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-      padding: 9px;
-      position: absolute;
-      right: 1%;
-      z-index: 1;
-      border-radius: 10px 10px 0px 0px;
-    } */
-
     .legend h4 {
       font-size: .8vw;
       text-align: center;
@@ -846,39 +610,34 @@
   <div class="menuLayerToggleContainer">
     <div style="display: flex;">
       <div class="menuLayerToggleSwitchContainer" style="display:inline; width: 30%; border-bottom:.2px solid black;">
-        <label class="switch" id="switchBasinLayer" >
+        <label class="switch" id="switchBasinLayer">
           <input type="checkbox" id="input1" checked>
           <span class="slider round" id="slider1" onClick="showHideBasinLayer()"></span>
         </label>
       </div>
-      <div id="layerName1" style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; border-bottom:.5px solid black; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">Basin</div>
+      <div id="layerName1"
+        style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; border-bottom:.5px solid black; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">
+        Basin</div>
     </div>
     <div style="display: flex;">
       <div class="menuLayerToggleSwitchContainer" style="display:inline; width: 30%; ">
-        <label class="switch" id="switchObservatoryLayer" >
+        <label class="switch" id="switchObservatoryLayer">
           <input type="checkbox" id="input2" checked>
           <span class="slider round" id="slider2" onClick="showHideObservatoryLayer()"></span>
         </label>
       </div>
-      <div id="layerName2" style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">Reseacrh Site</div>
+      <div id="layerName2" style="display:inline; width: 70%; background-color: rgba(221,221,221,0.8); padding: 5%; font-size:1vw; border-radius: 0px 10px 10px 0px; font-family: Trebuchet MS, Helvetica, sans-serif; font-weight: bold;">Research Site
+      </div>
     </div>
   </div>
-
-  <!-- <label class="switch" id="switchBasinLayer" onClick="showHideBasinLayer">
-    <input type="checkbox" checked>
-    <span class="slider round"></span>
-  </label>
-
-  <label class="switch" id="switchObservatoryLayer" onClick="showHideObservatoryLayer">
-    <input type="checkbox" checked>
-    <span class="slider round"></span>
-  </label> -->
 
   <!-- <div id="LayerItemsViewToggleContainer"> <nav id="layerItemsViewToggle"></nav> </div> -->
   <nav id="layerItemsViewToggle"></nav>
 
   <div id="map"></div>
-  <div class="ctrlScrollprompt" style="position:absolute; display:none;text-align: center;width: 100%; height: 55%;padding-top: 45vh; background-color:rgba(221,221,221,0.3); font-size: 2vw; font-family: Trebuchet MS, Helvetica, sans-serif; color: white;"> Press Ctrl + Scroll to zoom the map </div>
+  <div class="ctrlScrollprompt"
+    style="position:absolute; display:none;text-align: center;width: 100%; height: 55%;padding-top: 45vh; background-color:rgba(221,221,221,0.3); font-size: 2vw; font-family: Trebuchet MS, Helvetica, sans-serif; color: white;"> Press Ctrl + Scroll to
+    zoom the map </div>
 
   <div id="menuMapToggle"> <b>Base Map</b> <br>
     <input id="streets-v11" type="radio" name="rtoggle" value="streets" onClick="switchBaseMap(1)" />
@@ -895,43 +654,28 @@
     <label for="custom">Custom</label>
   </div>
 
-  <!-- <div id="listViewButton" onclick="showListView()">
-    <div class="listViewButtonLines" id="listViewButtonLines1"></div>
-    <div class="listViewButtonLines" id="listViewButtonLines2"></div>
-    <div class="listViewButtonLines" id="listViewButtonLines3"></div>
-    <div class="listViewButtonLines" id="listViewButtonLines4"></div>
-  </div>
-  <div id="thumbnailViewButton" onclick="showThumbnailView()">
-    <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes1"></div>
-    <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes2"></div>
-    <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes3"></div>
-    <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes4"></div>
-  </div> -->
-
-  <!-- <div id="observatoryViewButton" onclick="showObservatoryView()">Observatories</div>
-  <div id="projectViewButton" onclick="showProjectView()">Projects</div> -->
-
   <div id="closebtnContainer"> Observatory List <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X </a></div>
   <div class="map-overlay" id="sidebar">
-    <div id="viewTop">
-      <div id="viewTitle">Sample</div>
-        <div id="thumbnailViewButton" onclick="showThumbnailView()">
-          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes1"></div>
-          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes2"></div>
-          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes3"></div>
-          <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes4"></div>
-        </div>
-        <div id="listViewButton" onclick="showListView()">
-          <div class="listViewButtonLines" id="listViewButtonLines1"></div>
-          <div class="listViewButtonLines" id="listViewButtonLines2"></div>
-          <div class="listViewButtonLines" id="listViewButtonLines3"></div>
-          <div class="listViewButtonLines" id="listViewButtonLines4"></div>
-        </div>
+
+    <div class="viewTop">
+      <fieldset>
+        <input id="feature-filter" type="text" placeholder="Filter results by observatory name" />
+      </fieldset>
+
+      <div id="thumbnailViewButton" onclick="showThumbnailView()">
+        <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes1"></div>
+        <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes2"></div>
+        <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes3"></div>
+        <div class="thumbnailViewButtonBoxes" id="thumbnailViewButtonBoxes4"></div>
+      </div>
+      <div id="listViewButton" onclick="showListView()">
+        <div class="listViewButtonLines" id="listViewButtonLines1"></div>
+        <div class="listViewButtonLines" id="listViewButtonLines2"></div>
+        <div class="listViewButtonLines" id="listViewButtonLines3"></div>
+        <div class="listViewButtonLines" id="listViewButtonLines4"></div>
+      </div>
     </div>
 
-    <fieldset>
-      <input id="feature-filter" type="text" placeholder="Filter results by observatory name" />
-    </fieldset>
     <div id="feature-listing" class="listing">
       <!-- <div class = "dummyDiv"></div> -->
     </div>
@@ -939,29 +683,29 @@
   </div>
 
   <div id="basinlegendContainer" class="legendContainer">
-  <div id="basin-legend" class="legend">
-    <h4>Major River Basins</h4>
-    <div><span id="legendspan1"></span>Yukon River Basin</div>
-    <div><span id="legendspan2"></span>Mackenzie River Basin</div>
-    <div><span id="legendspan3"></span>Churchill River Basin</div>
-    <div><span id="legendspan4"></span>Fraser River Basin</div>
-    <div><span id="legendspan5"></span>Columbia River basin</div>
-    <div><span id="legendspan6"></span>Nelson-Saskatchewan River Basin</div>
-    <div><span id="legendspan7"></span>St. Lawrence River Basin</div>
-    <div><span id="legendspan8"></span>Saint. John River Basin</div>
-  </div>
+    <div id="basin-legend" class="legend">
+      <h4>Major River Basins</h4>
+      <div><span id="legendspan1"></span>Yukon River Basin</div>
+      <div><span id="legendspan2"></span>Mackenzie River Basin</div>
+      <div><span id="legendspan3"></span>Churchill River Basin</div>
+      <div><span id="legendspan4"></span>Fraser River Basin</div>
+      <div><span id="legendspan5"></span>Columbia River basin</div>
+      <div><span id="legendspan6"></span>Nelson-Saskatchewan River Basin</div>
+      <div><span id="legendspan7"></span>St. Lawrence River Basin</div>
+      <div><span id="legendspan8"></span>Saint. John River Basin</div>
+    </div>
 
-  <div id="colorPicker" class="colorPickerClass">
-    <h4>Basin Color Palette</h4>
-    <input type="radio" name="edit" value="A" onclick="colorPaletteChange(1)">1
-    <input type="radio" name="edit" value="B" onclick="colorPaletteChange(2)">2
-    <input type="radio" name="edit" value="A" onclick="colorPaletteChange(3)">3
-    <input type="radio" name="edit" value="B" onclick="colorPaletteChange(4)">4
-    <input type="radio" name="edit" value="C" onclick="colorPaletteChange(5)">5
-    <input type="radio" name="edit" value="A" onclick="colorPaletteChange(6)">6
-    <input type="radio" name="edit" value="C" checked="checked" onclick="colorPaletteChange(7)">7
+    <div id="colorPicker" class="colorPickerClass">
+      <h4>Basin Color Palette</h4>
+      <input type="radio" name="edit" value="A" onclick="colorPaletteChange(1)">1
+      <input type="radio" name="edit" value="B" onclick="colorPaletteChange(2)">2
+      <input type="radio" name="edit" value="A" onclick="colorPaletteChange(3)">3
+      <input type="radio" name="edit" value="B" onclick="colorPaletteChange(4)">4
+      <input type="radio" name="edit" value="C" onclick="colorPaletteChange(5)">5
+      <input type="radio" name="edit" value="A" onclick="colorPaletteChange(6)">6
+      <input type="radio" name="edit" value="C" checked="checked" onclick="colorPaletteChange(7)">7
+    </div>
   </div>
-</div>
 
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzbmF0MTI5NyIsImEiOiJja2gyZmozN3EwMm0xMnlxcnJlNjE2ZXIyIn0.JGVcpK9BELAP1RAtMrELtA';
@@ -1129,8 +873,9 @@
     var basinObjects = {};
     var basinFillOpacity = 0.4;
     var observatoryLayer = 1;
-    var basinLayer = 1;
-    var projectLayer = 1;
+    var observatoryClickActive = 0;
+    // var basinLayer = 1;
+    // var projectLayer = 1;
     var observatoryView = 0;
     var projectView = 1;
     var listView = 0;
@@ -1193,10 +938,6 @@
     function getBasinData() {
       // load basin geojson and put the name, coordinates and color into an object
       $.getJSON("GWFbasins_v3.json", function(json) {
-        // console.log(json); // show the JSON file content into console
-        // console.log(json.features.length);
-        // console.log(json.features[0].geometry.coordinates);
-        // console.log(json.features[0].properties.NAMRB_EN);
         var x;
         for (x = 0; x < json.features.length; x++) {
           var colorchosen;
@@ -1282,65 +1023,35 @@
         toSort.sortIndices.push(toSort[j][1]);
         toSort[j] = toSort[j][0];
       }
-      return toSort;
+      // return toSort;
     }
 
-    // function showObservatoryView() {
-    //   observatoryView = 1;
-    //   projectView = 0;
-    //   $('#projectViewButton').css('background-color', 'rgba(145,145,145,0.7)');
-    //   $('#observatoryViewButton').css('background-color', 'rgba(221,221,221,0.7)');
-    //   document.getElementById("projectViewButton").style.fontWeight = 'normal';
-    //   document.getElementById("observatoryViewButton").style.fontWeight = 'bold';
-    //   document.getElementById("observatoryViewButton").style.borderBottom = "thin solid #3d3d3d";
-    //   document.getElementById("projectViewButton").style.borderBottom = "none";
-    //   displayFilteredList();
-    // }
-    //
-    // function showProjectView() {
-    //   observatoryView = 0;
-    //   projectView = 1;
-    //   $('#observatoryViewButton').css('background-color', 'rgba(145,145,145,0.7)');
-    //   $('#projectViewButton').css('background-color', 'rgba(221,221,221,0.7)');
-    //   document.getElementById("projectViewButton").style.fontWeight = 'bold';
-    //   document.getElementById("observatoryViewButton").style.fontWeight = 'normal';
-    //   document.getElementById("projectViewButton").style.borderBottom = "thin solid black";
-    //   document.getElementById("observatoryViewButton").style.borderBottom = "none";
-    //   displayFilteredList();
-    // }
-
-    // console.log(document.getElementById("input1").checked);
-
-    function showHideBasinLayer(){
+    function showHideBasinLayer() {
       // console.log('click found');
-      if (document.getElementById("input1").checked == true){
+      if (document.getElementById("input1").checked == true) {
         // hide basin layer
         console.log("Basin Layer has been hidden");
         map.setLayoutProperty('Basins', 'visibility', 'none');
-        basinLayer = 0;
+        // basinLayer = 0;
         document.getElementById("basinlegendContainer").style.display = "none";
         document.getElementById("layerName1").style.fontWeight = "normal";
         displayFilteredList();
-      }
-      else{
+      } else {
         // hide basin layer
         console.log("Basin Layer has been made Visible");
         map.setLayoutProperty('Basins', 'visibility', 'visible');
-        basinLayer = 1;
+        // basinLayer = 1;
         document.getElementById("basinlegendContainer").style.display = "block";
         document.getElementById("layerName1").style.fontWeight = "bold";
         displayFilteredList();
       }
     }
 
-    function showHideObservatoryLayer(){
-      if (document.getElementById("input2").checked == true){
-        // currently visible, hide observatory layer
-        // map.setLayoutProperty('Observatory', 'visibility', 'none');
+    function showHideObservatoryLayer() {
+      if (document.getElementById("input2").checked == true) {
+        //currently visible, hide observatory layer
+        observatoryLayer = 0;
         document.getElementById("layerName2").style.fontWeight = "normal";
-        // observatoryLayer = 0;
-        // updateViewNavItems(1);
-        // updateViewNavItems(0);
         map.removeLayer("Observatory");
         map.addLayer({
           'id': 'Observatory',
@@ -1357,17 +1068,60 @@
             // 'circle-stroke-color': 'black',
           }
         });
-      }
-      else{
+        if(observatoryClickActive == 1){
+          map.removeLayer('ObservatoryClickedLayer');
+          map.addLayer({
+            id: 'ObservatoryClickedLayer',
+            source: 'observatorySource',
+            type: 'circle',
+            filter: ["==", "Site", siteclicked],
+            paint: {
+              'circle-color': 'red',
+              'circle-radius': {
+                "stops": [
+                  [3, 5],
+                  // zoom is 5 -> circle radius will be 1px
+                  [5, 7],
+                  // zoom is 10 -> circle radius will be 2px
+                  [7, 9],
+                  [9, 11],
+                  [11, 13]
+                ]
+              },
+              'circle-stroke-width': 2,
+              'circle-stroke-color': 'black',
+            }
+          });
+          // a red circle is drawn but the observatory layer is hidden
+          // add control to the red layer for clicking to close the red layers
+          map.on('mousemove', 'ObservatoryClickedLayer', function(e) {
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+
+            // Populate the popup and set its coordinates based on the feature.
+            var feature = e.features[0];
+            popup
+              .setLngLat(feature.geometry.coordinates)
+              .setText(feature.properties.Site)
+              .addTo(map);
+          });
+          map.on('mouseleave', 'ObservatoryClickedLayer', function() {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+          });
+          map.on('click','ObservatoryClickedLayer',function(e){
+            observatoryClickActive = 0;
+            siteclicked = "";
+            map.removeLayer('ObservatoryClickedLayer');
+            displayFilteredList();
+            listingEl.scrollTop = 0;
+          });
+        }
+      } else {
         // currently hidden, show observatory layer
-        map.setLayoutProperty('Observatory', 'visibility', 'visible');
         observatoryLayer = 1;
-        // document.getElementById("sidebar").style.display = "block";
-        // document.getElementById("closebtnContainer").style.display = "none";
-        // document.getElementById("listViewButton").style.display = "block";
-        // document.getElementById("thumbnailViewButton").style.display = "block";
+        map.setLayoutProperty('Observatory', 'visibility', 'visible');
         document.getElementById("layerName2").style.fontWeight = "bold";
-        // updateViewNavItems(0);
         map.removeLayer("Observatory");
         map.addLayer({
           'id': 'Observatory',
@@ -1416,7 +1170,34 @@
             'circle-stroke-color': 'black',
           }
         });
-        displayFilteredList();
+        if(observatoryClickActive == 1){
+          // a red circle is drawn but the observatory layer just got visiblem hiding the red circle
+          // remove the overlapped red layer and add again
+          map.removeLayer('ObservatoryClickedLayer');
+          map.addLayer({
+            id: 'ObservatoryClickedLayer',
+            source: 'observatorySource',
+            type: 'circle',
+            filter: ["==", "Site", siteclicked],
+            paint: {
+              'circle-color': 'red',
+              'circle-radius': {
+                "stops": [
+                  [3, 5],
+                  // zoom is 5 -> circle radius will be 1px
+                  [5, 7],
+                  // zoom is 10 -> circle radius will be 2px
+                  [7, 9],
+                  [9, 11],
+                  [11, 13]
+                ]
+              },
+              'circle-stroke-width': 2,
+              'circle-stroke-color': 'black',
+            }
+          });
+        }
+        // displayFilteredList();
       }
     }
 
@@ -1511,8 +1292,7 @@
         return "projectImages/Lake Futures.png"
       } else if (sitename == "Transformative Sensor Technologies and Smart Watersheds") {
         return "projectImages/Transformative Sensor Technologies and Smart Watersheds.jpg"
-      }
-      else {
+      } else {
         return "projectImages/GWF.png"
       }
     }
@@ -1604,98 +1384,183 @@
                 divItem.style.opacity = 1;
                 popup.remove();
               });
+
               var divItemDetailsON = 0;
-              divItem.addEventListener('click', function() {
-                if (divItemDetailsON == 0) {
-                  divItemDetailsON = 1;
-                  divItem.style.width = '95%';
-                  divItem.style.height = 'auto';
-                  divImgItem.style.height = '200px';
-                  imgItem.style.height = '200px';
-                  divItem.removeChild(divItem.lastChild);
 
-                  divNameItem.style.whiteSpace = "initial";
+              function showItemDetails(){
+                divItemDetailsON = 1;
+                divItem.style.width = '95%';
+                divItem.style.height = 'auto';
+                divImgItem.style.height = '200px';
+                imgItem.style.height = '200px';
+                divItem.removeChild(divItem.lastChild);
 
-                  var divItemDetails = document.createElement('div');
-                  divItemDetails.className = "divItemDetailsContainer";
-                  // var divImgItemDetails = document.createElement('div');
-                  // divImgItemDetails.className = "divImgDetailsContainer";
-                  var divOverviewItemDetails = document.createElement('div');
-                  divOverviewItemDetails.className = "divNameDetailsContainer";
-                  var divFocusItemDetails = document.createElement('div');
-                  divFocusItemDetails.className = "divTextDetailsContainer";
-                  // var imgItemDetails = document.createElement('img');
-                  // imgItemDetails.src = getListingImage(prop.Site);
-                  // imgItemDetails.className = "divImgDetails";
-                  var divProjectItemDetails = document.createElement('div');
-                  divProjectItemDetails.className = "divProjectDetailsContainer";
+                divNameItem.style.whiteSpace = "initial";
 
-                  var overviewItemDetails = document.createElement('p');
-                  overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
-                  // var overviewItemDetails = document.createElement('a');
-                  // overviewItemDetails.target = '_blank';
-                  // overviewItemDetails.textContent = 'Overview';
+                var divItemDetails = document.createElement('div');
+                divItemDetails.className = "divItemDetailsContainer";
+                // var divImgItemDetails = document.createElement('div');
+                // divImgItemDetails.className = "divImgDetailsContainer";
+                var divOverviewItemDetails = document.createElement('div');
+                divOverviewItemDetails.className = "divNameDetailsContainer";
+                var divFocusItemDetails = document.createElement('div');
+                divFocusItemDetails.className = "divTextDetailsContainer";
+                // var imgItemDetails = document.createElement('img');
+                // imgItemDetails.src = getListingImage(prop.Site);
+                // imgItemDetails.className = "divImgDetails";
+                var divProjectItemDetails = document.createElement('div');
+                divProjectItemDetails.className = "divProjectDetailsContainer";
 
-                  var divTextItem = document.createElement('div');
-                  divTextItem.className = "divTextContainer";
-                  var textItem = document.createElement('div');
-                  textItem.className = "divText";
-                  textItem.innerHTML = "Click to Collapse";
-                  divTextItem.style.transform = 'translate(0, -145px)';
+                var overviewItemDetails = document.createElement('p');
+                overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+                // var overviewItemDetails = document.createElement('a');
+                // overviewItemDetails.target = '_blank';
+                // overviewItemDetails.textContent = 'Overview';
 
-                  // var focusItemDetails = document.createElement('div');
-                  // focusItemDetails.className = "divFocusDetails";
-                  // focusItemDetails.innerHTML = "Other details"
+                var divTextItem = document.createElement('div');
+                divTextItem.className = "divTextContainer";
+                var textItem = document.createElement('div');
+                textItem.className = "divText";
+                textItem.innerHTML = "Click to Collapse";
+                divTextItem.style.transform = 'translate(0, -145px)';
 
-                  var focusItemDetails = document.createElement('div');
-                  focusItemDetails.className = "divFocusDetails";
-                  var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
-                  var focusList = document.createElement("ul");
-                  for (var s = 0; s < focusString.length; s++) {
+                var focusItemDetails = document.createElement('div');
+                focusItemDetails.className = "divFocusDetails";
+                var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
+                var focusList = document.createElement("ul");
+                for (var s = 0; s < focusString.length; s++) {
+                  var anchor = document.createElement("p");
+                  anchor.innerHTML = focusString[s];
+                  var elem = document.createElement("li");
+                  elem.appendChild(anchor);
+                  focusList.appendChild(elem);
+                }
+                focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
+                focusItemDetails.appendChild(focusList);
+
+                var projectItemDetails = document.createElement('div');
+                projectItemDetails.className = "divProjectDetails";
+                var projectString = prop.Projects.split(";");
+                var projectList = document.createElement("ul");
+                // console.log(projectString);
+                if (projectString.length > 0) {
+                  for (var p = 0; p < projectString.length; p++) {
                     var anchor = document.createElement("p");
-                    anchor.innerHTML = focusString[s];
+                    anchor.innerHTML = projectString[p];
                     var elem = document.createElement("li");
                     elem.appendChild(anchor);
-                    focusList.appendChild(elem);
+                    projectList.appendChild(elem);
                   }
-                  focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
-                  focusItemDetails.appendChild(focusList);
+                  projectItemDetails.innerHTML = "<b>Project(s)</b>";
+                  projectItemDetails.appendChild(projectList);
+                }
 
-                  var projectItemDetails = document.createElement('div');
-                  projectItemDetails.className = "divProjectDetails";
-                  var projectString = prop.Projects.split(";");
-                  var projectList = document.createElement("ul");
-                  console.log(projectString);
-                  if (projectString.length > 0) {
-                    for (var p = 0; p < projectString.length; p++) {
-                      var anchor = document.createElement("p");
-                      anchor.innerHTML = projectString[p];
-                      var elem = document.createElement("li");
-                      elem.appendChild(anchor);
-                      projectList.appendChild(elem);
-                    }
-                    projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                    projectItemDetails.appendChild(projectList);
-                  }
+                divTextItem.appendChild(textItem);
+                divItem.appendChild(divTextItem);
 
-                  divTextItem.appendChild(textItem);
-                  divItem.appendChild(divTextItem);
-                  // // divImgItemDetails.appendChild(imgItemDetails);
+                divOverviewItemDetails.appendChild(overviewItemDetails);
+                divFocusItemDetails.appendChild(focusItemDetails);
+                divProjectItemDetails.appendChild(projectItemDetails)
+                divItemDetails.appendChild(divOverviewItemDetails);
+                divItemDetails.appendChild(divFocusItemDetails);
+                divItemDetails.appendChild(divProjectItemDetails);
+
+                divItem.appendChild(divItemDetails);
+              }
+
+              divItem.addEventListener('click', function() {
+                if (divItemDetailsON == 0) {
+                  showItemDetails();
+                  // divItemDetailsON = 1;
+                  // divItem.style.width = '95%';
+                  // divItem.style.height = 'auto';
+                  // divImgItem.style.height = '200px';
+                  // imgItem.style.height = '200px';
+                  // divItem.removeChild(divItem.lastChild);
+                  //
+                  // divNameItem.style.whiteSpace = "initial";
+                  //
+                  // var divItemDetails = document.createElement('div');
+                  // divItemDetails.className = "divItemDetailsContainer";
+                  // // var divImgItemDetails = document.createElement('div');
+                  // // divImgItemDetails.className = "divImgDetailsContainer";
+                  // var divOverviewItemDetails = document.createElement('div');
+                  // divOverviewItemDetails.className = "divNameDetailsContainer";
+                  // var divFocusItemDetails = document.createElement('div');
+                  // divFocusItemDetails.className = "divTextDetailsContainer";
+                  // // var imgItemDetails = document.createElement('img');
+                  // // imgItemDetails.src = getListingImage(prop.Site);
+                  // // imgItemDetails.className = "divImgDetails";
+                  // var divProjectItemDetails = document.createElement('div');
+                  // divProjectItemDetails.className = "divProjectDetailsContainer";
+                  //
+                  // var overviewItemDetails = document.createElement('p');
+                  // overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+                  // // var overviewItemDetails = document.createElement('a');
+                  // // overviewItemDetails.target = '_blank';
+                  // // overviewItemDetails.textContent = 'Overview';
+                  //
+                  // var divTextItem = document.createElement('div');
+                  // divTextItem.className = "divTextContainer";
+                  // var textItem = document.createElement('div');
+                  // textItem.className = "divText";
+                  // textItem.innerHTML = "Click to Collapse";
+                  // divTextItem.style.transform = 'translate(0, -145px)';
+                  //
+                  // // var focusItemDetails = document.createElement('div');
+                  // // focusItemDetails.className = "divFocusDetails";
+                  // // focusItemDetails.innerHTML = "Other details"
+                  //
+                  // var focusItemDetails = document.createElement('div');
+                  // focusItemDetails.className = "divFocusDetails";
+                  // var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
+                  // var focusList = document.createElement("ul");
+                  // for (var s = 0; s < focusString.length; s++) {
+                  //   var anchor = document.createElement("p");
+                  //   anchor.innerHTML = focusString[s];
+                  //   var elem = document.createElement("li");
+                  //   elem.appendChild(anchor);
+                  //   focusList.appendChild(elem);
+                  // }
+                  // focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
+                  // focusItemDetails.appendChild(focusList);
+                  //
+                  // var projectItemDetails = document.createElement('div');
+                  // projectItemDetails.className = "divProjectDetails";
+                  // var projectString = prop.Projects.split(";");
+                  // var projectList = document.createElement("ul");
+                  // console.log(projectString);
+                  // if (projectString.length > 0) {
+                  //   for (var p = 0; p < projectString.length; p++) {
+                  //     var anchor = document.createElement("p");
+                  //     anchor.innerHTML = projectString[p];
+                  //     var elem = document.createElement("li");
+                  //     elem.appendChild(anchor);
+                  //     projectList.appendChild(elem);
+                  //   }
+                  //   projectItemDetails.innerHTML = "<b>Project(s)</b>";
+                  //   projectItemDetails.appendChild(projectList);
+                  // }
+                  //
+                  // divTextItem.appendChild(textItem);
+                  // divItem.appendChild(divTextItem);
+                  // // // divImgItemDetails.appendChild(imgItemDetails);
+                  // // divOverviewItemDetails.appendChild(overviewItemDetails);
+                  // // divFocusItemDetails.appendChild(focusItemDetails);
+                  // // // divItemDetails.appendChild(divImgItemDetails);
+                  // // divItemDetails.appendChild(divOverviewItemDetails);
+                  // // divItemDetails.appendChild(divFocusItemDetails);
+                  //
                   // divOverviewItemDetails.appendChild(overviewItemDetails);
                   // divFocusItemDetails.appendChild(focusItemDetails);
-                  // // divItemDetails.appendChild(divImgItemDetails);
+                  // divProjectItemDetails.appendChild(projectItemDetails)
                   // divItemDetails.appendChild(divOverviewItemDetails);
                   // divItemDetails.appendChild(divFocusItemDetails);
-
-                  divOverviewItemDetails.appendChild(overviewItemDetails);
-                  divFocusItemDetails.appendChild(focusItemDetails);
-                  divProjectItemDetails.appendChild(projectItemDetails)
-                  divItemDetails.appendChild(divOverviewItemDetails);
-                  divItemDetails.appendChild(divFocusItemDetails);
-                  divItemDetails.appendChild(divProjectItemDetails);
-
-                  divItem.appendChild(divItemDetails);
-                } else if (divItemDetailsON == 1) {
+                  // divItemDetails.appendChild(divProjectItemDetails);
+                  //
+                  // divItem.appendChild(divItemDetails);
+                }
+                else if (divItemDetailsON == 1) {
                   divItemDetailsON = 0;
                   divItem.style.width = '45%';
                   divItem.style.height = '150px';
@@ -1712,6 +1577,13 @@
                   textItem.innerHTML = "Click to View";
                   divTextItem.appendChild(textItem);
                   divItem.appendChild(divTextItem);
+
+                  // if any site was clicked, hide the red circle layer as well
+                  if(observatoryClickActive == 1){
+                    observatoryClickActive = 0;
+                    siteclicked = "";
+                    map.removeLayer('ObservatoryClickedLayer');
+                  }
                 }
               });
               // divItem.appendChild(imgItem);
@@ -1722,6 +1594,11 @@
               divItem.appendChild(divNameItem);
               divItem.appendChild(divTextItem);
               listingEl.appendChild(divItem);
+
+              if(observatoryClickActive == 1 && siteclicked == prop.Site){
+                showItemDetails();
+                // listingEl.scrollTop = 0;
+              }
             });
 
             //add a dummy div at the last of the listing div
@@ -1892,8 +1769,8 @@
 
           document.getElementById("listViewButton").style.display = "block";
           document.getElementById("thumbnailViewButton").style.display = "block";
-          document.getElementById("observatoryViewButton").style.display = "block";
-          document.getElementById("projectViewButton").style.display = "block";
+          // document.getElementById("observatoryViewButton").style.display = "block";
+          // document.getElementById("projectViewButton").style.display = "block";
 
           // Show the filter input
           filterEl.parentNode.style.display = 'block';
@@ -1910,8 +1787,7 @@
           // remove features filter
           map.setFilter('Observatory', ['has', 'Site']);
         }
-      }
-      else if (projectView == 1) {
+      } else if (projectView == 1) {
         document.getElementById("feature-filter").placeholder = "Filter results by project name";
         if (features.length) {
           if (thumbnailView == 1) {
@@ -2413,8 +2289,8 @@
 
     function displayFilteredList() {
       if (observatoryView == 1) {
-        document.getElementById("viewTitle").style.width = "60%";
-        document.getElementById("viewTitle").innerHTML = "Research Site View";
+        // document.getElementById("viewTitle").style.width = "60%";
+        // document.getElementById("viewTitle").innerHTML = "Research Site View";
         var features = map.queryRenderedFeatures({
           layers: ['Observatory']
         });
@@ -2428,7 +2304,12 @@
           sortWithIndeces(siteNames);
           // console.log('Site indices sorted: ', siteNames.sortIndices);
           for (var f = 0; f < features.length; f++) {
-            featuresSorted[f] = features[siteNames.sortIndices[f]];
+            if(observatoryClickActive == 1 && siteclicked == features[siteNames.sortIndices[f]].properties.Site){
+              featuresSorted[0] = features[siteNames.sortIndices[f]];
+              continue;
+            }
+            featuresSorted[f+1] = features[siteNames.sortIndices[f]];
+            // console.log(features[siteNames.sortIndices[f]].properties.Site);
           }
           renderListings(featuresSorted);
           // Clear the input container
@@ -2438,18 +2319,18 @@
           observatoryList = features;
         }
       } else if (projectView == 1) {
-        document.getElementById("viewTitle").style.width = "55%";
-        document.getElementById("viewTitle").innerHTML = "Project View";
+        // document.getElementById("viewTitle").style.width = "55%";
+        // document.getElementById("viewTitle").innerHTML = "Project View";
         var features = map.queryRenderedFeatures({
           layers: ['Project']
         });
-        console.log(features);
+        // console.log('before filtering duplicates:', features);
         features = features.filter(function(obj, index, self) {
           return index === self.findIndex(function(t) {
             return t['id'] === obj['id']
           });
         });
-        console.log('after filtering duplicates:', features);
+        // console.log('after filtering duplicates:', features);
         var projectNames = [];
         var featuresSorted = [];
         if (features) {
@@ -2473,75 +2354,9 @@
       }
     }
 
-    // to be used with the featurestate-wise site's circle coloring
-    // function changeObservatoryCircleColor() {
-    //   var features = map.queryRenderedFeatures({
-    //     layers: ['Observatory']
-    //   });
-    //   // console.log(features);
-    //
-    //   if (features) {
-    //     // console.log('features before sorting: ', features);
-    //     for (var i = 0; i < features.length; i++) {
-    //
-    //       // set empty initially
-    //       map.setFeatureState({
-    //         source: 'observatorySource',
-    //         id: features[i].id
-    //       }, {
-    //         basin: ""
-    //       });
-    //
-    //       for (var n = 0; n < numberOfBasins; n++) {
-    //         if (basinObjects[n].coordinates.length > 1) {
-    //           for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-    //             if (inside([features[i].properties.X, features[i].properties.Y], basinObjects[n].coordinates[m][0]) == true) {
-    //               map.setFeatureState({
-    //                 source: 'observatorySource',
-    //                 id: features[i].id
-    //               }, {
-    //                 basin: basinObjects[n].name
-    //               });
-    //               // console.log('updated feature: ', features[i]);
-    //             }
-    //           }
-    //         } else {
-    //           for (var m = 0; m < basinObjects[n].coordinates.length; m++) {
-    //             if (inside([features[i].properties.X, features[i].properties.Y], basinObjects[n].coordinates[m]) == true) {
-    //               map.setFeatureState({
-    //                 source: 'observatorySource',
-    //                 id: features[i].id
-    //               }, {
-    //                 basin: basinObjects[n].name
-    //               });
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-
     function normalize(string) {
       return string.trim().toLowerCase();
     }
-
-    // function getUniqueFeatures(array, comparatorProperty) {
-    //     var existingFeatureKeys = {};
-    //     // Because features come from tiled vector data, feature geometries may be split
-    //     // or duplicated across tile boundaries and, as a result, features may appear
-    //     // multiple times in query results.
-    //     var uniqueFeatures = array.filter(function (el) {
-    //         if (existingFeatureKeys[el.properties[comparatorProperty]]) {
-    //             return false;
-    //         } else {
-    //             existingFeatureKeys[el.properties[comparatorProperty]] = true;
-    //             return true;
-    //         }
-    //     });
-    //
-    //     return uniqueFeatures;
-    // }
 
     map.on('style.load', function() {
 
@@ -2557,7 +2372,9 @@
           // alert("Press Ctrl + Scroll to zoom the map");
           var ele = $(".ctrlScrollprompt");
           ele.show();
-          setTimeout(function() { ele.hide(); }, 1000);
+          setTimeout(function() {
+            ele.hide();
+          }, 1000);
         }
       });
 
@@ -2622,19 +2439,6 @@
           // 'circle-stroke-color': 'black',
         }
       });
-      // map.addLayer({
-      //   "id": "numberofprojects",
-      //   "type": "symbol",
-      //   "source": "projectSource",
-      //   "layout": {
-      //     "text-field": "{NumberofSites}",
-      //     "text-font": [
-      //       "DIN Offc Pro Medium",
-      //       "Arial Unicode MS Bold"
-      //     ],
-      //     "text-size": 20
-      //   }
-      // });
 
       map.addSource('observatorySource', {
         type: 'geojson',
@@ -2692,47 +2496,6 @@
           'circle-stroke-color': 'black',
         }
       });
-      //add layer and change circle color based on the site's basin origin on the runtime using featurestate
-      // map.addLayer({
-      //   'id': 'Observatory',
-      //   'source': 'observatorySource',
-      //   'type': 'circle',
-      //   // 'generateId': 'true',
-      //   layout: {
-      //     'visibility': 'visible'
-      //   },
-      //   paint: {
-      //     'circle-color':
-      //     [
-      //       'case',
-      //               ['==', ['feature-state', 'basin'], "Yukon"], colorPalette[0],
-      //               ['==', ['feature-state', 'basin'], "Mackenzie"], colorPalette[1],
-      //               ['==', ['feature-state', 'basin'], "Churchill"], colorPalette[2],
-      //               ['==', ['feature-state', 'basin'], "Fraser"], colorPalette[3],
-      //               ['==', ['feature-state', 'basin'], "Columbia"], colorPalette[4],
-      //               ['==', ['feature-state', 'basin'], "Nelson"], colorPalette[5],
-      //               ['==', ['feature-state', 'basin'], "St. Lawrence"], colorPalette[6],
-      //               ['==', ['feature-state', 'basin'], "Saint John"], colorPalette[7],
-      //               '#ccc'
-      //     ]
-      //     ,
-      //     // 'circle-radius': 4,
-      //     'circle-radius':
-      //       {"stops": [
-      //         [3, 4],
-      //         // zoom is 5 -> circle radius will be 1px
-      //         [5, 6],
-      //         // zoom is 10 -> circle radius will be 2px
-      //         [7, 8],
-      //         [9, 10],
-      //         [11, 12]
-      //     ]}
-      //     ,
-      //     'circle-stroke-width': 2,
-      //     'circle-stroke-color': 'black',
-      //     'circle-pitch-scale': 'viewport',
-      //   }
-      // });
 
       // warning: this fires many times per second!
       map.on('render', afterChangeComplete);
@@ -2769,6 +2532,115 @@
       map.on('mouseleave', 'Observatory', function() {
         map.getCanvas().style.cursor = '';
         popup.remove();
+      });
+
+      siteclicked = "";
+      map.on('click', 'Observatory', function(e) {
+        if (observatoryLayer == 1 && observatoryView == 1) {
+          var coordinates = e.features[0].geometry.coordinates.slice();
+          // var p1 = e.features[0].properties.Project_1;
+          // var p2 = e.features[0].properties.Project_2;
+          // var p3 = e.features[0].properties.Project_3;
+          // var p4 = e.features[0].properties.Project_4;
+          var site = e.features[0].properties.Site;
+          // var sup;
+          //
+          // if (e.features[0].properties.sup === 1) {
+          // 	sup = 'yes'
+          // } else {
+          // 	sup = 'no'
+          // }
+
+          // Ensure that if the map is zoomed out such that
+          // multiple copies of the feature are visible, the
+          // popup appears over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+
+          if (site != siteclicked) {
+            if (siteclicked == "") {
+              // no site was clicked before, just add a red inner circle to this site location
+              observatoryClickActive = 1;
+              map.addLayer({
+                id: 'ObservatoryClickedLayer',
+                source: 'observatorySource',
+                type: 'circle',
+                filter: ["==", "Site", e.features[0].properties.Site],
+                paint: {
+                  'circle-color': 'red',
+                  'circle-radius': {
+                    "stops": [
+                      [3, 5],
+                      // zoom is 5 -> circle radius will be 1px
+                      [5, 7],
+                      // zoom is 10 -> circle radius will be 2px
+                      [7, 9],
+                      [9, 11],
+                      [11, 13]
+                    ]
+                  },
+                  'circle-stroke-width': 2,
+                  'circle-stroke-color': 'black',
+                }
+              });
+            } else {
+              // another site was clicked before, delete the current layer and add a red inner circle to this new site location
+              map.removeLayer('ObservatoryClickedLayer');
+              map.addLayer({
+                id: 'ObservatoryClickedLayer',
+                source: 'observatorySource',
+                type: 'circle',
+                filter: ["==", "Site", e.features[0].properties.Site],
+                paint: {
+                  'circle-color': 'red',
+                  'circle-radius': {
+                    "stops": [
+                      [3, 5],
+                      // zoom is 5 -> circle radius will be 1px
+                      [5, 7],
+                      // zoom is 10 -> circle radius will be 2px
+                      [7, 9],
+                      [9, 11],
+                      [11, 13]
+                    ]
+                  },
+                  'circle-stroke-width': 2,
+                  'circle-stroke-color': 'black',
+                }
+              });
+            }
+
+            // document.getElementById("mySidebar").style.width = "30%";
+            // document.getElementById("main").style.marginLeft = "30%";
+            // document.getElementById("sitename_sidebar").innerHTML = site;
+            // document.getElementById("sitelink_sidebar").innerHTML = "Website Link";
+            // document.getElementById("sitelink_sidebar").href = "https://www.google.com/";
+            // if (p1 != "") {
+            // 	document.getElementById("Project_1_sidebar").innerHTML = "Project 1: " + p1;
+            // }
+            // if (p2 != "") {
+            // 	document.getElementById("Project_2_sidebar").innerHTML = "Project 2: " + p2;
+            // }
+            // if (p3 != "") {
+            // 	document.getElementById("Project_3_sidebar").innerHTML = "Project 3: " + p3;
+            // }
+            // if (p4 != "") {
+            // 	document.getElementById("Project_4_sidebar").innerHTML = "Project 4: " + p4;
+            // }
+            siteclicked = site;
+          }
+          else {
+            // same site was clicked before, delete the current layer
+            // document.getElementById("mySidebar").style.width = "0";
+            // document.getElementById("main").style.marginLeft = "0";
+            observatoryClickActive = 0;
+            siteclicked = "";
+            map.removeLayer('ObservatoryClickedLayer');
+          }
+          displayFilteredList();
+          listingEl.scrollTop = 0;
+        }
       });
 
       filterEl.addEventListener('keyup', function(e) {
@@ -2825,196 +2697,82 @@
       });
 
       // enumerate ids of the layers
-      var toggleableLayerItemViewIds = ['Observatory','Project'];
+      var toggleableLayerItemViewIds = ['Observatory', 'Project'];
 
       // set up the corresponding toggle button for each layer Item view
-      // window.updateViewNavItems = function(flag){
-        document.getElementById("layerItemsViewToggle").innerHTML = "";
-        for (var j = 0; j < toggleableLayerItemViewIds.length; j++) {
-          var id2 = toggleableLayerItemViewIds[j];
-          // console.log('entered loop ' , id2);
+      document.getElementById("layerItemsViewToggle").innerHTML = "";
+      for (var j = 0; j < toggleableLayerItemViewIds.length; j++) {
+        var id2 = toggleableLayerItemViewIds[j];
+        // console.log('entered loop ' , id2);
 
-          if( id2 == 'Observatory' && observatoryLayer == 1){
-            var link2 = document.createElement('a');
-            link2.href = '#';
-            link2.className = '';
-            // link2.setAttribute('style', 'white-space: pre;');
-            link2.innerHTML = '&nbsp Reseacrh Sites &nbsp';
-            link2.id = "researchSiteItemView";
-          }
-          else if( id2 == 'Project' && projectLayer == 1){
-            var link2 = document.createElement('a');
-            link2.href = '#';
-            link2.className = 'activeView';
-            // link2.setAttribute('style', 'white-space: pre;');
-            link2.innerHTML = '&nbsp Projects &nbsp';
-            link2.id = "projectItemView";
-          }
-          else{
-            continue;
-          }
-
-          link2.onclick = function(e2) {
-            var clickedLayer2 = this.id;
-            e2.preventDefault();
-            e2.stopPropagation();
-
-            if( clickedLayer2 == 'projectItemView'){
-              console.log('entered project click');
-              if ( projectView == 1 ){
-                projectView = 0;
-                this.className = '';
-                document.getElementById("sidebar").style.display = "none";
-              }
-              else if ( projectView == 0 ){
-                projectView = 1;
-                observatoryView = 0;
-                var v = document.getElementsByClassName('activeView');
-                for (var k = 0; k < v.length; v++ ){
-                  v[k].className = '';
-                }
-                this.className = 'activeView';
-                document.getElementById("sidebar").style.display = "block";
-                displayFilteredList();
-              }
-            }
-            else if( clickedLayer2 == 'researchSiteItemView'){
-              console.log('entered observatory click');
-              if ( observatoryView == 1 ){
-                observatoryView = 0;
-                this.className = '';
-                document.getElementById("sidebar").style.display = "none";
-              }
-              else if ( observatoryView == 0 ){
-                projectView = 0;
-                observatoryView = 1;
-                var v = document.getElementsByClassName('activeView');
-                for (var k = 0; k < v.length; v++ ){
-                  v[k].className = '';
-                }
-                this.className = 'activeView';
-                document.getElementById("sidebar").style.display = "block";
-                displayFilteredList();
-              }
-            }
-
-            // if (visibility2 == 'visible') {
-            //   map.setLayoutProperty(id2, 'visibility', 'none');
-            //   if (id2 == "Basins") {
-            //     document.getElementById("basinlegendContainer").style.display = "none";
-            //     displayFilteredList();
-            //   } else {
-            //     document.getElementById("sidebar").style.display = "none";
-            //     document.getElementById("closebtnContainer").style.display = "none";
-            //     document.getElementById("listViewButton").style.display = "none";
-            //     document.getElementById("thumbnailViewButton").style.display = "none";
-            //     document.getElementById("observatoryViewButton").style.display = "none";
-            //     document.getElementById("projectViewButton").style.display = "none";
-            //   }
-            //   this.className = '';
-            // }
-            // else {
-            //   this.className = 'activeView';
-            //   map.setLayoutProperty(id2, 'visibility', 'visible');
-            //   if (id2 == "Basins") {
-            //     document.getElementById("basinlegendContainer").style.display = "block";
-            //     displayFilteredList();
-            //   } else {
-            //     document.getElementById("sidebar").style.display = "block";
-            //     document.getElementById("closebtnContainer").style.display = "none";
-            //     document.getElementById("listViewButton").style.display = "block";
-            //     document.getElementById("thumbnailViewButton").style.display = "block";
-            //     document.getElementById("observatoryViewButton").style.display = "block";
-            //     document.getElementById("projectViewButton").style.display = "block";
-            //     map.on('render', afterChangeComplete);
-            //   }
-            // }
-          };
-
-          // if flag is -1, it was the initial call- skip any processing
-          // if flag is 1, not an initila call, the current list view's layer has been toggled off, change the list view to project's
-          // if flaf is 0, not an initial call, and the current layer that has been toogled off is not the current list view, no harm, skip
-          // if(flag == 1){
-          //   // document.getElementById("sidebar").style.display = "none";
-          //   projectView = 1;
-          //   observatoryView = 0;
-          //   // console.log('entered critical ');
-          //   displayFilteredList();
-          // }
-
-          var layers2 = document.getElementById('layerItemsViewToggle');
-          layers2.appendChild(link2);
+        // if (id2 == 'Observatory' && observatoryLayer == 1) {
+        if (id2 == 'Observatory') {
+          var link2 = document.createElement('a');
+          link2.href = '#';
+          link2.className = '';
+          // link2.setAttribute('style', 'white-space: pre;');
+          link2.innerHTML = '&nbsp Research Sites &nbsp';
+          link2.id = "researchSiteItemView";
         }
-      // }
-      // updateViewNavItems(-1);
+        // else if (id2 == 'Project' && projectLayer == 1) {
+        else if (id2 == 'Project') {
+          var link2 = document.createElement('a');
+          link2.href = '#';
+          link2.className = 'activeView';
+          // link2.setAttribute('style', 'white-space: pre;');
+          link2.innerHTML = '&nbsp Projects &nbsp';
+          link2.id = "projectItemView";
+        } else {
+          continue;
+        }
+
+        link2.onclick = function(e2) {
+          var clickedLayer2 = this.id;
+          e2.preventDefault();
+          e2.stopPropagation();
+
+          if (clickedLayer2 == 'projectItemView') {
+            console.log('entered project click');
+            if (projectView == 1) {
+              projectView = 0;
+              this.className = '';
+              document.getElementById("sidebar").style.display = "none";
+            } else if (projectView == 0) {
+              projectView = 1;
+              observatoryView = 0;
+              var v = document.getElementsByClassName('activeView');
+              for (var k = 0; k < v.length; v++) {
+                v[k].className = '';
+              }
+              this.className = 'activeView';
+              document.getElementById("sidebar").style.display = "block";
+              displayFilteredList();
+            }
+          } else if (clickedLayer2 == 'researchSiteItemView') {
+            console.log('entered observatory click');
+            if (observatoryView == 1) {
+              observatoryView = 0;
+              this.className = '';
+              document.getElementById("sidebar").style.display = "none";
+            } else if (observatoryView == 0) {
+              projectView = 0;
+              observatoryView = 1;
+              var v = document.getElementsByClassName('activeView');
+              for (var k = 0; k < v.length; v++) {
+                v[k].className = '';
+              }
+              this.className = 'activeView';
+              document.getElementById("sidebar").style.display = "block";
+              displayFilteredList();
+            }
+          }
+        };
+
+        var layers2 = document.getElementById('layerItemsViewToggle');
+        layers2.appendChild(link2);
+      }
 
       map.on('render', afterChangeComplete);
-
-      // // enumerate ids of the layers
-      // var toggleableLayerIds = ['Basins', 'Observatory'];
-      //
-      // document.getElementById("menuLayerToggle").innerHTML = "";
-      //
-      // // set up the corresponding toggle button for each layer
-      // for (var i = 0; i < toggleableLayerIds.length; i++) {
-      //   var id = toggleableLayerIds[i];
-      //
-      //   var link = document.createElement('a');
-      //   link.href = '#';
-      //   link.className = 'active';
-      //   link.textContent = id;
-      //
-      //   link.onclick = function(e) {
-      //     var flag = 0;
-      //     var clickedLayer = this.textContent;
-      //     e.preventDefault();
-      //     e.stopPropagation();
-      //
-      //     var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-      //
-      //     // toggle layer visibility by changing the layout object's visibility property
-      //     if (visibility == 'visible') {
-      //       map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-      //       if (clickedLayer == "Basins") {
-      //         basinLayer = 0;
-      //         document.getElementById("basinlegendContainer").style.display = "none";
-      //         displayFilteredList();
-      //       } else {
-      //         flag = 1;
-      //         observatoryLayer = 0;
-      //         // document.getElementById("sidebar").style.display = "none";
-      //         // document.getElementById("closebtnContainer").style.display = "none";
-      //         // document.getElementById("listViewButton").style.display = "none";
-      //         // document.getElementById("thumbnailViewButton").style.display = "none";
-      //         // document.getElementById("observatoryViewButton").style.display = "none";
-      //         // document.getElementById("projectViewButton").style.display = "none";
-      //         // displayFilteredList();
-      //       }
-      //       this.className = '';
-      //     } else {
-      //       this.className = 'active';
-      //       map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-      //       if (clickedLayer == "Basins") {
-      //         basinLayer = 1;
-      //         document.getElementById("basinlegendContainer").style.display = "block";
-      //         displayFilteredList();
-      //       } else {
-      //         observatoryLayer = 1;
-      //         document.getElementById("sidebar").style.display = "block";
-      //         document.getElementById("closebtnContainer").style.display = "none";
-      //         document.getElementById("listViewButton").style.display = "block";
-      //         document.getElementById("thumbnailViewButton").style.display = "block";
-      //         // document.getElementById("observatoryViewButton").style.display = "block";
-      //         // document.getElementById("projectViewButton").style.display = "block";
-      //         map.on('render', afterChangeComplete);
-      //       }
-      //     }
-      //   updateViewNavItems(flag);
-      //   };
-      //
-      //   var layers = document.getElementById('menuLayerToggle');
-      //   layers.appendChild(link);
-      // }
     });
   </script>
 
