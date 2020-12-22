@@ -659,7 +659,7 @@
 
     <div class="viewTop">
       <fieldset>
-        <input id="feature-filter" type="text" placeholder="Filter results by observatory name" />
+        <input id="feature-filter" type="text" placeholder="Filter results by research site name" />
       </fieldset>
 
       <div id="thumbnailViewButton" onclick="showThumbnailView()">
@@ -1304,7 +1304,7 @@
       listingEl.innerHTML = '';
 
       if (observatoryView == 1) {
-        document.getElementById("feature-filter").placeholder = "Filter results by observatory name";
+        document.getElementById("feature-filter").placeholder = "Filter results by research site name";
         if (features.length) {
           if (thumbnailView == 1) {
             //update the view icon colors
@@ -1387,7 +1387,7 @@
 
               var divItemDetailsON = 0;
 
-              function showItemDetails(){
+              function showThumbnailItemDetails(){
                 divItemDetailsON = 1;
                 divItem.style.width = '95%';
                 divItem.style.height = 'auto';
@@ -1470,95 +1470,7 @@
 
               divItem.addEventListener('click', function() {
                 if (divItemDetailsON == 0) {
-                  showItemDetails();
-                  // divItemDetailsON = 1;
-                  // divItem.style.width = '95%';
-                  // divItem.style.height = 'auto';
-                  // divImgItem.style.height = '200px';
-                  // imgItem.style.height = '200px';
-                  // divItem.removeChild(divItem.lastChild);
-                  //
-                  // divNameItem.style.whiteSpace = "initial";
-                  //
-                  // var divItemDetails = document.createElement('div');
-                  // divItemDetails.className = "divItemDetailsContainer";
-                  // // var divImgItemDetails = document.createElement('div');
-                  // // divImgItemDetails.className = "divImgDetailsContainer";
-                  // var divOverviewItemDetails = document.createElement('div');
-                  // divOverviewItemDetails.className = "divNameDetailsContainer";
-                  // var divFocusItemDetails = document.createElement('div');
-                  // divFocusItemDetails.className = "divTextDetailsContainer";
-                  // // var imgItemDetails = document.createElement('img');
-                  // // imgItemDetails.src = getListingImage(prop.Site);
-                  // // imgItemDetails.className = "divImgDetails";
-                  // var divProjectItemDetails = document.createElement('div');
-                  // divProjectItemDetails.className = "divProjectDetailsContainer";
-                  //
-                  // var overviewItemDetails = document.createElement('p');
-                  // overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
-                  // // var overviewItemDetails = document.createElement('a');
-                  // // overviewItemDetails.target = '_blank';
-                  // // overviewItemDetails.textContent = 'Overview';
-                  //
-                  // var divTextItem = document.createElement('div');
-                  // divTextItem.className = "divTextContainer";
-                  // var textItem = document.createElement('div');
-                  // textItem.className = "divText";
-                  // textItem.innerHTML = "Click to Collapse";
-                  // divTextItem.style.transform = 'translate(0, -145px)';
-                  //
-                  // // var focusItemDetails = document.createElement('div');
-                  // // focusItemDetails.className = "divFocusDetails";
-                  // // focusItemDetails.innerHTML = "Other details"
-                  //
-                  // var focusItemDetails = document.createElement('div');
-                  // focusItemDetails.className = "divFocusDetails";
-                  // var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
-                  // var focusList = document.createElement("ul");
-                  // for (var s = 0; s < focusString.length; s++) {
-                  //   var anchor = document.createElement("p");
-                  //   anchor.innerHTML = focusString[s];
-                  //   var elem = document.createElement("li");
-                  //   elem.appendChild(anchor);
-                  //   focusList.appendChild(elem);
-                  // }
-                  // focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
-                  // focusItemDetails.appendChild(focusList);
-                  //
-                  // var projectItemDetails = document.createElement('div');
-                  // projectItemDetails.className = "divProjectDetails";
-                  // var projectString = prop.Projects.split(";");
-                  // var projectList = document.createElement("ul");
-                  // console.log(projectString);
-                  // if (projectString.length > 0) {
-                  //   for (var p = 0; p < projectString.length; p++) {
-                  //     var anchor = document.createElement("p");
-                  //     anchor.innerHTML = projectString[p];
-                  //     var elem = document.createElement("li");
-                  //     elem.appendChild(anchor);
-                  //     projectList.appendChild(elem);
-                  //   }
-                  //   projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                  //   projectItemDetails.appendChild(projectList);
-                  // }
-                  //
-                  // divTextItem.appendChild(textItem);
-                  // divItem.appendChild(divTextItem);
-                  // // // divImgItemDetails.appendChild(imgItemDetails);
-                  // // divOverviewItemDetails.appendChild(overviewItemDetails);
-                  // // divFocusItemDetails.appendChild(focusItemDetails);
-                  // // // divItemDetails.appendChild(divImgItemDetails);
-                  // // divItemDetails.appendChild(divOverviewItemDetails);
-                  // // divItemDetails.appendChild(divFocusItemDetails);
-                  //
-                  // divOverviewItemDetails.appendChild(overviewItemDetails);
-                  // divFocusItemDetails.appendChild(focusItemDetails);
-                  // divProjectItemDetails.appendChild(projectItemDetails)
-                  // divItemDetails.appendChild(divOverviewItemDetails);
-                  // divItemDetails.appendChild(divFocusItemDetails);
-                  // divItemDetails.appendChild(divProjectItemDetails);
-                  //
-                  // divItem.appendChild(divItemDetails);
+                  showThumbnailItemDetails();
                 }
                 else if (divItemDetailsON == 1) {
                   divItemDetailsON = 0;
@@ -1596,7 +1508,7 @@
               listingEl.appendChild(divItem);
 
               if(observatoryClickActive == 1 && siteclicked == prop.Site){
-                showItemDetails();
+                showThumbnailItemDetails();
                 // listingEl.scrollTop = 0;
               }
             });
@@ -1680,69 +1592,74 @@
                 divListItem.style.backgroundColor = hexToRGBaListHover("#dddddd", 0);;
               });
               var divItemDetailsON = 0;
-              divListItem.addEventListener('click', function() {
-                if (divItemDetailsON == 0) {
-                  divItemDetailsON = 1;
-                  var divItemDetails = document.createElement('div');
-                  divItemDetails.className = "divItemDetailsContainer";
-                  divItemDetails.style.backgroundColor = itemColor;
 
-                  var divImgItemDetails = document.createElement('div');
-                  divImgItemDetails.className = "divImgDetailsContainer";
-                  var divOverviewItemDetails = document.createElement('div');
-                  divOverviewItemDetails.className = "divNameDetailsContainer";
-                  var divFocusItemDetails = document.createElement('div');
-                  divFocusItemDetails.className = "divTextDetailsContainer";
-                  var divProjectItemDetails = document.createElement('div');
-                  divProjectItemDetails.className = "divProjectDetailsContainer";
+              function showListItemDetails(){
+                divItemDetailsON = 1;
+                var divItemDetails = document.createElement('div');
+                divItemDetails.className = "divItemDetailsContainer";
+                divItemDetails.style.backgroundColor = itemColor;
 
-                  var imgItemDetails = document.createElement('img');
-                  imgItemDetails.src = getObservatoryListingImage(prop.Site);
-                  imgItemDetails.className = "divImgDetails";
+                var divImgItemDetails = document.createElement('div');
+                divImgItemDetails.className = "divImgDetailsContainer";
+                var divOverviewItemDetails = document.createElement('div');
+                divOverviewItemDetails.className = "divNameDetailsContainer";
+                var divFocusItemDetails = document.createElement('div');
+                divFocusItemDetails.className = "divTextDetailsContainer";
+                var divProjectItemDetails = document.createElement('div');
+                divProjectItemDetails.className = "divProjectDetailsContainer";
 
-                  var overviewItemDetails = document.createElement('p');
-                  overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+                var imgItemDetails = document.createElement('img');
+                imgItemDetails.src = getObservatoryListingImage(prop.Site);
+                imgItemDetails.className = "divImgDetails";
 
-                  var focusItemDetails = document.createElement('div');
-                  focusItemDetails.className = "divFocusDetails";
-                  var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
-                  var focusList = document.createElement("ul");
-                  for (var s = 0; s < focusString.length; s++) {
+                var overviewItemDetails = document.createElement('p');
+                overviewItemDetails.innerHTML = "<b>Overview:</b><br><br>" + prop.Overview;
+
+                var focusItemDetails = document.createElement('div');
+                focusItemDetails.className = "divFocusDetails";
+                var focusString = prop.CurrentScienceFocusandInstrumentation.split(";");
+                var focusList = document.createElement("ul");
+                for (var s = 0; s < focusString.length; s++) {
+                  var anchor = document.createElement("p");
+                  anchor.innerHTML = focusString[s];
+                  var elem = document.createElement("li");
+                  elem.appendChild(anchor);
+                  focusList.appendChild(elem);
+                }
+                focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
+                focusItemDetails.appendChild(focusList);
+
+                var projectItemDetails = document.createElement('div');
+                projectItemDetails.className = "divProjectDetails";
+                var projectString = prop.Projects.split(";");
+                var projectList = document.createElement("ul");
+                if (projectString.length > 0) {
+                  for (var p = 0; p < projectString.length; p++) {
                     var anchor = document.createElement("p");
-                    anchor.innerHTML = focusString[s];
+                    anchor.innerHTML = projectString[p];
                     var elem = document.createElement("li");
                     elem.appendChild(anchor);
-                    focusList.appendChild(elem);
+                    projectList.appendChild(elem);
                   }
-                  focusItemDetails.innerHTML = "<b>Current Science Focus and Instrumentation</b>";
-                  focusItemDetails.appendChild(focusList);
+                  projectItemDetails.innerHTML = "<b>Project(s)</b>";
+                  projectItemDetails.appendChild(projectList);
+                }
 
-                  var projectItemDetails = document.createElement('div');
-                  projectItemDetails.className = "divProjectDetails";
-                  var projectString = prop.Projects.split(";");
-                  var projectList = document.createElement("ul");
-                  if (projectString.length > 0) {
-                    for (var p = 0; p < projectString.length; p++) {
-                      var anchor = document.createElement("p");
-                      anchor.innerHTML = projectString[p];
-                      var elem = document.createElement("li");
-                      elem.appendChild(anchor);
-                      projectList.appendChild(elem);
-                    }
-                    projectItemDetails.innerHTML = "<b>Project(s)</b>";
-                    projectItemDetails.appendChild(projectList);
-                  }
+                divImgItemDetails.appendChild(imgItemDetails);
+                divOverviewItemDetails.appendChild(overviewItemDetails);
+                divFocusItemDetails.appendChild(focusItemDetails);
+                divProjectItemDetails.appendChild(projectItemDetails)
+                divItemDetails.appendChild(divImgItemDetails);
+                divItemDetails.appendChild(divOverviewItemDetails);
+                divItemDetails.appendChild(divFocusItemDetails);
+                divItemDetails.appendChild(divProjectItemDetails);
 
-                  divImgItemDetails.appendChild(imgItemDetails);
-                  divOverviewItemDetails.appendChild(overviewItemDetails);
-                  divFocusItemDetails.appendChild(focusItemDetails);
-                  divProjectItemDetails.appendChild(projectItemDetails)
-                  divItemDetails.appendChild(divImgItemDetails);
-                  divItemDetails.appendChild(divOverviewItemDetails);
-                  divItemDetails.appendChild(divFocusItemDetails);
-                  divItemDetails.appendChild(divProjectItemDetails);
+                item.appendChild(divItemDetails);
+              }
 
-                  item.appendChild(divItemDetails);
+              divListItem.addEventListener('click', function() {
+                if (divItemDetailsON == 0) {
+                  showListItemDetails();
                   // divListItem.removeChild(spanListItem);
                 } else if (divItemDetailsON == 1) {
                   divItemDetailsON = 0;
@@ -1755,6 +1672,11 @@
               divListItem.appendChild(spanListItem);
               divListItem.appendChild(item);
               listingEl.appendChild(divListItem);
+
+              if(observatoryClickActive == 1 && siteclicked == prop.Site){
+                showListItemDetails();
+                // listingEl.scrollTop = 0;
+              }
             });
 
             //add a dummy div at the last of the listing div
@@ -2536,20 +2458,16 @@
 
       siteclicked = "";
       map.on('click', 'Observatory', function(e) {
-        if (observatoryLayer == 1 && observatoryView == 1) {
+        if (observatoryLayer == 1) {
+          if(projectView == 1){
+            // switch to observatory view and display the clicked site
+            projectView = 0;
+            observatoryView = 1;
+            document.getElementById('researchSiteItemView').className = 'activeView';
+            document.getElementById('projectItemView').className = '';
+          }
           var coordinates = e.features[0].geometry.coordinates.slice();
-          // var p1 = e.features[0].properties.Project_1;
-          // var p2 = e.features[0].properties.Project_2;
-          // var p3 = e.features[0].properties.Project_3;
-          // var p4 = e.features[0].properties.Project_4;
           var site = e.features[0].properties.Site;
-          // var sup;
-          //
-          // if (e.features[0].properties.sup === 1) {
-          // 	sup = 'yes'
-          // } else {
-          // 	sup = 'no'
-          // }
 
           // Ensure that if the map is zoomed out such that
           // multiple copies of the feature are visible, the
